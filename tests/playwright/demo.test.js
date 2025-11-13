@@ -13,13 +13,13 @@ test.describe('Playwright Setup Verification', () => {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>TerminAI Demo</title>
+                <title>Terminail Demo</title>
             </head>
             <body>
                 <div id="terminal-container">
-                    <div class="xterm-rows">terminai$</div>
+                    <div class="xterm-rows">terminail$</div>
                     <input data-testid="command-input" placeholder="Enter command...">
-                    <div class="terminal-output">Welcome to TerminAI</div>
+                    <div class="terminal-output">Welcome to Terminail</div>
                     <button data-testid="deepseek-button">Switch to DeepSeek</button>
                     <div data-testid="ai-service-indicator">Current AI: Default</div>
                 </div>
@@ -35,7 +35,7 @@ test.describe('Playwright Setup Verification', () => {
         expect(terminalContainer).not.toBeNull();
         
         const prompt = await page.textContent('.xterm-rows');
-        expect(prompt).toContain('terminai$');
+        expect(prompt).toContain('terminail$');
         
         const commandInput = await page.$('[data-testid="command-input"]');
         expect(commandInput).not.toBeNull();
@@ -53,7 +53,7 @@ test.describe('Playwright Setup Verification', () => {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>TerminAI Interactive Demo</title>
+                <title>Terminail Interactive Demo</title>
                 <style>
                     #terminal-container { 
                         border: 1px solid #ccc; 
@@ -68,10 +68,10 @@ test.describe('Playwright Setup Verification', () => {
             </head>
             <body>
                 <div id="terminal-container">
-                    <div class="xterm-rows">terminai$</div>
+                    <div class="xterm-rows">terminail$</div>
                     <input id="command-input" data-testid="command-input" placeholder="Enter command...">
                     <button id="execute-btn">Execute</button>
-                    <div id="output" class="terminal-output">Welcome to TerminAI Demo</div>
+                    <div id="output" class="terminal-output">Welcome to Terminail Demo</div>
                     <button id="deepseek-btn" data-testid="deepseek-button">Switch to DeepSeek</button>
                     <div id="service-indicator" data-testid="ai-service-indicator">Current AI: Default</div>
                 </div>
@@ -125,7 +125,7 @@ test.describe('Playwright Setup Verification', () => {
             <html>
             <body>
                 <div id="browser-test">Running in ${browserName}</div>
-                <div id="terminal-sim">TerminAI Demo - Browser: ${browserName}</div>
+                <div id="terminal-sim">Terminail Demo - Browser: ${browserName}</div>
             </body>
             </html>
         `;
@@ -136,7 +136,7 @@ test.describe('Playwright Setup Verification', () => {
         expect(browserTest).toContain(browserName);
         
         const terminalSim = await page.textContent('#terminal-sim');
-        expect(terminalSim).toContain('TerminAI Demo');
+        expect(terminalSim).toContain('Terminail Demo');
         expect(terminalSim).toContain(browserName);
     });
 });

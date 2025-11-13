@@ -1,5 +1,5 @@
 """
-TerminAI Automatic Chrome Demo - Complete demonstration of TerminAI's automatic Chrome functionality
+Terminail Automatic Chrome Demo - Complete demonstration of Terminail's automatic Chrome functionality
 """
 import asyncio
 import logging
@@ -7,10 +7,10 @@ from mcp_server.browser import BrowserManager
 from mcp_server.handlers.deepseek_handler import DeepSeekHandler
 
 
-async def demo_terminai_automatic_functionality():
-    """Demonstrate TerminAI's automatic Chrome startup and DeepSeek interaction"""
-    print("=== TerminAI Automatic Chrome Demo ===")
-    print("This demo shows how TerminAI can automatically start Chrome and interact with DeepSeek")
+async def demo_terminail_automatic_functionality():
+    """Demonstrate Terminail's automatic Chrome startup and DeepSeek interaction"""
+    print("=== Terminail Automatic Chrome Demo ===")
+    print("This demo shows how Terminail can automatically start Chrome and interact with DeepSeek")
     
     # Configure logging
     logging.basicConfig(level=logging.INFO)
@@ -51,7 +51,7 @@ async def demo_terminai_automatic_functionality():
         print("✅ DeepSeek handler created")
         
         print("\n5. Asking a question to DeepSeek...")
-        question = "Hello! This is a test from TerminAI. What can you help me with?"
+        question = "Hello! This is a test from Terminail. What can you help me with?"
         response = await handler.ask_question(question)
         
         if not response or len(response) == 0:
@@ -73,7 +73,7 @@ async def demo_terminai_automatic_functionality():
         await manager.close()
         print("\n✅ Demo completed successfully!")
         print("\nSummary:")
-        print("  ✓ TerminAI automatically started Chrome")
+        print("  ✓ Terminail automatically started Chrome")
         print("  ✓ Connected to Chrome with debug port")
         print("  ✓ Navigated to DeepSeek website")
         print("  ✓ Sent questions to DeepSeek")
@@ -86,4 +86,4 @@ async def demo_terminai_automatic_functionality():
 
 
 if __name__ == "__main__":
-    asyncio.run(demo_terminai_automatic_functionality())
+    asyncio.run(demo_terminail_automatic_functionality())

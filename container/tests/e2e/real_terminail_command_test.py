@@ -1,5 +1,5 @@
 """
-Real TerminAI Command Sender - Actually sends commands to TerminAI extension
+Real Terminail Command Sender - Actually sends commands to Terminail extension
 """
 import subprocess
 import time
@@ -8,11 +8,11 @@ import os
 import json
 import requests
 
-class TerminAICommandSender:
-    """Sends commands to TerminAI extension and verifies results"""
+class TerminailCommandSender:
+    """Sends commands to Terminail extension and verifies results"""
     
     def __init__(self):
-        # In a real implementation, this would connect to the TerminAI extension
+        # In a real implementation, this would connect to the Terminail extension
         # For now, we'll simulate the communication
         self.mcp_server_url = "http://localhost:3000"
         self.connected = False
@@ -21,17 +21,17 @@ class TerminAICommandSender:
         """Connect to the MCP server running in the container"""
         try:
             # In a real implementation, this would check if the server is running
-            print("   🔌 Connecting to TerminAI MCP Server...")
+            print("   🔌 Connecting to Terminail MCP Server...")
             # Simulate connection
             self.connected = True
-            print("   ✅ Connected to TerminAI MCP Server")
+            print("   ✅ Connected to Terminail MCP Server")
             return True
         except Exception as e:
             print(f"   ❌ Failed to connect to MCP Server: {e}")
             return False
     
     def send_command(self, command: str) -> bool:
-        """Send a command to the TerminAI extension"""
+        """Send a command to the Terminail extension"""
         if not self.connected:
             print("   ❌ Not connected to MCP Server")
             return False
@@ -69,18 +69,18 @@ class TerminAICommandSender:
             print(f"   ❌ Failed to send command: {e}")
             return False
 
-def run_real_terminai_test():
-    """Run a real test that actually sends commands to TerminAI"""
+def run_real_terminail_test():
+    """Run a real test that actually sends commands to Terminail"""
     print("=" * 60)
     print("🎯 REAL TERMINAI COMMAND TEST")
     print("=" * 60)
     print()
     
     # Create command sender
-    sender = TerminAICommandSender()
+    sender = TerminailCommandSender()
     
     # Connect to MCP server
-    print("🚀 STEP 1: Connect to TerminAI MCP Server")
+    print("🚀 STEP 1: Connect to Terminail MCP Server")
     if not sender.connect_to_mcp_server():
         print("❌ Failed to connect to MCP Server")
         return False
@@ -98,7 +98,7 @@ def run_real_terminai_test():
         print("❌ Chrome is not on DeepSeek website")
         print("   This indicates an issue with the 'cd deepseek' command")
         print("   Possible causes:")
-        print("   - TerminAI extension not properly installed")
+        print("   - Terminail extension not properly installed")
         print("   - MCP Server not running correctly")
         print("   - Chrome not connected to debug port")
         print("   - Network issues accessing DeepSeek")
@@ -114,10 +114,10 @@ def run_real_terminai_test():
         return False
     
     print()
-    print("🔍 Please check if the answer is displayed in TerminAI terminal")
-    response = input("   Did you see the answer displayed in the TerminAI terminal? (y/N): ")
+    print("🔍 Please check if the answer is displayed in Terminail terminal")
+    response = input("   Did you see the answer displayed in the Terminail terminal? (y/N): ")
     if response.lower().strip() not in ['y', 'yes']:
-        print("❌ Answer not displayed in TerminAI terminal")
+        print("❌ Answer not displayed in Terminail terminal")
         print("   This indicates an issue with the question processing")
         print("   Possible causes:")
         print("   - AI service not responding")
@@ -126,7 +126,7 @@ def run_real_terminai_test():
         print("   - Response parsing error")
         return False
     
-    print("✅ Confirmed: Answer displayed in TerminAI terminal")
+    print("✅ Confirmed: Answer displayed in Terminail terminal")
     print()
     
     print("=" * 60)
@@ -135,11 +135,11 @@ def run_real_terminai_test():
     print("✅ 'cd deepseek' command works correctly")
     print("✅ Chrome navigates to DeepSeek website")
     print("✅ 'qi' question command works correctly")
-    print("✅ Answer displayed in TerminAI terminal")
+    print("✅ Answer displayed in Terminail terminal")
     print()
     print("🎯 TERMINAI IS FULLY FUNCTIONAL!")
     return True
 
 if __name__ == "__main__":
-    success = run_real_terminai_test()
+    success = run_real_terminail_test()
     sys.exit(0 if success else 1)

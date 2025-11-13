@@ -1,5 +1,5 @@
 """
-Full Architecture Demo - Shows complete TerminAI architecture with container-host communication
+Full Architecture Demo - Shows complete Terminail architecture with container-host communication
 """
 import asyncio
 import logging
@@ -17,8 +17,8 @@ from mcp_server.handlers.deepseek_handler import DeepSeekHandler
 
 
 async def demo_full_architecture():
-    """Demonstrate the complete TerminAI architecture"""
-    print("=== Full TerminAI Architecture Demo ===")
+    """Demonstrate the complete Terminail architecture"""
+    print("=== Full Terminail Architecture Demo ===")
     print("Architecture:")
     print("1. Host Machine: VS Code Extension (TypeScript/Node.js)")
     print("2. Host Machine: Podman (Container Runtime)")
@@ -68,7 +68,7 @@ async def demo_full_architecture():
     print("✓ Provides clear instructions if service unavailable")
     print("✓ Automatically cleans up resources")
     
-    print("\n=== TerminAI Extension Benefits ===")
+    print("\n=== Terminail Extension Benefits ===")
     print("✓ Zero user Chrome setup required")
     print("✓ Automatic container-host communication")
     print("✓ Robust error handling and fallbacks")
@@ -81,7 +81,7 @@ async def demo_full_architecture():
     print("     python scripts/host_chrome_service.py")
     print("  2. Run container with proper port mapping:")
     print("     podman run -p 9222:9222 -p 9223:9223 container-image")
-    print("  3. Use TerminAI extension in VS Code")
+    print("  3. Use Terminail extension in VS Code")
     
     print("\n✅ Full architecture demo completed!")
 

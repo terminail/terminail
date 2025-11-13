@@ -2,14 +2,14 @@
 REM download_prebuilt_image.bat
 REM Script to download pre-built container images from CI/CD
 
-echo 🚀 Downloading pre-built TerminAI MCP Server container image...
+echo 🚀 Downloading pre-built Terminail MCP Server container image...
 
 REM Try to pull from GitHub Container Registry first
 echo 🔍 Attempting to pull from GitHub Container Registry...
-podman pull ghcr.io/6terminai/terminai-mcp-server:latest
+podman pull ghcr.io/6terminail/terminail-mcp-server:latest
 if %ERRORLEVEL% EQU 0 (
     echo ✅ Successfully pulled image from GitHub Container Registry
-    echo 📦 Image tag: ghcr.io/6terminai/terminai-mcp-server:latest
+    echo 📦 Image tag: ghcr.io/6terminail/terminail-mcp-server:latest
     exit /b 0
 )
 
@@ -19,5 +19,5 @@ echo ⚠️  Pre-built images are not yet available. Please build locally for no
 
 echo.
 echo To build locally, run:
-echo   cd container && podman build -t terminai-mcp-server .
+echo   cd container && podman build -t terminail-mcp-server .
 echo.

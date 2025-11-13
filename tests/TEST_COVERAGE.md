@@ -1,11 +1,11 @@
-# TerminAI Extension Test Coverage Report
+# Terminail Extension Test Coverage Report
 
-This document provides an overview of the test coverage for the TerminAI extension, based on the test files created following the learning-primer-buddy pattern.
+This document provides an overview of the test coverage for the Terminail extension, based on the test files created following the learning-primer-buddy pattern.
 
 ## Test Files Created
 
 ### Unit Tests (`tests/unit/`)
-- `terminAIManager.test.ts` - Tests for TerminAIManager class
+- `terminailManager.test.ts` - Tests for TerminailManager class
 - `configurationManager.test.ts` - Tests for ConfigurationManager class
 - `podmanManager.test.ts` - Tests for PodmanManager class
 - `aiService.test.ts` - Tests for AIService class
@@ -14,7 +14,7 @@ This document provides an overview of the test coverage for the TerminAI extensi
 - `run-unit-tests.js` - Script to run unit tests
 
 ### Integration Tests (`tests/integration/`)
-- `terminAIManager.integration.test.ts` - Integration tests for TerminAIManager with VS Code API
+- `terminailManager.integration.test.ts` - Integration tests for TerminailManager with VS Code API
 - `configuration.integration.test.ts` - Tests for configuration management integration
 - `extensionActivation.integration.test.ts` - Tests for extension activation
 - `aiService.integration.test.ts` - Integration tests for AIService with VS Code API
@@ -37,7 +37,7 @@ This document provides an overview of the test coverage for the TerminAI extensi
 ## Test Coverage Summary
 
 ### Core Components Tested
-1. **TerminAIManager** - Full unit and integration test coverage
+1. **TerminailManager** - Full unit and integration test coverage
    - Initialization and disposal
    - VS Code API integration
    - Command handling
@@ -57,7 +57,7 @@ This document provides an overview of the test coverage for the TerminAI extensi
 
 ### Extension Features Tested
 1. **Command Registration** - All commands from package.json tested
-   - `terminai.openTerminal` command
+   - `terminail.openTerminal` command
    - Command execution workflows
 
 2. **Configuration System** - Full configuration testing

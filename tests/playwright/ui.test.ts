@@ -1,11 +1,11 @@
 import { test, expect, Page } from '@playwright/test';
 
 /**
- * Playwright UI Tests for TerminAI Extension (TypeScript)
+ * Playwright UI Tests for Terminail Extension (TypeScript)
  * These tests verify the visual interface and user interactions
  */
 
-test.describe('TerminAI Webview UI Tests', () => {
+test.describe('Terminail Webview UI Tests', () => {
     let page: Page;
 
     test.beforeEach(async ({ page: testPage }) => {

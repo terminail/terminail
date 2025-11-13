@@ -18,7 +18,7 @@ class TestAPIEndpoints:
         
         assert response.status_code == 200
         data = response.json()
-        assert data["service"] == "TerminAI MCP Server"
+        assert data["service"] == "Terminail MCP Server"
         assert data["version"] == "1.0.0"
         assert data["status"] == "running"
     

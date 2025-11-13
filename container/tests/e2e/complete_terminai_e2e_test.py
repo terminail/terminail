@@ -1,5 +1,5 @@
 """
-Complete TerminAI E2E Test - Full end-to-end test with user interaction
+Complete Terminail E2E Test - Full end-to-end test with user interaction
 """
 import subprocess
 import time
@@ -19,28 +19,28 @@ def check_port_open(host: str, port: int) -> bool:
     except:
         return False
 
-def install_terminai_extension() -> bool:
-    """Install TerminAI extension in VS Code"""
+def install_terminail_extension() -> bool:
+    """Install Terminail extension in VS Code"""
     try:
-        print("   🔧 Installing TerminAI extension...")
+        print("   🔧 Installing Terminail extension...")
         
         # First, try to uninstall if it exists
-        subprocess.run(["C:\\VSCode\\bin\\code.cmd", "--uninstall-extension", "terminai.terminai"], 
+        subprocess.run(["C:\\VSCode\\bin\\code.cmd", "--uninstall-extension", "terminail.terminail"], 
                       capture_output=True)
         time.sleep(2)
         
         # For this demo, we'll simulate the installation
         # In a real scenario, we would install from a vsix file
-        print("   ✅ TerminAI extension installed (simulated)")
+        print("   ✅ Terminail extension installed (simulated)")
         return True
     except Exception as e:
-        print(f"   ❌ Error installing TerminAI extension: {e}")
+        print(f"   ❌ Error installing Terminail extension: {e}")
         return False
 
-def check_terminai_extension() -> bool:
-    """Check if TerminAI extension is installed and running"""
+def check_terminail_extension() -> bool:
+    """Check if Terminail extension is installed and running"""
     try:
-        print("   🔍 Checking for TerminAI extension...")
+        print("   🔍 Checking for Terminail extension...")
         
         # Check if VS Code is installed
         result = subprocess.run(["C:\\VSCode\\bin\\code.cmd", "--version"], capture_output=True, text=True)
@@ -50,22 +50,22 @@ def check_terminai_extension() -> bool:
         
         print("   ✅ VS Code is installed")
         
-        # Check if TerminAI extension is installed
+        # Check if Terminail extension is installed
         result = subprocess.run(["C:\\VSCode\\bin\\code.cmd", "--list-extensions"], capture_output=True, text=True)
-        if "terminai" in result.stdout.lower():
-            print("   ✅ TerminAI extension is already installed")
+        if "terminail" in result.stdout.lower():
+            print("   ✅ Terminail extension is already installed")
             return True
         else:
-            print("   ⚠ TerminAI extension is not installed")
+            print("   ⚠ Terminail extension is not installed")
             return False
     except Exception as e:
-        print(f"   ❌ Error checking TerminAI extension: {e}")
+        print(f"   ❌ Error checking Terminail extension: {e}")
         return False
 
-def start_vscode_with_terminai() -> bool:
-    """Start VS Code with TerminAI extension"""
+def start_vscode_with_terminail() -> bool:
+    """Start VS Code with Terminail extension"""
     try:
-        print("   🚀 Starting VS Code with TerminAI extension...")
+        print("   🚀 Starting VS Code with Terminail extension...")
         
         # Start VS Code (this will open a window)
         subprocess.Popen(["C:\\VSCode\\bin\\code.cmd"])
@@ -73,7 +73,7 @@ def start_vscode_with_terminai() -> bool:
         
         response = input("   Did VS Code open successfully? (y/N): ")
         if response.lower().strip() in ['y', 'yes']:
-            print("   ✅ VS Code is running with TerminAI extension")
+            print("   ✅ VS Code is running with Terminail extension")
             return True
         else:
             print("   ❌ VS Code did not open properly")
@@ -82,19 +82,19 @@ def start_vscode_with_terminai() -> bool:
         print(f"   ❌ Error starting VS Code: {e}")
         return False
 
-def start_terminai_container() -> bool:
-    """Start TerminAI container with proper port mapping"""
+def start_terminail_container() -> bool:
+    """Start Terminail container with proper port mapping"""
     try:
-        print("   🐳 Starting TerminAI container...")
+        print("   🐳 Starting Terminail container...")
         
         # Check if container is already running
         result = subprocess.run(["podman", "ps"], capture_output=True, text=True)
-        if "terminai-mcp-server" in result.stdout:
-            print("   ✅ TerminAI container is already running")
+        if "terminail-mcp-server" in result.stdout:
+            print("   ✅ Terminail container is already running")
             return True
         
         # For this demo, we'll simulate the container start
-        print("   ✅ TerminAI container started successfully (simulated)")
+        print("   ✅ Terminail container started successfully (simulated)")
         time.sleep(2)
         return True
     except Exception as e:
@@ -121,8 +121,8 @@ def check_mcp_server() -> bool:
         print(f"   ❌ Error checking MCP Server: {e}")
         return False
 
-def send_terminai_command(command: str) -> dict:
-    """Send a command to TerminAI MCP server"""
+def send_terminail_command(command: str) -> dict:
+    """Send a command to Terminail MCP server"""
     try:
         print(f"   📤 Sending command: {command}")
         
@@ -162,34 +162,34 @@ def run_complete_e2e_test():
     print("=" * 60)
     print()
     
-    # Step 1: Install TerminAI extension
-    print("🚀 STEP 1: Install TerminAI Extension")
-    if not install_terminai_extension():
-        print("❌ Failed to install TerminAI extension")
+    # Step 1: Install Terminail extension
+    print("🚀 STEP 1: Install Terminail Extension")
+    if not install_terminail_extension():
+        print("❌ Failed to install Terminail extension")
         return False
     
     print()
     
-    # Step 2: Check TerminAI extension
-    print("🚀 STEP 2: Check TerminAI Extension")
-    if not check_terminai_extension():
-        print("⚠ TerminAI extension not found - this is expected for demo")
+    # Step 2: Check Terminail extension
+    print("🚀 STEP 2: Check Terminail Extension")
+    if not check_terminail_extension():
+        print("⚠ Terminail extension not found - this is expected for demo")
         print("   In a real scenario, you would install the extension first")
     
     print()
     
     # Step 3: Start VS Code
-    print("🚀 STEP 3: Start VS Code with TerminAI")
-    if not start_vscode_with_terminai():
-        print("❌ Failed to start VS Code with TerminAI")
+    print("🚀 STEP 3: Start VS Code with Terminail")
+    if not start_vscode_with_terminail():
+        print("❌ Failed to start VS Code with Terminail")
         return False
     
     print()
     
     # Step 4: Start container
-    print("🚀 STEP 4: Start TerminAI Container")
-    if not start_terminai_container():
-        print("❌ Failed to start TerminAI container")
+    print("🚀 STEP 4: Start Terminail Container")
+    if not start_terminail_container():
+        print("❌ Failed to start Terminail container")
         return False
     
     print()
@@ -204,7 +204,7 @@ def run_complete_e2e_test():
     
     # Step 6: Send 'cd deepseek' command
     print("🚀 STEP 6: Send 'cd deepseek' command")
-    response = send_terminai_command("cd deepseek")
+    response = send_terminail_command("cd deepseek")
     if response.get("status") != "success":
         print("❌ Failed to send 'cd deepseek' command")
         return False
@@ -216,7 +216,7 @@ def run_complete_e2e_test():
         print("❌ Chrome is not on DeepSeek website")
         print("   This indicates an issue with the 'cd deepseek' command")
         print("   Possible causes:")
-        print("   - TerminAI extension not properly installed")
+        print("   - Terminail extension not properly installed")
         print("   - MCP Server not running correctly")
         print("   - Chrome not connected to debug port")
         print("   - Network issues accessing DeepSeek")
@@ -228,16 +228,16 @@ def run_complete_e2e_test():
     # Step 7: Send question command
     print("🚀 STEP 7: Send question command")
     test_question = "What is the capital of France?"
-    response = send_terminai_command(f"qi {test_question}")
+    response = send_terminail_command(f"qi {test_question}")
     if response.get("status") != "success":
         print("❌ Failed to send question command")
         return False
     
     print()
-    print("🔍 Please check if the answer is displayed in TerminAI terminal")
-    response = input("   Did you see the answer displayed in the TerminAI terminal? (y/N): ")
+    print("🔍 Please check if the answer is displayed in Terminail terminal")
+    response = input("   Did you see the answer displayed in the Terminail terminal? (y/N): ")
     if response.lower().strip() not in ['y', 'yes']:
-        print("❌ Answer not displayed in TerminAI terminal")
+        print("❌ Answer not displayed in Terminail terminal")
         print("   This indicates an issue with the question processing")
         print("   Possible causes:")
         print("   - AI service not responding")
@@ -246,20 +246,20 @@ def run_complete_e2e_test():
         print("   - Response parsing error")
         return False
     
-    print("✅ Confirmed: Answer displayed in TerminAI terminal")
+    print("✅ Confirmed: Answer displayed in Terminail terminal")
     print()
     
     print("=" * 60)
     print("🎉 TERMINAI COMPLETE E2E TEST SUCCESSFUL!")
     print("=" * 60)
-    print("✅ TerminAI extension is properly installed")
+    print("✅ Terminail extension is properly installed")
     print("✅ VS Code started successfully")
     print("✅ Container starts and runs correctly")
     print("✅ MCP Server communicates properly")
     print("✅ 'cd deepseek' command works correctly")
     print("✅ Chrome navigates to DeepSeek website")
     print("✅ 'qi' question command works correctly")
-    print("✅ Answer displayed in TerminAI terminal")
+    print("✅ Answer displayed in Terminail terminal")
     print()
     print("🎯 TERMINAI IS FULLY FUNCTIONAL!")
     return True

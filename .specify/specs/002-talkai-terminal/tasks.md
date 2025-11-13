@@ -1,10 +1,10 @@
 ---
-description: "Task list for TerminAI Terminal implementation"
+description: "Task list for Terminail Terminal implementation"
 ---
 
-# Tasks: TerminAI Terminal
+# Tasks: Terminail Terminal
 
-**Input**: Design documents from `/specs/002-terminai-terminal/`
+**Input**: Design documents from `/specs/002-terminail-terminal/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
 **Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
@@ -50,7 +50,7 @@ description: "Task list for TerminAI Terminal implementation"
 
 ---
 
-## Phase 3: User Story 1 - Initialize TerminAI Terminal Environment (Priority: P1) 🎯 MVP
+## Phase 3: User Story 1 - Initialize Terminail Terminal Environment (Priority: P1) 🎯 MVP
 
 **Goal**: Provide terminal interface that automatically sets up Podman container and guides browser setup
 
@@ -69,12 +69,12 @@ description: "Task list for TerminAI Terminal implementation"
 - [ ] T014 [P] [US1] Create PodmanManager in src/podmanManager.ts
 - [ ] T015 [P] [US1] Create BrowserManager in src/browserManager.ts
 - [ ] T016 [P] [US1] Create MCPClient in src/mcpClient.ts
-- [ ] T017 [US1] Implement TerminAITerminal in src/terminaiTerminal.ts (depends on T014, T015, T016)
+- [ ] T017 [US1] Implement TerminailTerminal in src/terminailTerminal.ts (depends on T014, T015, T016)
 - [ ] T018 [US1] Implement terminal webview UI with basic prompt and output display
 - [ ] T019 [US1] Add Podman container startup logic to PodmanManager
 - [ ] T020 [US1] Add browser launch with debug port logic to BrowserManager
 - [ ] T021 [US1] Add MCP server connection logic to MCPClient
-- [ ] T022 [US1] Add terminal initialization workflow in TerminAITerminal
+- [ ] T022 [US1] Add terminal initialization workflow in TerminailTerminal
 - [ ] T023 [US1] Add user guidance for browser setup in terminal interface
 - [ ] T024 [US1] Add error handling for container and browser startup failures
 - [ ] T025 [US1] Add logging for initialization operations
@@ -98,7 +98,7 @@ description: "Task list for TerminAI Terminal implementation"
 
 - [ ] T028 [P] [US2] Create AIServiceManager in src/aiServiceManager.ts
 - [ ] T029 [US2] Implement AI service registry with DeepSeek, Qwen, Doubao
-- [ ] T030 [US2] Add 'cd' command parsing to TerminAITerminal
+- [ ] T030 [US2] Add 'cd' command parsing to TerminailTerminal
 - [ ] T031 [US2] Add service switching logic to AIServiceManager
 - [ ] T032 [US2] Add MCP server command for service switching
 - [ ] T033 [US2] Update terminal prompt with current AI service context
@@ -122,7 +122,7 @@ description: "Task list for TerminAI Terminal implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T038 [US3] Add 'ls' command parsing to TerminAITerminal
+- [ ] T038 [US3] Add 'ls' command parsing to TerminailTerminal
 - [ ] T039 [US3] Add service listing logic to AIServiceManager
 - [ ] T040 [US3] Add MCP server command for service listing
 - [ ] T041 [US3] Add output formatting for service list
@@ -140,12 +140,12 @@ description: "Task list for TerminAI Terminal implementation"
 
 ### Tests for User Story 4 (OPTIONAL - only if tests requested) ⚠️
 
-- [ ] T043 [P] [US4] Unit test for question sending in tests/unit/terminaiTerminal.test.ts
+- [ ] T043 [P] [US4] Unit test for question sending in tests/unit/terminailTerminal.test.ts
 - [ ] T044 [P] [US4] Integration test for 'qi' command in tests/integration/aiInteraction.test.ts
 
 ### Implementation for User Story 4
 
-- [ ] T045 [US4] Add 'qi' command parsing to TerminAITerminal
+- [ ] T045 [US4] Add 'qi' command parsing to TerminailTerminal
 - [ ] T046 [US4] Add question sending logic to MCPClient
 - [ ] T047 [US4] Add MCP server endpoint for question processing
 - [ ] T048 [US4] Add real-time response streaming display

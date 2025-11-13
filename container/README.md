@@ -1,6 +1,6 @@
-# TerminAI MCP Server Container
+# Terminail MCP Server Container
 
-MCP (Model Context Protocol) Server container for TerminAI VS Code extension, providing browser automation capabilities for web-based AI chat services. TerminAI is not affiliated with or endorsed by any AI website.
+MCP (Model Context Protocol) Server container for Terminail VS Code extension, providing browser automation capabilities for web-based AI chat services. Terminail is not affiliated with or endorsed by any AI website.
 
 ## 📋 Features
 
@@ -39,7 +39,7 @@ container/
 cd container
 
 # Build image
-podman build -t terminai-mcp-server -f Containerfile .
+podman build -t terminail-mcp-server -f Containerfile .
 ```
 
 ### Run Container
@@ -48,8 +48,8 @@ podman build -t terminai-mcp-server -f Containerfile .
 # Run MCP server container
 podman run -d \
   -p 3000:3000 \
-  --name terminai-mcp \
-  terminai-mcp-server
+  --name terminail-mcp \
+  terminail-mcp-server
 ```
 
 ### Development Mode
@@ -59,8 +59,8 @@ podman run -d \
 podman run -it \
   -p 3000:3000 \
   -v $(pwd)/mcp_server:/app/mcp_server \
-  --name terminai-mcp-dev \
-  terminai-mcp-server
+  --name terminail-mcp-dev \
+  terminail-mcp-server
 ```
 
 ## 🔧 API Reference
@@ -124,10 +124,10 @@ python -m mcp_server.main
 
 ```bash
 # View container logs
-podman logs -f terminai-mcp
+podman logs -f terminail-mcp
 
 # Enter container for debugging
-podman exec -it terminai-mcp /bin/bash
+podman exec -it terminail-mcp /bin/bash
 
 # Check browser connection status
 curl http://localhost:3000/health
@@ -183,15 +183,15 @@ The MCP server uses a YAML configuration file (`config.yaml`) for its settings:
 
 ```bash
 # View detailed logs
-podman logs terminai-mcp
+podman logs terminail-mcp
 
 # Real-time log monitoring
-podman logs -f terminai-mcp
+podman logs -f terminail-mcp
 ```
 
 ## 📄 License
 
-This project is licensed under the [TerminAI Personal and Commercial Use License](LICENSE) - allows personal and internal use, prohibits commercial sales.
+This project is licensed under the [Terminail Personal and Commercial Use License](LICENSE) - allows personal and internal use, prohibits commercial sales.
 
 ## 🤝 Contributing
 
@@ -206,4 +206,4 @@ If you encounter any issues:
 
 ---
 
-**Note**: Using this container requires compliance with each AI website's terms of service. Please use automation features responsibly. TerminAI is not affiliated with or endorsed by any AI website.
+**Note**: Using this container requires compliance with each AI website's terms of service. Please use automation features responsibly. Terminail is not affiliated with or endorsed by any AI website.

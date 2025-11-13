@@ -6,12 +6,12 @@
 
 ## Overview
 
-This data model defines the entities, relationships, and data flows for the UI integration feature that enables sidebar icon access and panel placement for the TerminAI extension. The model focuses on the configuration, state management, and interaction patterns required to integrate seamlessly with VS Code's UI framework.
+This data model defines the entities, relationships, and data flows for the UI integration feature that enables sidebar icon access and panel placement for the Terminail extension. The model focuses on the configuration, state management, and interaction patterns required to integrate seamlessly with VS Code's UI framework.
 
 ## Key Entities
 
 ### SidebarIconConfiguration
-Represents the configuration data for the sidebar icon that provides quick access to the TerminAI extension.
+Represents the configuration data for the sidebar icon that provides quick access to the Terminail extension.
 
 **Attributes**:
 - `id`: string - Unique identifier for the view container
@@ -26,7 +26,7 @@ Represents the configuration data for the sidebar icon that provides quick acces
 - `updateVisibility()`: Changes the icon's visibility state
 
 ### PanelConfiguration
-Defines the configuration for integrating the TerminAI interface into VS Code's panel area.
+Defines the configuration for integrating the Terminail interface into VS Code's panel area.
 
 **Attributes**:
 - `viewId`: string - Unique identifier for the panel view

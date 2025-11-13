@@ -1,6 +1,6 @@
 """
 03_check_container_installation.py
-Check if terminai-mcp-server container image is built
+Check if terminail-mcp-server container image is built
 """
 import subprocess
 import sys
@@ -8,10 +8,10 @@ import time
 import os
 
 def check_container_installation():
-    """Check if terminai-mcp-server container image is built"""
+    """Check if terminail-mcp-server container image is built"""
     try:
         print("🚀 STEP 3: Check Container Installation")
-        print("   🔍 Checking for terminai-mcp-server container image...")
+        print("   🔍 Checking for terminail-mcp-server container image...")
         
         # List Podman images
         result = subprocess.run(["podman", "images"], capture_output=True, text=True)
@@ -19,23 +19,23 @@ def check_container_installation():
             print("   📋 Available Podman images:")
             print(result.stdout)
             
-            # Check if terminai-mcp-server image exists
-            if "terminai-mcp-server" in result.stdout:
-                print("   ✅ terminai-mcp-server image is available")
+            # Check if terminail-mcp-server image exists
+            if "terminail-mcp-server" in result.stdout:
+                print("   ✅ terminail-mcp-server image is available")
                 return True
             else:
-                print("   ❌ terminai-mcp-server image not found")
+                print("   ❌ terminail-mcp-server image not found")
                 print("   Please build the container image using:")
-                print("   cd D:/git/6terminai/container && podman build -t terminai-mcp-server .")
+                print("   cd D:/git/6terminail/container && podman build -t terminail-mcp-server .")
                 response = input("   Have you built the container image? (y/N): ")
                 if response.lower().strip() in ['y', 'yes']:
                     # Retry the check
                     result = subprocess.run(["podman", "images"], capture_output=True, text=True)
-                    if "terminai-mcp-server" in result.stdout:
-                        print("   ✅ terminai-mcp-server image is now available")
+                    if "terminail-mcp-server" in result.stdout:
+                        print("   ✅ terminail-mcp-server image is now available")
                         return True
                     else:
-                        print("   ❌ terminai-mcp-server image still not found")
+                        print("   ❌ terminail-mcp-server image still not found")
                         return False
                 else:
                     print("   Please build the container image and run this script again")

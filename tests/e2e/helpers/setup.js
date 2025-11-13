@@ -9,7 +9,7 @@ require('module').Module._nodeModulePaths(projectRoot);
 
 // Global test configuration
 global.TEST_TIMEOUT = 30000;
-global.EXTENSION_ID = 'TerminAI.terminai';
+global.EXTENSION_ID = 'Terminail.terminail';
 
 // Setup global error handling
 process.on('unhandledRejection', (reason, promise) => {

@@ -8,7 +8,7 @@
 
 ## Implementation Summary
 
-This feature implements the `cd` command for the TerminAI terminal interface, allowing users to switch between different AI chat services. The command follows the familiar Unix/Linux `cd` (change directory) convention but adapts it for AI service context switching. When a user executes `cd <ai_service>`, the TerminAI extension communicates with the Playwright MCP server running in a Podman container to navigate the browser to the appropriate AI chat website.
+This feature implements the `cd` command for the Terminail terminal interface, allowing users to switch between different AI chat services. The command follows the familiar Unix/Linux `cd` (change directory) convention but adapts it for AI service context switching. When a user executes `cd <ai_service>`, the Terminail extension communicates with the Playwright MCP server running in a Podman container to navigate the browser to the appropriate AI chat website.
 
 The implementation involves parsing the `cd` command in the terminal interface, validating the requested AI service, and sending the appropriate navigation command to the MCP server. The command provides immediate feedback to the user about the success or failure of the context switch operation. **After a successful context switch, the terminal prompt updates to display the new AI service name followed by '>', for example: 'deepseek>'**.
 
@@ -24,14 +24,14 @@ As a developer using multiple AI chat services, I want to use the `cd` command t
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with a ready TerminAI terminal, **When** they type "cd deepseek", **Then** the MCP server should navigate to the DeepSeek chat website.
-2. **Given** a user with a ready TerminAI terminal, **When** they type "cd qwen", **Then** the MCP server should navigate to the Qwen chat website.
-3. **Given** a user with a ready TerminAI terminal, **When** they type "cd doubao", **Then** the MCP server should navigate to the Doubao chat website.
-4. **Given** a user with a ready TerminAI terminal, **When** they type "cd nonexistent", **Then** the terminal should display an error message indicating the service is not supported.
+1. **Given** a user with a ready Terminail terminal, **When** they type "cd deepseek", **Then** the MCP server should navigate to the DeepSeek chat website.
+2. **Given** a user with a ready Terminail terminal, **When** they type "cd qwen", **Then** the MCP server should navigate to the Qwen chat website.
+3. **Given** a user with a ready Terminail terminal, **When** they type "cd doubao", **Then** the MCP server should navigate to the Doubao chat website.
+4. **Given** a user with a ready Terminail terminal, **When** they type "cd nonexistent", **Then** the terminal should display an error message indicating the service is not supported.
 
 ### User Story 2 - Command Feedback and Validation (Priority: P1)
 
-As a developer using TerminAI, I want immediate feedback when I use the `cd` command so that I know whether the context switch was successful.
+As a developer using Terminail, I want immediate feedback when I use the `cd` command so that I know whether the context switch was successful.
 
 **Why this priority**: This is essential for providing a responsive user experience.
 
@@ -45,7 +45,7 @@ As a developer using TerminAI, I want immediate feedback when I use the `cd` com
 
 ### User Story 3 - Tab Completion for AI Services (Priority: P2)
 
-As a developer using TerminAI, I want tab completion for AI service names when using the `cd` command so that I can quickly and accurately switch between services.
+As a developer using Terminail, I want tab completion for AI service names when using the `cd` command so that I can quickly and accurately switch between services.
 
 **Why this priority**: This enhances usability but is not core functionality.
 
@@ -59,7 +59,7 @@ As a developer using TerminAI, I want tab completion for AI service names when u
 
 ### User Story 4 - Persistent Context Tracking (Priority: P2)
 
-As a developer using TerminAI, I want the current AI service context to be tracked and displayed in the terminal prompt so that I always know which service I'm interacting with.
+As a developer using Terminail, I want the current AI service context to be tracked and displayed in the terminal prompt so that I always know which service I'm interacting with.
 
 **Why this priority**: This enhances user experience by providing clear context awareness.
 
@@ -68,7 +68,7 @@ As a developer using TerminAI, I want the current AI service context to be track
 **Acceptance Scenarios**:
 
 1. **Given** a user switching AI services with `cd`, **When** the context changes, **Then** the terminal prompt should update to reflect the current service.
-2. **Given** a user restarting TerminAI, **When** the extension initializes, **Then** it should restore the last used AI service context.
+2. **Given** a user restarting Terminail, **When** the extension initializes, **Then** it should restore the last used AI service context.
 3. **Given** a user with multiple terminal instances, **When** they switch contexts in one terminal, **Then** other terminals should maintain their individual contexts.
 
 ### Edge Cases

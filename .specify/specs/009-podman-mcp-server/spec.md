@@ -7,15 +7,15 @@
 
 ## Implementation Summary
 
-This feature implements a Podman container that runs the Playwright MCP (Model Context Protocol) Server, which is responsible for browser automation to interact with AI chat websites. The container provides a secure, isolated environment for running Playwright automation scripts that control a host browser instance via Chrome DevTools Protocol (CDP). This architecture allows the TerminAI extension to send natural language commands to control browser interactions without requiring direct browser automation from the extension.
+This feature implements a Podman container that runs the Playwright MCP (Model Context Protocol) Server, which is responsible for browser automation to interact with AI chat websites. The container provides a secure, isolated environment for running Playwright automation scripts that control a host browser instance via Chrome DevTools Protocol (CDP). This architecture allows the Terminail extension to send natural language commands to control browser interactions without requiring direct browser automation from the extension.
 
-The implementation involves creating a Podman image that includes the Playwright MCP server, configuring the container to expose the necessary ports for communication, and ensuring the container can connect to a host browser instance with remote debugging enabled. The container handles browser automation requests from the TerminAI extension and translates them into Playwright commands that control the host browser.
+The implementation involves creating a Podman image that includes the Playwright MCP server, configuring the container to expose the necessary ports for communication, and ensuring the container can connect to a host browser instance with remote debugging enabled. The container handles browser automation requests from the Terminail extension and translates them into Playwright commands that control the host browser.
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Container Initialization and Startup (Priority: P1)
 
-As a developer using TerminAI, I want the Podman container with the Playwright MCP server to start automatically so that I can immediately begin interacting with AI services.
+As a developer using Terminail, I want the Podman container with the Playwright MCP server to start automatically so that I can immediately begin interacting with AI services.
 
 **Why this priority**: This is essential for providing a seamless user experience with the browser automation capabilities.
 
@@ -23,13 +23,13 @@ As a developer using TerminAI, I want the Podman container with the Playwright M
 
 **Acceptance Scenarios**:
 
-1. **Given** a fresh extension installation, **When** a user opens the TerminAI terminal, **Then** the extension should automatically initialize the Podman container with the Playwright MCP server.
+1. **Given** a fresh extension installation, **When** a user opens the Terminail terminal, **Then** the extension should automatically initialize the Podman container with the Playwright MCP server.
 2. **Given** an existing Podman environment, **When** a user opens the terminal, **Then** the extension should verify the container is up-to-date and start it if needed.
 3. **Given** a user with a stopped container, **When** they open the terminal, **Then** the extension should restart the container automatically.
 
 ### User Story 2 - Browser Automation Through Container (Priority: P1)
 
-As a developer using TerminAI, I want the container to control browser interactions so that I can automate interactions with AI chat websites securely.
+As a developer using Terminail, I want the container to control browser interactions so that I can automate interactions with AI chat websites securely.
 
 **Why this priority**: This is the core functionality - enabling browser automation through containerized MCP server while keeping the extension secure.
 
@@ -37,13 +37,13 @@ As a developer using TerminAI, I want the container to control browser interacti
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with the TerminAI terminal open, **When** they send a command to switch AI services, **Then** the extension should communicate with the Podman container that controls browser navigation.
+1. **Given** a user with the Terminail terminal open, **When** they send a command to switch AI services, **Then** the extension should communicate with the Podman container that controls browser navigation.
 2. **Given** a user with the terminal ready, **When** they send a question to an AI service, **Then** the extension should communicate with the container to automate browser interactions and retrieve the response.
 3. **Given** a user with an active container, **When** they execute browser automation commands, **Then** the container should successfully control the host browser.
 
 ### User Story 3 - Container Communication with Host Browser (Priority: P1)
 
-As a developer using TerminAI, I want the container to connect to and control a host browser instance so that I can automate interactions with pre-logged-in AI websites.
+As a developer using Terminail, I want the container to connect to and control a host browser instance so that I can automate interactions with pre-logged-in AI websites.
 
 **Why this priority**: This is essential for the core functionality of interacting with AI services.
 
@@ -57,7 +57,7 @@ As a developer using TerminAI, I want the container to connect to and control a 
 
 ### User Story 4 - Container Resource Management (Priority: P2)
 
-As a developer using TerminAI, I want the container to manage resources appropriately so that it doesn't consume excessive system resources.
+As a developer using Terminail, I want the container to manage resources appropriately so that it doesn't consume excessive system resources.
 
 **Why this priority**: This enhances user experience by preventing resource abuse but is not core functionality.
 
@@ -71,7 +71,7 @@ As a developer using TerminAI, I want the container to manage resources appropri
 
 ### User Story 5 - Container Error Handling and Recovery (Priority: P2)
 
-As a developer using TerminAI, I want the container to handle errors gracefully and recover automatically so that I can continue using the service without technical knowledge of the underlying system.
+As a developer using Terminail, I want the container to handle errors gracefully and recover automatically so that I can continue using the service without technical knowledge of the underlying system.
 
 **Why this priority**: This enhances reliability but is not core functionality for initial use.
 
@@ -81,7 +81,7 @@ As a developer using TerminAI, I want the container to handle errors gracefully 
 
 1. **Given** a user with a running container, **When** the browser connection is lost, **Then** the container should handle the disconnection gracefully and provide appropriate feedback.
 2. **Given** a user with a container experiencing errors, **When** the errors occur, **Then** the container should log diagnostic information for troubleshooting.
-3. **Given** a user with a crashed container, **When** they attempt to use TerminAI, **Then** the extension should automatically restart the container.
+3. **Given** a user with a crashed container, **When** they attempt to use Terminail, **Then** the extension should automatically restart the container.
 
 ### Edge Cases
 
@@ -98,9 +98,9 @@ As a developer using TerminAI, I want the container to handle errors gracefully 
 ### Functional Requirements
 
 - **FR-001**: Container MUST run Playwright MCP server for browser automation
-- **FR-002**: Container MUST expose port 3000 for communication with TerminAI extension
+- **FR-002**: Container MUST expose port 3000 for communication with Terminail extension
 - **FR-003**: Container MUST connect to host browser via Chrome DevTools Protocol (CDP)
-- **FR-004**: Container MUST handle browser automation requests from TerminAI extension
+- **FR-004**: Container MUST handle browser automation requests from Terminail extension
 - **FR-005**: Container MUST translate MCP commands into Playwright automation scripts
 - **FR-006**: Container MUST provide real-time feedback during automation operations
 - **FR-007**: Container MUST handle browser connection errors gracefully
@@ -109,7 +109,7 @@ As a developer using TerminAI, I want the container to handle errors gracefully 
 - **FR-010**: Container MUST handle concurrent automation requests appropriately
 - **FR-011**: Container MUST recover from common error conditions automatically
 - **FR-012**: Container MUST prevent browser automation data from being stored in container filesystem
-- **FR-013**: Container MUST support secure communication with TerminAI extension
+- **FR-013**: Container MUST support secure communication with Terminail extension
 - **FR-014**: Container MUST handle long-running automation tasks without timeouts
 - **FR-015**: Container MUST provide clear error messages for failure scenarios
 - **FR-016**: Container MUST support updates to MCP server implementation
@@ -137,7 +137,7 @@ As a developer using TerminAI, I want the container to handle errors gracefully 
 - **SC-008**: Concurrent automation requests are handled without interference in 99% of cases
 - **SC-009**: Automatic recovery from common errors occurs in 90% of cases
 - **SC-010**: No browser automation data is stored in container filesystem in 100% of cases
-- **SC-011**: Secure communication with TerminAI extension works in 100% of cases
+- **SC-011**: Secure communication with Terminail extension works in 100% of cases
 - **SC-012**: Long-running automation tasks complete without timeouts in 95% of cases
 - **SC-013**: Clear error messages are provided for failure scenarios in 100% of cases
 - **SC-014**: Container supports updates to MCP server implementation in 100% of cases

@@ -1,27 +1,27 @@
 import * as vscode from 'vscode';
-import { TerminAIWebviewProvider } from './terminAIManager';
+import { TerminailWebviewProvider } from './terminailManager';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('TerminAI extension is now active!');
+    console.log('Terminail extension is now active!');
 
     // Create and register Webview provider
-    const provider = new TerminAIWebviewProvider(context.extensionUri);
+    const provider = new TerminailWebviewProvider(context.extensionUri);
     
     // Register Webview view provider
     const viewRegistration = vscode.window.registerWebviewViewProvider(
-        'terminai.terminalView',
+        'terminail.terminalView',
         provider
     );
 
     // Register commands
 
-    const openTerminalCommand = vscode.commands.registerCommand('terminai.openTerminal', async () => {
+    const openTerminalCommand = vscode.commands.registerCommand('terminail.openTerminal', async () => {
 
         // Display Webview view - the view will appear in the panel area alongside other views
 
         // Users can access it through the panel dropdown
 
-        console.log('Opening TerminAI Terminal in panel');
+        console.log('Opening Terminail Terminal in panel');
 
     });
 

@@ -3,7 +3,7 @@
 /**
  * Unit Test Runner
  * 
- * This script runs unit tests for the TerminAI extension.
+ * This script runs unit tests for the Terminail extension.
  */
 
 const { exec } = require('child_process');
@@ -50,7 +50,7 @@ async function runCommand(command, options = {}) {
 }
 
 async function runUnitTests() {
-    console.log('=== TerminAI Extension Unit Tests ===\n');
+    console.log('=== Terminail Extension Unit Tests ===\n');
     
     try {
         // Run unit tests using npm
@@ -60,7 +60,7 @@ async function runUnitTests() {
         
         console.log('🎉 All unit tests passed!');
         console.log('\nSummary of what was tested:');
-        console.log('- TerminAIManager basic functionality');
+        console.log('- TerminailManager basic functionality');
         console.log('- ConfigurationManager basic functionality');
         console.log('- PodmanManager basic functionality');
         console.log('- Core component instantiation and method existence');

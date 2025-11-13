@@ -1,15 +1,15 @@
-# TerminAI Extension Coding Checklist
+# Terminail Extension Coding Checklist
 
-This checklist is based on the TerminAI project structure and requirements for VS Code extension development.
+This checklist is based on the Terminail project structure and requirements for VS Code extension development.
 
 ## Project Structure
 
 - [x] Follow the recommended project structure:
   ```
-  terminai/
+  terminail/
   ├── src/
   │   ├── extension.ts          # Main extension entry point
-  │   ├── terminAIManager.ts    # Webview terminal manager
+  │   ├── terminailManager.ts    # Webview terminal manager
   │   ├── aiService.ts          # AI service integration
   │   ├── configurationManager.ts # Configuration management
   │   └── podmanManager.ts      # Podman container management
@@ -27,7 +27,7 @@ This checklist is based on the TerminAI project structure and requirements for V
 
 ## Webview Terminal Implementation
 
-- [x] Implement `TerminAIWebviewProvider` class that implements `vscode.WebviewViewProvider`
+- [x] Implement `TerminailWebviewProvider` class that implements `vscode.WebviewViewProvider`
 - [x] Implement `resolveWebviewView()` method that:
   - [x] Sets up webview options with `enableScripts: true` and `retainContextWhenHidden: true`
   - [x] Generates HTML content with terminal interface
@@ -147,14 +147,14 @@ This checklist is based on the TerminAI project structure and requirements for V
   - [x] Test question answering workflow
 - [x] Perform real behavior verification by installing and testing the extension in a clean VS Code environment using the `code` command:
   - [x] Package the extension using `npm run package`
-  - [x] Install the extension using `code --install-extension terminai-0.1.0.vsix`
+  - [x] Install the extension using `code --install-extension terminail-0.1.0.vsix`
   - [x] Launch VS Code and verify all extension features work correctly in a real environment
-  - [x] Test the TerminAI terminal view appears correctly
+  - [x] Test the Terminail terminal view appears correctly
   - [x] Verify the cd command switches AI services correctly
   - [x] Test the ls command lists AI services correctly
   - [x] Verify the qi command asks questions and displays responses
   - [x] Test all extension commands and UI interactions
-  - [x] Uninstall the extension using `code --uninstall-extension terminai`
+  - [x] Uninstall the extension using `code --uninstall-extension terminail`
   - [x] Confirm the extension is completely removed and VS Code returns to its original state
   - [x] Run automated end-to-end tests using `npm run test` to verify complete extension lifecycle
 

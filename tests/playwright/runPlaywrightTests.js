@@ -4,11 +4,11 @@ const fs = require('fs');
 const http = require('http');
 
 /**
- * Playwright UI Test Runner for TerminAI Extension
+ * Playwright UI Test Runner for Terminail Extension
  * This runner serves a test page and then runs Playwright tests using the official CLI
  */
 async function runPlaywrightTests() {
-    console.log('🚀 Starting TerminAI Playwright UI Tests...\n');
+    console.log('🚀 Starting Terminail Playwright UI Tests...\n');
     
     let server;
     let testHtmlPath;
@@ -33,7 +33,7 @@ async function runPlaywrightTests() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerminAI Terminal Test</title>
+    <title>Terminail Terminal Test</title>
     <style>
         body {
             margin: 0;
@@ -107,7 +107,7 @@ async function runPlaywrightTests() {
 <body>
     <div class="terminal">
         <div class="terminal-header">
-            <h3>TerminAI Terminal</h3>
+            <h3>Terminail Terminal</h3>
             <div class="ai-service-selector">
                 <button class="service-btn active" data-service="deepseek">DeepSeek</button>
                 <button class="service-btn" data-service="qwen">Qwen</button>
@@ -115,11 +115,11 @@ async function runPlaywrightTests() {
             </div>
         </div>
         <div class="terminal-output" id="output">
-            <div>Welcome to TerminAI Terminal!</div>
+            <div>Welcome to Terminail Terminal!</div>
             <div>Type 'help' for available commands.</div>
         </div>
         <div class="command-line">
-            <span class="prompt">TerminAI:deepseek$ </span>
+            <span class="prompt">Terminail:deepseek$ </span>
             <input type="text" class="command-input" id="commandInput" placeholder="Enter command..." autofocus>
         </div>
     </div>
@@ -147,7 +147,7 @@ async function runPlaywrightTests() {
         
         // Update prompt when AI service changes
         function updatePrompt(service) {
-            promptSpan.textContent = 'TerminAI:' + service + '$ ';
+            promptSpan.textContent = 'Terminail:' + service + '$ ';
         }
         
         // Handle command input
@@ -177,7 +177,7 @@ async function runPlaywrightTests() {
         });
         
         function executeCommand(command) {
-            addOutput('TerminAI:' + currentService + '$ ' + command);
+            addOutput('Terminail:' + currentService + '$ ' + command);
             
             // Simulate command execution with loading state
             const loadingId = addOutput('Processing...', 'loading');
@@ -188,23 +188,23 @@ async function runPlaywrightTests() {
                 // Handle different commands
                 switch (command.toLowerCase()) {
                     case 'help':
-                        addOutput('\n📖 TerminAI Command Help:\n\nBasic Commands:\n  cd <ai>       Switch current AI (deepseek, qwen, doubao)\n  ls            List all supported AIs\n  qi <question> Ask current AI a question\n  status        Check system status\n  clear         Clear terminal\n\nSystem Commands:\n  help          Display this help\n\nTips:\n• After switching AI, the system will automatically navigate to the corresponding chat page\n• Please wait patiently for AI to generate answers when asking questions\n• Ensure the browser remains open\n');
-                        addOutput('TerminAI:' + currentService + '$ ');
+                        addOutput('\n📖 Terminail Command Help:\n\nBasic Commands:\n  cd <ai>       Switch current AI (deepseek, qwen, doubao)\n  ls            List all supported AIs\n  qi <question> Ask current AI a question\n  status        Check system status\n  clear         Clear terminal\n\nSystem Commands:\n  help          Display this help\n\nTips:\n• After switching AI, the system will automatically navigate to the corresponding chat page\n• Please wait patiently for AI to generate answers when asking questions\n• Ensure the browser remains open\n');
+                        addOutput('Terminail:' + currentService + '$ ');
                         break;
                     case 'ls':
                         addOutput('Supported AI services: deepseek, qwen, doubao, chatgpt\n');
-                        addOutput('TerminAI:' + currentService + '$ ');
+                        addOutput('Terminail:' + currentService + '$ ');
                         break;
                     case 'status':
                         addOutput('\n📊 System Status:\n• Current AI: ' + currentService + '\n• Podman: Running\n• Browser: Running\n');
-                        addOutput('TerminAI:' + currentService + '$ ');
+                        addOutput('Terminail:' + currentService + '$ ');
                         break;
                     case 'clear':
                         output.innerHTML = '';
                         break;
                     case 'cd':
                         addOutput('❌ Please specify the AI service to switch to\n');
-                        addOutput('TerminAI:' + currentService + '$ ');
+                        addOutput('Terminail:' + currentService + '$ ');
                         break;
                     default:
                         if (command.toLowerCase().startsWith('cd ')) {
@@ -225,7 +225,7 @@ async function runPlaywrightTests() {
                             } else {
                                 addOutput('❌ Unsupported AI service: ' + aiName + '\n');
                             }
-                            addOutput('TerminAI:' + currentService + '$ ');
+                            addOutput('Terminail:' + currentService + '$ ');
                         } else if (command.toLowerCase().startsWith('qi ')) {
                             const question = command.substring(3);
                             if (question.trim()) {
@@ -234,10 +234,10 @@ async function runPlaywrightTests() {
                             } else {
                                 addOutput('❌ Please enter a question to ask\n');
                             }
-                            addOutput('TerminAI:' + currentService + '$ ');
+                            addOutput('Terminail:' + currentService + '$ ');
                         } else {
                             addOutput('❌ Unknown command: ' + command.split(' ')[0] + '\nType \'help\' to see available commands\n');
-                            addOutput('TerminAI:' + currentService + '$ ');
+                            addOutput('Terminail:' + currentService + '$ ');
                         }
                 }
             }, 500);

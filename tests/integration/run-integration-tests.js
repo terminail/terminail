@@ -3,7 +3,7 @@
 /**
  * Integration Test Runner
  * 
- * This script runs integration tests for the TerminAI extension.
+ * This script runs integration tests for the Terminail extension.
  */
 
 const { exec } = require('child_process');
@@ -50,7 +50,7 @@ async function runCommand(command, options = {}) {
 }
 
 async function runIntegrationTests() {
-    console.log('=== TerminAI Extension Integration Tests ===\n');
+    console.log('=== Terminail Extension Integration Tests ===\n');
     
     try {
         // Run integration tests using npm
@@ -61,7 +61,7 @@ async function runIntegrationTests() {
         console.log('🎉 All integration tests passed!');
         console.log('\nSummary of what was tested:');
         console.log('- Configuration management integration with VS Code');
-        console.log('- TerminAIManager integration with VS Code APIs');
+        console.log('- TerminailManager integration with VS Code APIs');
         console.log('- Command registration and handling');
         
     } catch (error) {

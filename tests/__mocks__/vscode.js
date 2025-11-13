@@ -18,8 +18,8 @@ module.exports = {
             const config = {
                 get: jest.fn().mockImplementation((key, defaultValue) => {
                     // 模拟vscode配置的行为：如果配置值不存在，返回默认值
-                    // 对于terminai配置的apiKey，如果没有设置，应该返回空字符串
-                    if (section === 'terminai' && key === 'apiKey') {
+                    // 对于terminail配置的apiKey，如果没有设置，应该返回空字符串
+                    if (section === 'terminail' && key === 'apiKey') {
                         return defaultValue !== undefined ? defaultValue : '';
                     }
                     return defaultValue;

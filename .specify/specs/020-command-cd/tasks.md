@@ -144,7 +144,7 @@ description: "Task list for CD Command implementation"
 - [ ] T041 [P] [US4] Add terminal prompt updates with current context
 - [ ] T042 [P] [US4] Add last used context restoration on restart
 - [ ] T043 [US4] Add independent context for multiple terminal instances
-- [ ] T044 [US4] Add context persistence in `.terminai` directory
+- [ ] T044 [US4] Add context persistence in `.terminail` directory
 - [ ] T045 [US4] Add context validation on load
 - [ ] T046 [US4] Add context cleanup on extension shutdown
 

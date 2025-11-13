@@ -1,7 +1,7 @@
-# Implementation Plan: TerminAI Terminal
+# Implementation Plan: Terminail Terminal
 
-**Branch**: `002-terminai-terminal` | **Date**: 2025-11-11 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/002-terminai-terminal/spec.md`
+**Branch**: `002-terminail-terminal` | **Date**: 2025-11-11 | **Spec**: [spec.md](./spec.md)
+**Input**: Feature specification from `/specs/002-terminail-terminal/spec.md`
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
@@ -43,7 +43,7 @@ Based on the project constitution, this feature complies with all guidelines:
 ### Documentation (this feature)
 
 ```text
-specs/002-terminai-terminal/
+specs/002-terminail-terminal/
 ├── plan.md              # This file (/speckit.plan command output)
 ├── research.md          # Phase 0 output (/speckit.plan command)
 ├── data-model.md        # Phase 1 output (/speckit.plan command)
@@ -57,7 +57,7 @@ specs/002-terminai-terminal/
 ```text
 src/
 ├── extension.ts         # Extension entry point
-├── terminaiTerminal.ts    # Main terminal interface component
+├── terminailTerminal.ts    # Main terminal interface component
 ├── podmanManager.ts     # Podman container management
 ├── browserManager.ts    # Browser launch and connection management
 ├── mcpClient.ts         # Communication with MCP server
@@ -69,7 +69,7 @@ src/
 
 tests/
 ├── unit/                # Unit tests for individual components
-│   ├── terminaiTerminal.test.ts
+│   ├── terminailTerminal.test.ts
 │   ├── podmanManager.test.ts
 │   ├── browserManager.test.ts
 │   ├── mcpClient.test.ts

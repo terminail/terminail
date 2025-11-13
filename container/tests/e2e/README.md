@@ -1,13 +1,13 @@
-# TerminAI End-to-End Testing Guide
+# Terminail End-to-End Testing Guide
 
 ## 🎯 Objective
-This guide provides a step-by-step process to test the complete TerminAI end-to-end workflow. Each step includes user confirmation points (Y/N) to help identify exactly where issues occur.
+This guide provides a step-by-step process to test the complete Terminail end-to-end workflow. Each step includes user confirmation points (Y/N) to help identify exactly where issues occur.
 
 ## 🔄 Flow Chart
 
 ```mermaid
 graph TD
-    A[Start] --> B[Step 0: Install TerminAI Extension]
+    A[Start] --> B[Step 0: Install Terminail Extension]
     B --> C{Extension Installed?}
     C -->|Y| D[Step 1: Check Podman Installation]
     C -->|N| B
@@ -46,11 +46,11 @@ graph TD
 
 ## 📋 Step-by-Step Testing Process
 
-### Step 0: Install TerminAI Extension
-- **Script**: `00_install_terminai_extension.py`
-- **Action**: Install TerminAI Extension to VS Code
-- **Verification**: Check if VS Code opens with TerminAI extension
-- **User Confirmation**: "Did VS Code open with TerminAI extension? (y/N): "
+### Step 0: Install Terminail Extension
+- **Script**: `00_install_terminail_extension.py`
+- **Action**: Install Terminail Extension to VS Code
+- **Verification**: Check if VS Code opens with Terminail extension
+- **User Confirmation**: "Did VS Code open with Terminail extension? (y/N): "
 
 ### Step 1: Check Podman Installation
 - **Script**: `01_check_podman_installation.py`
@@ -66,9 +66,9 @@ graph TD
 
 ### Step 3: Check Container Installation
 - **Script**: `03_check_container_installation.py`
-- **Action**: Check if terminai-mcp-server container image is built
+- **Action**: Check if terminail-mcp-server container image is built
 - **Verification**: List available Podman images
-- **User Confirmation**: "Is terminai-mcp-server image available? (y/N): "
+- **User Confirmation**: "Is terminail-mcp-server image available? (y/N): "
 
 ### Step 4: Start Podman
 - **Script**: `04_start_podman.py`
@@ -84,9 +84,9 @@ graph TD
 
 ### Step 6: Start Container
 - **Script**: `06_start_container.py`
-- **Action**: Start terminai-mcp-server container from image
+- **Action**: Start terminail-mcp-server container from image
 - **Verification**: Check if container is running
-- **User Confirmation**: "Is the terminai-mcp-server container running? (y/N): "
+- **User Confirmation**: "Is the terminail-mcp-server container running? (y/N): "
 
 ### Step 7: Verify Prerequisites
 - **Script**: `07_verify_prerequisites.py`
@@ -96,15 +96,15 @@ graph TD
 
 ### Step 8: Issue 'cd deepseek' Command
 - **Script**: `08_send_cd_deepseek_command.py`
-- **Action**: Send 'cd deepseek' command from TerminAI
+- **Action**: Send 'cd deepseek' command from Terminail
 - **Verification**: Check if Chrome navigates to DeepSeek website
 - **User Confirmation**: "Is Chrome now on the DeepSeek website? (y/N): "
 
 ### Step 9: Issue Question Command
 - **Script**: `09_send_qi_deepseek_command.py`
-- **Action**: Send 'qi <question>' command from TerminAI
-- **Verification**: Check if answer is displayed in TerminAI terminal
-- **User Confirmation**: "Is the answer displayed in TerminAI terminal? (y/N): "
+- **Action**: Send 'qi <question>' command from Terminail
+- **Verification**: Check if answer is displayed in Terminail terminal
+- **User Confirmation**: "Is the answer displayed in Terminail terminal? (y/N): "
 
 ### Step 10: E2E Success
 - **Script**: `10_confirm_e2e_success.py`

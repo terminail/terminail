@@ -8,7 +8,7 @@
 
 ## Implementation Summary
 
-This feature implements the `ls` command for the TerminAI terminal interface, allowing users to list available AI chat services. The command follows the familiar Unix/Linux `ls` (list) convention but adapts it for displaying supported AI services. When a user executes `ls`, the TerminAI extension retrieves the list of supported AI services from the service registry and displays them in a clear, organized format in the terminal.
+This feature implements the `ls` command for the Terminail terminal interface, allowing users to list available AI chat services. The command follows the familiar Unix/Linux `ls` (list) convention but adapts it for displaying supported AI services. When a user executes `ls`, the Terminail extension retrieves the list of supported AI services from the service registry and displays them in a clear, organized format in the terminal.
 
 The implementation involves parsing the `ls` command in the terminal interface, retrieving the list of supported services, and formatting the output for display. The command provides immediate feedback to the user about available AI services, helping them discover and select services for interaction.
 
@@ -24,13 +24,13 @@ As a developer exploring AI services, I want to use the `ls` command to see a li
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with a ready TerminAI terminal, **When** they type "ls", **Then** the terminal should display a list of supported AI services (deepseek, qwen, doubao).
-2. **Given** a user with a ready TerminAI terminal, **When** they type "ls" after adding new AI services, **Then** the terminal should show the updated list including new services.
+1. **Given** a user with a ready Terminail terminal, **When** they type "ls", **Then** the terminal should display a list of supported AI services (deepseek, qwen, doubao).
+2. **Given** a user with a ready Terminail terminal, **When** they type "ls" after adding new AI services, **Then** the terminal should show the updated list including new services.
 3. **Given** a user with no configured AI services, **When** they type "ls", **Then** the terminal should display an appropriate message indicating no services are available.
 
 ### User Story 2 - Command Feedback and Formatting (Priority: P1)
 
-As a developer using TerminAI, I want the `ls` command output to be well-formatted and informative so that I can easily understand the available services.
+As a developer using Terminail, I want the `ls` command output to be well-formatted and informative so that I can easily understand the available services.
 
 **Why this priority**: This is essential for providing a user-friendly experience.
 
@@ -44,7 +44,7 @@ As a developer using TerminAI, I want the `ls` command output to be well-formatt
 
 ### User Story 3 - Service Details Display (Priority: P2)
 
-As a developer using TerminAI, I want the `ls` command to optionally show detailed information about AI services so that I can make informed decisions about which service to use.
+As a developer using Terminail, I want the `ls` command to optionally show detailed information about AI services so that I can make informed decisions about which service to use.
 
 **Why this priority**: This enhances usability by providing more information about services.
 
@@ -58,7 +58,7 @@ As a developer using TerminAI, I want the `ls` command to optionally show detail
 
 ### User Story 4 - Dynamic Service Listing (Priority: P2)
 
-As a developer using TerminAI, I want the `ls` command to reflect dynamically added or removed services so that I always see the current list of available services.
+As a developer using Terminail, I want the `ls` command to reflect dynamically added or removed services so that I always see the current list of available services.
 
 **Why this priority**: This ensures the command stays current with service configuration changes.
 

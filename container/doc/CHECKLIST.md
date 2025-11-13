@@ -1,6 +1,6 @@
-# TerminAI MCP Server Container Checklist
+# Terminail MCP Server Container Checklist
 
-This checklist is based on the TerminAI project structure and requirements for the MCP server container implementation.
+This checklist is based on the Terminail project structure and requirements for the MCP server container implementation.
 
 ## Project Structure
 

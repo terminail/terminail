@@ -18,19 +18,19 @@ export class PodmanManager {
             // Check if Podman is available
             await execAsync('podman --version');
             
-            // Check if TerminAI image exists
+            // Check if Terminail image exists
             try {
-                await execAsync('podman image exists terminai-mcp-server');
+                await execAsync('podman image exists terminail-mcp-server');
             } catch {
                 // If image doesn't exist, need to build (simplified here)
-                vscode.window.showInformationMessage('Building TerminAI MCP server image...');
+                vscode.window.showInformationMessage('Building Terminail MCP server image...');
                 // In actual implementation, this should build an image containing Playwright MCP server
             }
             
             // Stop any existing old containers
             try {
-                await execAsync(`podman stop terminai-mcp`);
-                await execAsync(`podman rm terminai-mcp`);
+                await execAsync(`podman stop terminail-mcp`);
+                await execAsync(`podman rm terminail-mcp`);
             } catch {
                 // Ignore errors stopping non-existent containers
             }
@@ -41,7 +41,7 @@ export class PodmanManager {
                 portMappings += ` -p ${debugPort}:${debugPort}`;
             }
             
-            const command = `podman run -d ${portMappings} --name terminai-mcp terminai-mcp-server`;
+            const command = `podman run -d ${portMappings} --name terminail-mcp terminail-mcp-server`;
             const result = await execAsync(command);
             this.containerId = result.stdout.trim();
             
@@ -55,7 +55,7 @@ export class PodmanManager {
 
 
     /**
-     * Check if the TerminAI container is running
+     * Check if the Terminail container is running
      * Uses both container ID and name for more reliable detection
      */
     async isContainerRunning(): Promise<boolean> {
@@ -71,8 +71,8 @@ export class PodmanManager {
         
         // Fallback to container name check
         try {
-            const result = await execAsync(`podman ps --filter name=terminai-mcp --format "{{.Names}}"`);
-            return result.stdout.trim().includes('terminai-mcp');
+            const result = await execAsync(`podman ps --filter name=terminail-mcp --format "{{.Names}}"`);
+            return result.stdout.trim().includes('terminail-mcp');
         } catch {
             return false;
         }
@@ -91,11 +91,11 @@ export class PodmanManager {
     }
 
     /**
-     * Check if the TerminAI container image is installed
+     * Check if the Terminail container image is installed
      */
     async isContainerInstalled(): Promise<boolean> {
         try {
-            await execAsync('podman image exists terminai-mcp-server');
+            await execAsync('podman image exists terminail-mcp-server');
             return true;
         } catch {
             return false;

@@ -1,5 +1,5 @@
 """
-Complete TerminAI Demo - Shows full automatic Chrome startup and DeepSeek interaction
+Complete Terminail Demo - Shows full automatic Chrome startup and DeepSeek interaction
 """
 import asyncio
 import logging
@@ -8,10 +8,10 @@ from mcp_server.browser import BrowserManager
 from mcp_server.handlers.deepseek_handler import DeepSeekHandler
 
 
-async def demo_complete_terminai_functionality():
-    """Demonstrate complete TerminAI functionality: automatic Chrome + DeepSeek interaction"""
-    print("=== Complete TerminAI Extension Demo ===")
-    print("This demo shows the full TerminAI workflow:")
+async def demo_complete_terminail_functionality():
+    """Demonstrate complete Terminail functionality: automatic Chrome + DeepSeek interaction"""
+    print("=== Complete Terminail Extension Demo ===")
+    print("This demo shows the full Terminail workflow:")
     print("1. Automatic Chrome startup")
     print("2. Connection to DeepSeek")
     print("3. AI interaction")
@@ -22,7 +22,7 @@ async def demo_complete_terminai_functionality():
     
     # Use context manager for automatic resource management
     with ChromeManager() as chrome_manager:
-        print("\n1. Chrome started automatically by TerminAI extension")
+        print("\n1. Chrome started automatically by Terminail extension")
         
         manager = BrowserManager()
         
@@ -54,7 +54,7 @@ async def demo_complete_terminai_functionality():
             print("\n5. Testing AI interaction...")
             
             # Test greeting
-            greeting = "Hello from TerminAI! What can you help me with today?"
+            greeting = "Hello from Terminail! What can you help me with today?"
             print(f"Asking: {greeting}")
             response = await handler.ask_question(greeting)
             print(f"✅ Response: {len(response)} characters received")
@@ -93,7 +93,7 @@ async def demo_complete_terminai_functionality():
         print("\n6. Chrome will be automatically stopped when this block exits")
     
     print("\n✅ Demo completed successfully!")
-    print("\nSummary of TerminAI Extension Capabilities:")
+    print("\nSummary of Terminail Extension Capabilities:")
     print("  ✓ Automatically starts Chrome on host machine")
     print("  ✓ Connects to Chrome debug port (9222)")
     print("  ✓ Navigates to AI websites (DeepSeek)")
@@ -103,4 +103,4 @@ async def demo_complete_terminai_functionality():
 
 
 if __name__ == "__main__":
-    asyncio.run(demo_complete_terminai_functionality())
+    asyncio.run(demo_complete_terminail_functionality())

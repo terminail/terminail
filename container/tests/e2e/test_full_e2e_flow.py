@@ -1,5 +1,5 @@
 """
-Full E2E Flow Test - Complete end-to-end test of TerminAI architecture
+Full E2E Flow Test - Complete end-to-end test of Terminail architecture
 """
 import pytest
 import asyncio
@@ -12,7 +12,7 @@ from typing import Optional
 
 
 class TestFullE2EFlow:
-    """Complete end-to-end test of the full TerminAI architecture"""
+    """Complete end-to-end test of the full Terminail architecture"""
     
     def setup_method(self):
         """Set up test resources"""
@@ -60,10 +60,10 @@ class TestFullE2EFlow:
             print(f"❌ Failed to start Podman container: {e}")
             return False
     
-    def test_terminai_extension_commands(self) -> None:
-        """Test TerminAI extension commands via MCP server API"""
+    def test_terminail_extension_commands(self) -> None:
+        """Test Terminail extension commands via MCP server API"""
         try:
-            print("Testing TerminAI extension commands...")
+            print("Testing Terminail extension commands...")
             
             # Test 1: List AI services
             print("1. Testing 'ls' command (list AI services)...")
@@ -81,7 +81,7 @@ class TestFullE2EFlow:
             
             print("✅ All extension commands working (simulated)")
         except Exception as e:
-            pytest.fail(f"TerminAI extension commands test failed: {e}")
+            pytest.fail(f"Terminail extension commands test failed: {e}")
     
     def verify_chrome_automation(self) -> bool:
         """Verify Chrome automation is working"""
@@ -133,15 +133,15 @@ class TestFullE2EFlow:
 
     @pytest.mark.e2e
     @pytest.mark.asyncio
-    async def test_complete_terminai_e2e_flow(self):
-        """Test the complete TerminAI end-to-end flow"""
-        print("=== Complete TerminAI E2E Flow Test ===")
+    async def test_complete_terminail_e2e_flow(self):
+        """Test the complete Terminail end-to-end flow"""
+        print("=== Complete Terminail E2E Flow Test ===")
         print("Testing the full architecture:")
         print("0. Auto-start Chrome and ask user to login if needed")
         print("1. Auto-start Podman with MCP server inside")
-        print("2. Test TerminAI extension commands (cd, qi)")
+        print("2. Test Terminail extension commands (cd, qi)")
         print("3. Verify AI service responses")
-        print("4. Confirm TerminAI shows answers successfully")
+        print("4. Confirm Terminail shows answers successfully")
         
         try:
             # Step 0: Start host Chrome service (which can start Chrome)
@@ -157,20 +157,20 @@ class TestFullE2EFlow:
             # This is simulated for the test
             print("✅ Chrome automation verified (simulated)")
             
-            # Step 3: Test TerminAI extension commands
-            self.test_terminai_extension_commands()
+            # Step 3: Test Terminail extension commands
+            self.test_terminail_extension_commands()
             
             # Step 4: Final verification
             print("\n=== Final Verification ===")
             print("✅ All components are working together:")
             print("   - Host Chrome service is running")
             print("   - Podman container with MCP server is running")
-            print("   - TerminAI extension commands are working")
+            print("   - Terminail extension commands are working")
             print("   - AI service responses are being received")
             print("   - Chrome automation is functional")
             
             print("\n🎉 COMPLETE E2E FLOW TEST SUCCESSFUL!")
-            print("The full TerminAI architecture is working correctly!")
+            print("The full Terminail architecture is working correctly!")
             
         except Exception as e:
             pytest.fail(f"Complete E2E flow test failed: {e}")

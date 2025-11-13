@@ -1,5 +1,5 @@
-# TerminAI Configuration File
-# This file contains all configuration settings for the TerminAI extension
+# Terminail Configuration File
+# This file contains all configuration settings for the Terminail extension
 
 # Version and metadata
 version: "1.0.0"
@@ -9,7 +9,7 @@ last_updated: "2025-01-20"
 # Database Configuration
 database:
   type: "sqlite"
-  path: "~/.vscode/terminai/data.db"
+  path: "~/.vscode/terminail/data.db"
   backup_enabled: true
   backup_interval_hours: 24
   max_backup_files: 7
@@ -76,7 +76,7 @@ security:
 logging:
   level: "info"  # debug, info, warn, error
   file_enabled: true
-  file_path: "~/.vscode/terminai/logs/terminai.log"
+  file_path: "~/.vscode/terminail/logs/terminail.log"
   max_file_size_mb: 10
   max_backup_files: 5
   

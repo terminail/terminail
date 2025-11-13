@@ -1,20 +1,20 @@
 /**
- * End-to-End Test: TerminAI Extension Functionality
+ * End-to-End Test: Terminail Extension Functionality
  * 
- * This test verifies that the TerminAI extension works correctly
+ * This test verifies that the Terminail extension works correctly
  * in a real VS Code environment.
  */
 
 const vscode = require('vscode');
 
-async function testTerminAIExtension() {
-    console.log('=== TerminAI Extension End-to-End Test ===\n');
+async function testTerminailExtension() {
+    console.log('=== Terminail Extension End-to-End Test ===\n');
     
     try {
         // Get the extension
-        const extension = vscode.extensions.getExtension('TerminAI.terminai');
+        const extension = vscode.extensions.getExtension('Terminail.terminail');
         if (!extension) {
-            throw new Error('TerminAI extension not found');
+            throw new Error('Terminail extension not found');
         }
 
         // Activate the extension if not already active
@@ -32,7 +32,7 @@ async function testTerminAIExtension() {
             // Test 1: Verify the main command is registered
             console.log('\n1. Verifying main command registration...');
             const commands = await vscode.commands.getCommands(true);
-            const hasMainCommand = commands.includes('terminai.openTerminal');
+            const hasMainCommand = commands.includes('terminail.openTerminal');
             
             if (!hasMainCommand) {
                 throw new Error('Main command not registered');
@@ -41,10 +41,10 @@ async function testTerminAIExtension() {
             
             // Test 2: Execute the main command
             console.log('\n2. Executing main command...');
-            await vscode.commands.executeCommand('terminai.openTerminal');
+            await vscode.commands.executeCommand('terminail.openTerminal');
             console.log('✅ Main command executed successfully');
             
-            console.log('\n🎉 TerminAI Extension End-to-End Test PASSED!');
+            console.log('\n🎉 Terminail Extension End-to-End Test PASSED!');
             console.log('\nSummary of verified functionality:');
             console.log('- Main command is properly registered');
             console.log('- Main command can be executed without errors');
@@ -55,7 +55,7 @@ async function testTerminAIExtension() {
             throw new Error('Extension failed to activate');
         }
     } catch (error) {
-        console.error('❌ TerminAI Extension End-to-End Test FAILED:', error.message);
+        console.error('❌ Terminail Extension End-to-End Test FAILED:', error.message);
         console.log('\nTroubleshooting steps:');
         console.log('1. Verify that the main command is registered in package.json');
         console.log('2. Verify that the command is registered in extension.ts with the exact same name');
@@ -68,7 +68,7 @@ async function testTerminAIExtension() {
 
 // Run the test if called directly
 if (require.main === module) {
-    testTerminAIExtension().then(success => {
+    testTerminailExtension().then(success => {
         process.exit(success ? 0 : 1);
     }).catch(error => {
         console.error('Test execution error:', error);
@@ -76,4 +76,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { testTerminAIExtension };
+module.exports = { testTerminailExtension };

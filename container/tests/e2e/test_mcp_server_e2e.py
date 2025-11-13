@@ -23,7 +23,7 @@ class TestMCPEndToEnd:
         response = client.get("/")
         assert response.status_code == 200
         data = response.json()
-        assert data["service"] == "TerminAI MCP Server"
+        assert data["service"] == "Terminail MCP Server"
         assert data["version"] == "1.0.0"
         assert data["status"] == "running"
         
@@ -122,7 +122,7 @@ class TestMCPEndToEnd:
         response = client.get("/")
         assert response.status_code == 200
         data = response.json()
-        assert data["service"] == "TerminAI MCP Server"
+        assert data["service"] == "Terminail MCP Server"
         
         # Test that we can make POST requests (they'll fail due to browser not connected, but should be valid requests)
         response = client.post("/ask?ai=deepseek&question=test")

@@ -1,4 +1,4 @@
-import { TerminAIWebviewProvider } from '../../src/terminAIManager';
+import { TerminailWebviewProvider } from '../../src/terminailManager';
 import * as vscode from 'vscode';
 
 // Mock the VS Code API
@@ -36,8 +36,8 @@ jest.mock('http', () => ({
     request: jest.fn()
 }));
 
-describe('TerminAIWebviewProvider', () => {
-    let webviewProvider: TerminAIWebviewProvider;
+describe('TerminailWebviewProvider', () => {
+    let webviewProvider: TerminailWebviewProvider;
     let mockExtensionUri: vscode.Uri;
     let mockWebviewView: any;
     let mockWebview: any;
@@ -61,7 +61,7 @@ describe('TerminAIWebviewProvider', () => {
             onDidDispose: jest.fn()
         };
         
-        webviewProvider = new TerminAIWebviewProvider(mockExtensionUri);
+        webviewProvider = new TerminailWebviewProvider(mockExtensionUri);
     });
 
     afterEach(() => {
@@ -69,8 +69,8 @@ describe('TerminAIWebviewProvider', () => {
     });
 
     describe('Basic Functionality', () => {
-        test('should create TerminAIWebviewProvider instance', () => {
-            expect(webviewProvider).toBeInstanceOf(TerminAIWebviewProvider);
+        test('should create TerminailWebviewProvider instance', () => {
+            expect(webviewProvider).toBeInstanceOf(TerminailWebviewProvider);
         });
 
         test('should have resolveWebviewView method', () => {
@@ -78,7 +78,7 @@ describe('TerminAIWebviewProvider', () => {
         });
 
         test('should have static viewType property', () => {
-            expect(TerminAIWebviewProvider.viewType).toBe('terminai.terminalView');
+            expect(TerminailWebviewProvider.viewType).toBe('terminail.terminalView');
         });
 
         test('should have currentAI property with default value', () => {
@@ -195,7 +195,7 @@ describe('TerminAIWebviewProvider', () => {
             await webviewProvider['handleCommand']('');
             
             // Empty command should just add prompt without error message
-            expect(webviewProvider['postMessage']).toHaveBeenCalledWith({ type: 'output', content: 'TerminAI:deepseek$ ' });
+            expect(webviewProvider['postMessage']).toHaveBeenCalledWith({ type: 'output', content: 'Terminail:deepseek$ ' });
         });
 
         test('should handle help command', async () => {
@@ -203,7 +203,7 @@ describe('TerminAIWebviewProvider', () => {
             
             expect(webviewProvider['postMessage']).toHaveBeenCalledWith(expect.objectContaining({
                 type: 'output',
-                content: expect.stringContaining('TerminAI Command Help')
+                content: expect.stringContaining('Terminail Command Help')
             }));
         });
 

@@ -1,9 +1,9 @@
-// Full VS Code E2E Test Runner for TerminAI
-// This runner requires a real VS Code instance with the TerminAI extension installed
+// Full VS Code E2E Test Runner for Terminail
+// This runner requires a real VS Code instance with the Terminail extension installed
 
 const vscode = require('vscode');
 
-class TerminAITestRunner {
+class TerminailTestRunner {
     constructor() {
         this.extension = null;
         this.isActive = false;
@@ -12,40 +12,40 @@ class TerminAITestRunner {
 
     async activateExtension() {
         try {
-            // Get the TerminAI extension
-            this.extension = vscode.extensions.getExtension('TerminAI.terminai');
+            // Get the Terminail extension
+            this.extension = vscode.extensions.getExtension('Terminail.terminail');
             if (!this.extension) {
-                throw new Error('TerminAI extension not found. Please install the extension first.');
+                throw new Error('Terminail extension not found. Please install the extension first.');
             }
 
             // Activate the extension
             await this.extension.activate();
             this.isActive = true;
-            console.log('✅ TerminAI extension activated successfully');
+            console.log('✅ Terminail extension activated successfully');
             
             return this.extension;
         } catch (error) {
-            console.error('❌ Failed to activate TerminAI extension:', error);
+            console.error('❌ Failed to activate Terminail extension:', error);
             throw error;
         }
     }
 
-    async openTerminAITerminal() {
+    async openTerminailTerminal() {
         if (!this.isActive) {
             throw new Error('Extension not active');
         }
 
         try {
-            // Execute the command to open TerminAI terminal
-            await vscode.commands.executeCommand('terminai.openTerminal');
+            // Execute the command to open Terminail terminal
+            await vscode.commands.executeCommand('terminail.openTerminal');
             
             // Wait for terminal to be ready
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            console.log('✅ TerminAI terminal opened successfully');
+            console.log('✅ Terminail terminal opened successfully');
             return true;
         } catch (error) {
-            console.error('❌ Failed to open TerminAI terminal:', error);
+            console.error('❌ Failed to open Terminail terminal:', error);
             throw error;
         }
     }
@@ -65,7 +65,7 @@ class TerminAITestRunner {
         }
     }
 
-    async createTerminal(name = 'TerminAI Terminal') {
+    async createTerminal(name = 'Terminail Terminal') {
         if (!this.isActive) {
             throw new Error('Extension not active');
         }
@@ -136,7 +136,7 @@ class TerminAITestRunner {
             this.isActive = false;
             this.extension = null;
             
-            console.log('✅ TerminAITestRunner cleaned up successfully');
+            console.log('✅ TerminailTestRunner cleaned up successfully');
         } catch (error) {
             console.error('❌ Failed to cleanup test runner:', error);
             throw error;
@@ -150,4 +150,4 @@ class TerminAITestRunner {
     }
 }
 
-module.exports = TerminAITestRunner;
+module.exports = TerminailTestRunner;

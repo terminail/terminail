@@ -1,24 +1,24 @@
 """
-Complete Flow Demo - Shows the full TerminAI E2E flow
+Complete Flow Demo - Shows the full Terminail E2E flow
 """
 import asyncio
 import time
 
 
-async def demo_complete_terminai_flow():
-    """Demonstrate the complete TerminAI end-to-end flow"""
-    print("=== Complete TerminAI E2E Flow Demo ===")
+async def demo_complete_terminail_flow():
+    """Demonstrate the complete Terminail end-to-end flow"""
+    print("=== Complete Terminail E2E Flow Demo ===")
     print()
     
-    print("🎯 GOAL: Show that the complete TerminAI architecture works end-to-end")
+    print("🎯 GOAL: Show that the complete Terminail architecture works end-to-end")
     print()
     
     print("📋 COMPLETE FLOW:")
     print("0. Auto-start Chrome and ask user to login if needed")
     print("1. Auto-start Podman with MCP server inside")
-    print("2. Test TerminAI extension commands (cd, qi)")
+    print("2. Test Terminail extension commands (cd, qi)")
     print("3. Verify AI service responses")
-    print("4. Confirm TerminAI shows answers successfully")
+    print("4. Confirm Terminail shows answers successfully")
     print()
     
     # Step 0: Chrome Management
@@ -33,7 +33,7 @@ async def demo_complete_terminai_flow():
     
     # Step 1: Container Management
     print("🚀 STEP 1: Container Management")
-    print("   ├─ TerminAI extension triggers Podman container start")
+    print("   ├─ Terminail extension triggers Podman container start")
     print("   ├─ Container runs MCP server with Python code")
     print("   ├─ Port mapping: -p 9222:9222 -p 9223:9223")
     print("   └─ ✅ Container and MCP server running")
@@ -42,7 +42,7 @@ async def demo_complete_terminai_flow():
     
     # Step 2: Extension Commands
     print("🚀 STEP 2: Extension Commands")
-    print("   ├─ User types 'ls' in TerminAI terminal")
+    print("   ├─ User types 'ls' in Terminail terminal")
     print("   ├─ VS Code extension sends to MCP server")
     print("   ├─ MCP server responds with AI service list")
     print("   ├─ User types 'qi deepseek' to switch service")
@@ -66,7 +66,7 @@ async def demo_complete_terminai_flow():
     # Step 4: Response Display
     print("🚀 STEP 4: Response Display")
     print("   ├─ MCP server sends response to VS Code extension")
-    print("   ├─ TerminAI terminal view updates with answer")
+    print("   ├─ Terminail terminal view updates with answer")
     print("   ├─ User sees AI response in familiar terminal UI")
     print("   └─ ✅ Response displayed successfully")
     print()
@@ -79,7 +79,7 @@ async def demo_complete_terminai_flow():
     print("   ├─────────────────────────────────────────────┤")
     print("   │ ✅ Chrome auto-started on host              │")
     print("   │ ✅ Podman container running MCP server      │")
-    print("   │ ✅ TerminAI extension commands working      │")
+    print("   │ ✅ Terminail extension commands working      │")
     print("   │ ✅ AI service responses received            │")
     print("   │ ✅ Answers displayed in VS Code terminal    │")
     print("   └─────────────────────────────────────────────┘")
@@ -110,4 +110,4 @@ async def demo_complete_terminai_flow():
 
 
 if __name__ == "__main__":
-    asyncio.run(demo_complete_terminai_flow())
+    asyncio.run(demo_complete_terminail_flow())

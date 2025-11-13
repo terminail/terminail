@@ -1,12 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
 /**
- * Playwright UI Tests for TerminAI Extension
+ * Playwright UI Tests for Terminail Extension
  * These tests verify the visual interface and user interactions
- * Following the documented approach from terminai_e2e_tests.md
+ * Following the documented approach from terminail_e2e_tests.md
  */
 
-test.describe('TerminAI Webview UI Tests', function() {
+test.describe('Terminail Webview UI Tests', function() {
     test.beforeEach(async ({ page }) => {
         // Set up test environment - using simulated HTML interface
         await page.goto('http://localhost:3000');

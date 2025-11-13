@@ -4,13 +4,13 @@
 
 set -e
 
-echo "🚀 Downloading pre-built TerminAI MCP Server container image..."
+echo "🚀 Downloading pre-built Terminail MCP Server container image..."
 
 # Try to pull from GitHub Container Registry first
 echo "🔍 Attempting to pull from GitHub Container Registry..."
-if docker pull ghcr.io/6terminai/terminai-mcp-server:latest; then
+if docker pull ghcr.io/6terminail/terminail-mcp-server:latest; then
     echo "✅ Successfully pulled image from GitHub Container Registry"
-    echo "📦 Image tag: ghcr.io/6terminai/terminai-mcp-server:latest"
+    echo "📦 Image tag: ghcr.io/6terminail/terminail-mcp-server:latest"
     exit 0
 fi
 
@@ -20,5 +20,5 @@ echo "⚠️  Pre-built images are not yet available. Please build locally for n
 
 echo ""
 echo "To build locally, run:"
-echo "  cd container && podman build -t terminai-mcp-server ."
+echo "  cd container && podman build -t terminail-mcp-server ."
 echo ""

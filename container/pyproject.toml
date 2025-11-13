@@ -1,7 +1,7 @@
 [project]
-name = "terminai-mcp-server"
+name = "terminail-mcp-server"
 version = "1.0.0"
-description = "MCP Server for TerminAI VS Code Extension"
+description = "MCP Server for Terminail VS Code Extension"
 authors = [
     {name = "Your Name", email = "your.email@example.com"},
 ]
@@ -28,7 +28,7 @@ test = [
 ]
 
 [project.scripts]
-terminai-mcp-server = "mcp_server.main:main"
+terminail-mcp-server = "mcp_server.main:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]

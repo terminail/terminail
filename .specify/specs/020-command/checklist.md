@@ -1,7 +1,7 @@
 # Command System Implementation Checklist
 
 ## Overview
-This checklist covers the implementation of the overall command system for the TerminAI terminal interface, providing a unified framework for all terminal commands.
+This checklist covers the implementation of the overall command system for the Terminail terminal interface, providing a unified framework for all terminal commands.
 
 ## Command System Core
 - [ ] Unified command parsing framework

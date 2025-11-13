@@ -1,7 +1,7 @@
-# TerminAI Terminal Implementation Checklist
+# Terminail Terminal Implementation Checklist
 
 ## Overview
-This checklist covers the implementation of the TerminAI Terminal feature, which provides a terminal-like interface in VS Code for interacting with multiple AI chat services through browser automation.
+This checklist covers the implementation of the Terminail Terminal feature, which provides a terminal-like interface in VS Code for interacting with multiple AI chat services through browser automation.
 
 ## Terminal Interface
 - [ ] Terminal-like UI with webview implementation

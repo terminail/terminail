@@ -1,16 +1,16 @@
-# TerminAI - Your AI Chat Terminal Companion
+# Terminail - Your AI Chat Terminal Companion
 
 > "I am a knife, I cut the code. I just lie down here, I won't cut you. But use me or not, it depends on your needs. I am just a knife, I won't cut you. But you can use me to cut the code."
 
-## 🚀 What is TerminAI?
+## 🚀 What is Terminail?
 
-TerminAI is a VS Code extension that turns AI chat websites into terminal commands! Imagine:
+Terminail is a VS Code extension that turns AI chat websites into terminal commands! Imagine:
 
 - `cd deepseek` - Switch to DeepSeek chat interface
 - `ls` - View all supported AI services
 - `qi help me write Python code` - Send questions to the current AI
 
-**In simple terms: TerminAI lets you operate AI chat websites like you're using a terminal!**
+**In simple terms: Terminail lets you operate AI chat websites like you're using a terminal!**
 
 ## 🎯 Core Features
 
@@ -41,18 +41,18 @@ TerminAI is a VS Code extension that turns AI chat websites into terminal comman
 
 1. **Install the Extension**
    ```bash
-   # Install TerminAI from VS Code Extension Marketplace
+   # Install Terminail from VS Code Extension Marketplace
    ```
 
 2. **Launch the Terminal**
    ```bash
-   # Run "Open TerminAI Terminal" command in VS Code
+   # Run "Open Terminail Terminal" command in VS Code
    ```
 
 3. **Configure Browser**
    - Extension will guide you to start browser with debug port
    - Manually log into your preferred AI websites
-   - Keep browser open - TerminAI will take over automatically
+   - Keep browser open - Terminail will take over automatically
 
 4. **Start Chatting!**
    ```bash
@@ -72,7 +72,7 @@ TerminAI is a VS Code extension that turns AI chat websites into terminal comman
 
 ## 🔧 Technical Architecture
 
-TerminAI uses a three-layer architecture:
+Terminail uses a three-layer architecture:
 
 1. **VS Code Extension Layer** - Provides terminal interface and user interaction
 2. **Podman Container Layer** - Runs Playwright MCP server
@@ -83,7 +83,7 @@ This design ensures:
 - **Stability**: Automatic error detection and recovery
 - **Usability**: No technical background required
 
-## 🎨 Why Choose TerminAI?
+## 🎨 Why Choose Terminail?
 
 ### For Developers
 - 🚀 **Efficiency Boost**: No need to switch between browser and IDE
@@ -101,8 +101,8 @@ We welcome all forms of contributions! Whether it's code, documentation, or idea
 
 ### Development Environment Setup
 ```bash
-git clone https://github.com/your-org/terminai.git
-cd terminai
+git clone https://github.com/your-org/terminail.git
+cd terminail
 npm install
 npm run compile
 ```
@@ -129,4 +129,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Remember: I'm just a knife, sharp but harmless. Use me to cut code, not fingers!** 🔪✨
 
-*TerminAI - Making AI chat as simple as terminal operations!*
+*Terminail - Making AI chat as simple as terminal operations!*

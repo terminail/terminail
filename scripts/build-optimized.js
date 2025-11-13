@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Optimized Build Script for TerminAI Extension
+ * Optimized Build Script for Terminail Extension
  * 
  * This script automates the packaging process with size optimization:
  * 1. Compiles TypeScript code
@@ -54,7 +54,7 @@ function getFileSize(filePath) {
 
 async function main() {
     try {
-        log(colors.green, '=== TerminAI Extension Optimized Build ===\n');
+        log(colors.green, '=== Terminail Extension Optimized Build ===\n');
         
         // 1. Clean previous build artifacts
         log(colors.yellow, '1. Cleaning previous build artifacts...');

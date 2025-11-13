@@ -1,5 +1,5 @@
 """
-Automatic Chrome Startup E2E Test - Tests TerminAI's ability to automatically start Chrome
+Automatic Chrome Startup E2E Test - Tests Terminail's ability to automatically start Chrome
 """
 import pytest
 import asyncio

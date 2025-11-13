@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { activate } from '../../src/extension';
-import { TerminAIWebviewProvider } from '../../src/terminAIManager';
+import { TerminailWebviewProvider } from '../../src/terminailManager';
 
 // Mock the VS Code API
 jest.mock('vscode', () => ({
@@ -24,9 +24,9 @@ jest.mock('vscode', () => ({
     }
 }));
 
-// Mock TerminAIWebviewProvider
-jest.mock('../../src/terminAIManager', () => ({
-    TerminAIWebviewProvider: jest.fn().mockImplementation(() => ({
+// Mock TerminailWebviewProvider
+jest.mock('../../src/terminailManager', () => ({
+    TerminailWebviewProvider: jest.fn().mockImplementation(() => ({
         dispose: jest.fn()
     }))
 }));
@@ -97,23 +97,23 @@ describe('Extension Integration Tests', () => {
             // Mock the registerCommand to return a disposable
             (vscode.commands.registerCommand as jest.Mock).mockReturnValue(mockDisposable);
             
-            // Reset TerminAIWebviewProvider mock to use actual constructor
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockClear();
+            // Reset TerminailWebviewProvider mock to use actual constructor
+            (TerminailWebviewProvider as unknown as jest.Mock).mockClear();
 
             activate(mockContext);
 
-            // Verify that TerminAIWebviewProvider was instantiated
-            expect(TerminAIWebviewProvider).toHaveBeenCalledWith(mockContext.extensionUri);
+            // Verify that TerminailWebviewProvider was instantiated
+            expect(TerminailWebviewProvider).toHaveBeenCalledWith(mockContext.extensionUri);
 
             // Verify that Webview view provider was registered
             expect(vscode.window.registerWebviewViewProvider).toHaveBeenCalledWith(
-                'terminai.terminalView',
-                expect.any(Object) // TerminAIWebviewProvider is mocked to return an object
+                'terminail.terminalView',
+                expect.any(Object) // TerminailWebviewProvider is mocked to return an object
             );
 
             // Verify that commands were registered
             expect(vscode.commands.registerCommand).toHaveBeenCalledWith(
-                'terminai.openTerminal',
+                'terminail.openTerminal',
                 expect.any(Function)
             );
 
@@ -133,7 +133,7 @@ describe('Extension Integration Tests', () => {
             activate(mockContext);
 
             // Verify console logging
-            expect(consoleSpy).toHaveBeenCalledWith('TerminAI extension is now active!');
+            expect(consoleSpy).toHaveBeenCalledWith('Terminail extension is now active!');
             
             consoleSpy.mockRestore();
         });
@@ -147,7 +147,7 @@ describe('Extension Integration Tests', () => {
 
             // Verify the correct view type is registered
             expect(vscode.window.registerWebviewViewProvider).toHaveBeenCalledWith(
-                'terminai.terminalView',
+                'terminail.terminalView',
                 expect.anything()
             );
         });
@@ -161,7 +161,7 @@ describe('Extension Integration Tests', () => {
 
             // Verify the correct command ID is registered
             expect(vscode.commands.registerCommand).toHaveBeenCalledWith(
-                'terminai.openTerminal',
+                'terminail.openTerminal',
                 expect.anything()
             );
         });
@@ -174,7 +174,7 @@ describe('Extension Integration Tests', () => {
             
             let registeredCommandHandler: Function | undefined;
             (vscode.commands.registerCommand as jest.Mock).mockImplementation((commandId, handler) => {
-                if (commandId === 'terminai.openTerminal') {
+                if (commandId === 'terminail.openTerminal') {
                     registeredCommandHandler = handler;
                 }
                 return mockDisposable;
@@ -190,7 +190,7 @@ describe('Extension Integration Tests', () => {
             const consoleSpy = jest.spyOn(console, 'log');
             registeredCommandHandler!();
             
-            expect(consoleSpy).toHaveBeenCalledWith('Opening TerminAI Terminal in panel');
+            expect(consoleSpy).toHaveBeenCalledWith('Opening Terminail Terminal in panel');
             consoleSpy.mockRestore();
         });
 
@@ -200,7 +200,7 @@ describe('Extension Integration Tests', () => {
             
             let registeredCommandHandler: Function | undefined;
             (vscode.commands.registerCommand as jest.Mock).mockImplementation((commandId, handler) => {
-                if (commandId === 'terminai.openTerminal') {
+                if (commandId === 'terminail.openTerminal') {
                     registeredCommandHandler = handler;
                 }
                 return mockDisposable;
@@ -221,9 +221,9 @@ describe('Extension Integration Tests', () => {
             (vscode.window.registerWebviewViewProvider as jest.Mock).mockReturnValue(mockViewDisposable);
             (vscode.commands.registerCommand as jest.Mock).mockReturnValue(mockCommandDisposable);
 
-            // Mock TerminAIWebviewProvider to return a disposable
+            // Mock TerminailWebviewProvider to return a disposable
             const mockProviderDisposable = { dispose: jest.fn() };
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockImplementation(() => mockProviderDisposable);
+            (TerminailWebviewProvider as unknown as jest.Mock).mockImplementation(() => mockProviderDisposable);
 
             activate(mockContext);
 
@@ -247,8 +247,8 @@ describe('Extension Integration Tests', () => {
             // Should not throw error
             expect(() => activate(mockContextWithoutUri)).not.toThrow();
 
-            // TerminAIWebviewProvider should still be called
-            expect(TerminAIWebviewProvider).toHaveBeenCalled();
+            // TerminailWebviewProvider should still be called
+            expect(TerminailWebviewProvider).toHaveBeenCalled();
         });
     });
 
@@ -260,8 +260,8 @@ describe('Extension Integration Tests', () => {
 
             activate(mockContext);
 
-            // Verify TerminAIWebviewProvider receives the correct extension URI
-            expect(TerminAIWebviewProvider).toHaveBeenCalledWith(mockContext.extensionUri);
+            // Verify TerminailWebviewProvider receives the correct extension URI
+            expect(TerminailWebviewProvider).toHaveBeenCalledWith(mockContext.extensionUri);
         });
 
         test('should work with different extension modes', () => {
@@ -309,7 +309,7 @@ describe('Extension Integration Tests', () => {
             
             // Mock other required APIs to avoid interference
             (vscode.window.registerWebviewViewProvider as jest.Mock).mockReturnValue({ dispose: jest.fn() });
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockImplementation(() => ({
+            (TerminailWebviewProvider as unknown as jest.Mock).mockImplementation(() => ({
                 dispose: jest.fn()
             }));
 
@@ -318,8 +318,8 @@ describe('Extension Integration Tests', () => {
         });
 
         test('should handle provider instantiation failures gracefully', () => {
-            // Mock TerminAIWebviewProvider to throw error
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockImplementation(() => {
+            // Mock TerminailWebviewProvider to throw error
+            (TerminailWebviewProvider as unknown as jest.Mock).mockImplementation(() => {
                 throw new Error('Provider creation failed');
             });
 
@@ -338,8 +338,8 @@ describe('Extension Integration Tests', () => {
             (vscode.window.registerWebviewViewProvider as jest.Mock).mockReturnValue(mockDisposable);
             (vscode.commands.registerCommand as jest.Mock).mockReturnValue(mockDisposable);
             
-            // Reset TerminAIWebviewProvider mock to default behavior
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockImplementation(() => ({
+            // Reset TerminailWebviewProvider mock to default behavior
+            (TerminailWebviewProvider as unknown as jest.Mock).mockImplementation(() => ({
                 dispose: jest.fn()
             }));
 
@@ -360,7 +360,7 @@ describe('Extension Integration Tests', () => {
             
             (vscode.window.registerWebviewViewProvider as jest.Mock).mockReturnValue(mockViewDisposable);
             (vscode.commands.registerCommand as jest.Mock).mockReturnValue(mockCommandDisposable);
-            (TerminAIWebviewProvider as unknown as jest.Mock).mockImplementation(() => mockProviderDisposable);
+            (TerminailWebviewProvider as unknown as jest.Mock).mockImplementation(() => mockProviderDisposable);
 
             activate(mockContext);
 

@@ -1,6 +1,6 @@
 """
 07_verify_prerequisites.py
-Confirm all prerequisites are met for TerminAI E2E testing
+Confirm all prerequisites are met for Terminail E2E testing
 """
 import subprocess
 import sys
@@ -9,20 +9,20 @@ import os
 import platform
 import requests
 
-def check_terminai_extension():
-    """Check if TerminAI extension is installed"""
+def check_terminail_extension():
+    """Check if Terminail extension is installed"""
     try:
-        print("   🔍 Checking TerminAI extension...")
+        print("   🔍 Checking Terminail extension...")
         result = subprocess.run(["C:\\VSCode\\bin\\code.cmd", "--list-extensions"], 
                               capture_output=True, text=True)
-        if "terminai" in result.stdout.lower():
-            print("   ✅ TerminAI extension is installed")
+        if "terminail" in result.stdout.lower():
+            print("   ✅ Terminail extension is installed")
             return True
         else:
-            print("   ❌ TerminAI extension is not installed")
+            print("   ❌ Terminail extension is not installed")
             return False
     except Exception as e:
-        print(f"   ❌ Error checking TerminAI extension: {e}")
+        print(f"   ❌ Error checking Terminail extension: {e}")
         return False
 
 def check_podman():
@@ -54,15 +54,15 @@ def check_podman():
         return False
 
 def check_container_image():
-    """Check if terminai-mcp-server container image is built"""
+    """Check if terminail-mcp-server container image is built"""
     try:
         print("   🔍 Checking container image...")
         result = subprocess.run(["podman", "images"], capture_output=True, text=True)
-        if "terminai-mcp-server" in result.stdout:
-            print("   ✅ terminai-mcp-server image is available")
+        if "terminail-mcp-server" in result.stdout:
+            print("   ✅ terminail-mcp-server image is available")
             return True
         else:
-            print("   ❌ terminai-mcp-server image not found")
+            print("   ❌ terminail-mcp-server image not found")
             return False
     except Exception as e:
         print(f"   ❌ Error checking container image: {e}")
@@ -153,7 +153,7 @@ def verify_prerequisites():
         print("   🔍 Validating all services and connections...")
         
         checks = [
-            ("TerminAI Extension", check_terminai_extension),
+            ("Terminail Extension", check_terminail_extension),
             ("Podman", check_podman),
             ("Container Image", check_container_image),
             ("Host Chrome Service", check_host_service),

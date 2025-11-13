@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test runner script for TerminAI MCP Server
+Test runner script for Terminail MCP Server
 """
 import subprocess
 import sys
@@ -87,7 +87,7 @@ def run_tests_with_coverage():
 
 def main():
     """Main test runner function"""
-    print("🚀 TerminAI MCP Server Test Runner")
+    print("🚀 Terminail MCP Server Test Runner")
     print("=" * 60)
     
     # Change to project root directory

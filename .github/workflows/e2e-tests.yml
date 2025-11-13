@@ -1,4 +1,4 @@
-name: TerminAI E2E Tests
+name: Terminail E2E Tests
 
 on:
   push:

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * TerminAI Extension Automated Integration Tests
+ * Terminail Extension Automated Integration Tests
  * 
  * This script runs automated integration tests to verify all extension components
  * as specified in the checklist requirements.
@@ -52,7 +52,7 @@ async function runCommand(command, options = {}) {
 }
 
 async function main() {
-    console.log('=== TerminAI Extension Automated Integration Tests ===\n');
+    console.log('=== Terminail Extension Automated Integration Tests ===\n');
     console.log('Running automated integration tests as per checklist requirements...\n');
     
     try {

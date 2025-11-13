@@ -3,12 +3,12 @@
 **Feature Branch**: `020-command-chrome`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "The 'chrome' command launches a Chrome browser instance with remote debugging enabled, following the pattern described in terminai.md lines 1948-1949."
+**Input**: User description: "The 'chrome' command launches a Chrome browser instance with remote debugging enabled, following the pattern described in terminail.md lines 1948-1949."
 **Parent Feature**: [020-command](../020-command/spec.md)
 
 ## Implementation Summary
 
-This feature implements the `chrome` command for the TerminAI terminal interface, allowing users to launch a Chrome browser instance with remote debugging enabled. The command follows the pattern described in terminai.md lines 1948-1949, launching Chrome with the `--remote-debugging-port=9222` and `--user-data-dir=/tmp/TerminAI` parameters. This enables the Playwright MCP server running in a Podman container to connect to the browser via Chrome DevTools Protocol (CDP) for automating interactions with AI chat websites.
+This feature implements the `chrome` command for the Terminail terminal interface, allowing users to launch a Chrome browser instance with remote debugging enabled. The command follows the pattern described in terminail.md lines 1948-1949, launching Chrome with the `--remote-debugging-port=9222` and `--user-data-dir=/tmp/Terminail` parameters. This enables the Playwright MCP server running in a Podman container to connect to the browser via Chrome DevTools Protocol (CDP) for automating interactions with AI chat websites.
 
 The implementation involves parsing the `chrome` command in the terminal interface, validating system requirements, and executing the appropriate Chrome launch command for the user's operating system. The command provides immediate feedback to the user about the success or failure of the browser launch operation.
 
@@ -16,7 +16,7 @@ The implementation involves parsing the `chrome` command in the terminal interfa
 
 ### User Story 1 - Launch Chrome with Debugging (Priority: P1)
 
-As a developer using TerminAI, I want to use the `chrome` command to launch a Chrome browser with remote debugging enabled so that the MCP server can connect to it for AI service automation.
+As a developer using Terminail, I want to use the `chrome` command to launch a Chrome browser with remote debugging enabled so that the MCP server can connect to it for AI service automation.
 
 **Why this priority**: This is core functionality for enabling browser automation.
 
@@ -24,14 +24,14 @@ As a developer using TerminAI, I want to use the `chrome` command to launch a Ch
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with a ready TerminAI terminal, **When** they type "chrome", **Then** the extension should launch Chrome with `--remote-debugging-port=9222` and `--user-data-dir=/tmp/TerminAI`.
+1. **Given** a user with a ready Terminail terminal, **When** they type "chrome", **Then** the extension should launch Chrome with `--remote-debugging-port=9222` and `--user-data-dir=/tmp/Terminail`.
 2. **Given** a user on Windows, **When** they execute "chrome", **Then** the extension should launch Chrome using the Windows Chrome executable path.
 3. **Given** a user on macOS, **When** they execute "chrome", **Then** the extension should launch Chrome using the macOS Chrome executable path.
 4. **Given** a user on Linux, **When** they execute "chrome", **Then** the extension should launch Chrome using the Linux Chrome executable path.
 
 ### User Story 2 - Command Feedback and Validation (Priority: P1)
 
-As a developer using TerminAI, I want immediate feedback when I use the `chrome` command so that I know whether the browser launch was successful.
+As a developer using Terminail, I want immediate feedback when I use the `chrome` command so that I know whether the browser launch was successful.
 
 **Why this priority**: This is essential for providing a responsive user experience.
 
@@ -45,7 +45,7 @@ As a developer using TerminAI, I want immediate feedback when I use the `chrome`
 
 ### User Story 3 - Chrome Process Management (Priority: P2)
 
-As a developer using TerminAI, I want the extension to manage Chrome processes appropriately so that I don't end up with multiple debugging instances.
+As a developer using Terminail, I want the extension to manage Chrome processes appropriately so that I don't end up with multiple debugging instances.
 
 **Why this priority**: This enhances user experience by preventing resource conflicts.
 
@@ -59,7 +59,7 @@ As a developer using TerminAI, I want the extension to manage Chrome processes a
 
 ### User Story 4 - Cross-Platform Chrome Launching (Priority: P1)
 
-As a developer using TerminAI on different operating systems, I want the `chrome` command to work consistently across Windows, macOS, and Linux so that I can use TerminAI regardless of my platform.
+As a developer using Terminail on different operating systems, I want the `chrome` command to work consistently across Windows, macOS, and Linux so that I can use Terminail regardless of my platform.
 
 **Why this priority**: This is essential for broad user adoption and accessibility.
 
@@ -86,7 +86,7 @@ As a developer using TerminAI on different operating systems, I want the `chrome
 
 - **FR-001**: Extension MUST support `chrome` command syntax
 - **FR-002**: Extension MUST launch Chrome with `--remote-debugging-port=9222` parameter
-- **FR-003**: Extension MUST launch Chrome with `--user-data-dir=/tmp/TerminAI` parameter
+- **FR-003**: Extension MUST launch Chrome with `--user-data-dir=/tmp/Terminail` parameter
 - **FR-004**: Extension MUST provide immediate feedback for successful browser launch
 - **FR-005**: Extension MUST display error messages for Chrome launch failures
 - **FR-006**: Extension MUST handle existing Chrome debugging instances appropriately

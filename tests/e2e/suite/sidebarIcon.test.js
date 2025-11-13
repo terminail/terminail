@@ -1,7 +1,7 @@
 /**
  * End-to-End Test: Sidebar Icon Verification
  * 
- * This test verifies that the TerminAI extension appears with an icon in the sidebar
+ * This test verifies that the Terminail extension appears with an icon in the sidebar
  * and can be dragged to the panel area.
  */
 
@@ -10,14 +10,14 @@ const fs = require('fs');
 const path = require('path');
 
 async function testSidebarIcon() {
-    console.log('=== TerminAI Sidebar Icon End-to-End Test ===\n');
+    console.log('=== Terminail Sidebar Icon End-to-End Test ===\n');
     
     try {
         // 1. Verify extension is available
         console.log('1. Verifying extension is available...');
-        const extension = vscode.extensions.getExtension('TerminAI.terminai');
+        const extension = vscode.extensions.getExtension('Terminail.terminail');
         if (!extension) {
-            throw new Error('TerminAI extension not found');
+            throw new Error('Terminail extension not found');
         }
         console.log('✅ Extension found');
         
@@ -55,56 +55,56 @@ async function testSidebarIcon() {
         }
         
         const activityBarViews = packageJson.contributes.viewsContainers.activitybar;
-        const terminaiViewContainer = activityBarViews.find(container => container.id === 'terminai');
+        const terminailViewContainer = activityBarViews.find(container => container.id === 'terminail');
         
-        if (!terminaiViewContainer) {
-            throw new Error('TerminAI view container not found in activity bar configuration');
+        if (!terminailViewContainer) {
+            throw new Error('Terminail view container not found in activity bar configuration');
         }
         
-        console.log(`✅ TerminAI view container found in activity bar: ${terminaiViewContainer.title}`);
-        console.log(`✅ Sidebar icon configured with title: ${terminaiViewContainer.title}`);
-        console.log(`✅ Sidebar icon configured with icon: ${terminaiViewContainer.icon || 'default'}`);
+        console.log(`✅ Terminail view container found in activity bar: ${terminailViewContainer.title}`);
+        console.log(`✅ Sidebar icon configured with title: ${terminailViewContainer.title}`);
+        console.log(`✅ Sidebar icon configured with icon: ${terminailViewContainer.icon || 'default'}`);
         
         // 4. Verify the view is registered to the sidebar container
         console.log('\n3. Verifying view registration...');
-        if (!packageJson.contributes.views || !packageJson.contributes.views.terminai) {
-            throw new Error('Missing terminai view registration in package.json');
+        if (!packageJson.contributes.views || !packageJson.contributes.views.terminail) {
+            throw new Error('Missing terminail view registration in package.json');
         }
         
-        const terminaiViews = packageJson.contributes.views.terminai;
-        const terminaiView = terminaiViews.find(view => view.id === 'terminai.terminalView');
+        const terminailViews = packageJson.contributes.views.terminail;
+        const terminailView = terminailViews.find(view => view.id === 'terminail.terminalView');
         
-        if (!terminaiView) {
-            throw new Error('Terminai.terminalView not found in terminai view container');
+        if (!terminailView) {
+            throw new Error('Terminai.terminalView not found in terminail view container');
         }
         
-        console.log(`✅ terminai.terminalView registered in terminai container: ${terminaiView.name}`);
+        console.log(`✅ terminail.terminalView registered in terminail container: ${terminailView.name}`);
         
         // 5. Verify the view is also registered to the panel (for drag functionality)
         if (!packageJson.contributes.views['panel']) {
-            console.warn('⚠️  terminai.terminalView not registered in panel container (may not be draggable)');
+            console.warn('⚠️  terminail.terminalView not registered in panel container (may not be draggable)');
         } else {
             const panelViews = packageJson.contributes.views['panel'];
-            const panelView = panelViews.find(view => view.id === 'terminai.terminalView');
+            const panelView = panelViews.find(view => view.id === 'terminail.terminalView');
             
             if (panelView) {
-                console.log(`✅ terminai.terminalView also registered in panel container: ${panelView.name}`);
+                console.log(`✅ terminail.terminalView also registered in panel container: ${panelView.name}`);
             } else {
-                console.warn('⚠️  terminai.terminalView not found in panel container (may not be draggable)');
+                console.warn('⚠️  terminail.terminalView not found in panel container (may not be draggable)');
             }
         }
         
         // 6. Verify the command is registered
         console.log('\n4. Verifying command registration...');
         const commands = await vscode.commands.getCommands(true);
-        const hasMainCommand = commands.includes('terminai.openTerminal');
+        const hasMainCommand = commands.includes('terminail.openTerminal');
         
         if (!hasMainCommand) {
             throw new Error('Main command not registered');
         }
-        console.log('✅ Main command is registered: terminai.openTerminal');
+        console.log('✅ Main command is registered: terminail.openTerminal');
         
-        console.log('\n🎉 TerminAI Sidebar Icon End-to-End Test PASSED!');
+        console.log('\n🎉 Terminail Sidebar Icon End-to-End Test PASSED!');
         console.log('\nSummary of verified functionality:');
         console.log('- Extension is available and activates correctly');
         console.log('- Sidebar icon is configured in activity bar');
@@ -115,12 +115,12 @@ async function testSidebarIcon() {
         return true;
         
     } catch (error) {
-        console.error('❌ TerminAI Sidebar Icon End-to-End Test FAILED:', error.message);
+        console.error('❌ Terminail Sidebar Icon End-to-End Test FAILED:', error.message);
         console.log('\nTroubleshooting steps:');
         console.log('1. Verify that viewsContainers.activitybar is properly configured in package.json');
-        console.log('2. Verify that the terminai view container has proper id, title, and icon');
-        console.log('3. Verify that terminai.terminalView is registered in the terminai container');
-        console.log('4. Verify that terminai.terminalView is also registered in the panel container');
+        console.log('2. Verify that the terminail view container has proper id, title, and icon');
+        console.log('3. Verify that terminail.terminalView is registered in the terminail container');
+        console.log('4. Verify that terminail.terminalView is also registered in the panel container');
         console.log('5. Ensure all required commands are registered');
         
         return false;

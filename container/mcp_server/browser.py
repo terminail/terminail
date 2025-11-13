@@ -13,7 +13,7 @@ from .utils import load_ai_urls
 from .handler_factory import create_ai_handler
 from .chrome_manager import ChromeManager
 
-logger = logging.getLogger("terminai-mcp-browser")
+logger = logging.getLogger("terminail-mcp-browser")
 
 class BrowserManager:
     """Browser manager"""

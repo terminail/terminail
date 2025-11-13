@@ -201,6 +201,7 @@ cython_debug/
 
 # Playwright test reports
 playwright-report/
+test-results/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
@@ -218,6 +219,6 @@ out/
 
 extension-package/
 
-terminai-*.vsix 
+terminail-*.vsix 
 
 learning-primer-buddy/

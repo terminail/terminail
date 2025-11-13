@@ -15,9 +15,9 @@ module.exports = {
     
     // Extension settings
     extension: {
-      id: 'terminai',
-      displayName: 'TerminAI',
-      publisher: 'terminai',
+      id: 'terminail',
+      displayName: 'Terminail',
+      publisher: 'terminail',
       version: '0.1.0'
     },
     

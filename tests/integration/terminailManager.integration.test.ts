@@ -1,15 +1,15 @@
 import * as vscode from 'vscode';
-import { TerminAIWebviewProvider } from '../../src/terminAIManager';
+import { TerminailWebviewProvider } from '../../src/terminailManager';
 
 /**
- * Integration Test: TerminAIManager with VS Code API
+ * Integration Test: TerminailManager with VS Code API
  * 
- * This test verifies that the TerminAIManager properly integrates with the VS Code API
+ * This test verifies that the TerminailManager properly integrates with the VS Code API
  * and can be properly initialized and disposed.
  */
 
-describe('TerminAIManager Integration', () => {
-    let terminAIManager: TerminAIWebviewProvider;
+describe('TerminailManager Integration', () => {
+    let terminailManager: TerminailWebviewProvider;
     let mockContext: vscode.ExtensionContext;
 
     beforeEach(() => {
@@ -18,7 +18,7 @@ describe('TerminAIManager Integration', () => {
             fsPath: '/test/path'
         } as any;
 
-        terminAIManager = new TerminAIWebviewProvider(mockUri);
+        terminailManager = new TerminailWebviewProvider(mockUri);
     });
 
     afterEach(() => {
@@ -37,7 +37,7 @@ describe('TerminAIManager Integration', () => {
         } as any;
         
         // Test webview view resolution
-        terminAIManager.resolveWebviewView(mockWebviewView, {} as any, {} as any);
+        terminailManager.resolveWebviewView(mockWebviewView, {} as any, {} as any);
         
         // Verify webview was configured
         expect(mockWebviewView.webview.options).toBeDefined();
@@ -46,6 +46,6 @@ describe('TerminAIManager Integration', () => {
 
     it('should have view type defined', () => {
         // Test static view type property
-        expect(TerminAIWebviewProvider.viewType).toBe('terminai.terminalView');
+        expect(TerminailWebviewProvider.viewType).toBe('terminail.terminalView');
     });
 });

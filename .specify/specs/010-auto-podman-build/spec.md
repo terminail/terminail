@@ -1,11 +1,11 @@
 # Auto Podman Build Specification
 
 ## Overview
-This specification defines the automatic Podman image building capability for the TerminAI VS Code extension, enabling seamless container-based development with the Playwright MCP server.
+This specification defines the automatic Podman image building capability for the Terminail VS Code extension, enabling seamless container-based development with the Playwright MCP server.
 
 ## Related Documents
-- Primary: `d:\git\6terminai\container\mcp_server` - Playwright MCP server implementation
-- Reference: `d:\git\6terminai\container\Podmanfile` - Container definition
+- Primary: `d:\git\6terminail\container\mcp_server` - Playwright MCP server implementation
+- Reference: `d:\git\6terminail\container\Podmanfile` - Container definition
 - Requirements: FR-002 from 001-podman-environment/spec.md (line 39)
 
 ## Functional Requirements
@@ -13,7 +13,7 @@ This specification defines the automatic Podman image building capability for th
 ### FR-001: Automatic Image Detection
 **Priority**: High
 **Status**: Proposed
-**Description**: The TerminAI extension must automatically detect the presence of container configuration files in the project workspace.
+**Description**: The Terminail extension must automatically detect the presence of container configuration files in the project workspace.
 
 **Requirements**:
 - MUST scan for `Podmanfile` in the project root
@@ -28,7 +28,7 @@ This specification defines the automatic Podman image building capability for th
 
 **Requirements**:
 - MUST build image using detected `Podmanfile`
-- MUST set appropriate image name (terminai-mcp-server:latest)
+- MUST set appropriate image name (terminail-mcp-server:latest)
 - MUST validate build process and report errors
 - SHOULD support build progress tracking and user feedback
 - SHOULD implement build caching for faster subsequent builds
@@ -142,9 +142,9 @@ This specification defines the automatic Podman image building capability for th
 ### Build Configuration
 ```json
 {
-  "terminai.container.autoBuild": {
+  "terminail.container.autoBuild": {
     "enabled": true,
-    "imageName": "terminai-mcp-server",
+    "imageName": "terminail-mcp-server",
     "buildContext": "./",
     "dockerfilePath": "./container/Podmanfile",
     "buildOnSave": true,
@@ -156,8 +156,8 @@ This specification defines the automatic Podman image building capability for th
 ### Runtime Configuration
 ```json
 {
-  "terminai.container.runtime": {
-    "containerName": "terminai-mcp-server-dev",
+  "terminail.container.runtime": {
+    "containerName": "terminail-mcp-server-dev",
     "portMapping": {
       "mcpServer": 3000,
       "playwrightDebug": 9222
@@ -178,7 +178,7 @@ This specification defines the automatic Podman image building capability for th
 ## User Experience Flow
 
 1. **Initial Setup**:
-   - User opens TerminAI project with container configuration
+   - User opens Terminail project with container configuration
    - Extension detects container files automatically
    - System prompts user to enable auto-build feature
    - First build is executed automatically or manually
@@ -203,7 +203,7 @@ This specification defines the automatic Podman image building capability for th
 - File system write permissions for build operations
 
 ### Security Considerations
-- Container runs as non-root user (terminai)
+- Container runs as non-root user (terminail)
 - Build process uses minimal privileges
 - Container networking is properly isolated
 - Source code is not exposed in production containers

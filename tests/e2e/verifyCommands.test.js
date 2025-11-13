@@ -28,7 +28,7 @@ async function testCommandRegistration() {
         
         // Required commands - based on package.json
         const requiredCommands = [
-            'terminai.openTerminal'
+            'terminail.openTerminal'
         ];
         
         // Check that all required commands are defined

@@ -1,19 +1,19 @@
-# TerminAI Configuration Directory Implementation Checklist
+# Terminail Configuration Directory Implementation Checklist
 
 ## Overview
-This checklist covers the implementation of the TerminAI Configuration Directory feature, which automatically creates and manages a `.terminai` directory in the VS Code workspace for storing configuration, history, and file tracking information.
+This checklist covers the implementation of the Terminail Configuration Directory feature, which automatically creates and manages a `.terminail` directory in the VS Code workspace for storing configuration, history, and file tracking information.
 
 ## Directory Management
-- [ ] Automatic `.terminai` directory creation on extension initialization
+- [ ] Automatic `.terminail` directory creation on extension initialization
 - [ ] Verification of write permissions before directory creation
-- [ ] Graceful handling of existing `.terminai` directories
+- [ ] Graceful handling of existing `.terminail` directories
 - [ ] Cross-platform directory handling (Windows, macOS, Linux)
 - [ ] Error handling for directory creation failures
 - [ ] Directory cleanup on extension shutdown
-- [ ] Temporary file management within `.terminai` directory
+- [ ] Temporary file management within `.terminail` directory
 
 ## Configuration Management
-- [ ] Configuration file creation (`.terminai/config.json`)
+- [ ] Configuration file creation (`.terminail/config.json`)
 - [ ] Configuration saving functionality
 - [ ] Configuration loading functionality
 - [ ] Configuration validation on load
@@ -23,7 +23,7 @@ This checklist covers the implementation of the TerminAI Configuration Directory
 - [ ] Configuration migration between versions
 
 ## History Management
-- [ ] Command history file creation (`.terminai/history.json`)
+- [ ] Command history file creation (`.terminail/history.json`)
 - [ ] Command history saving functionality
 - [ ] Command history loading functionality
 - [ ] History file size limiting
@@ -32,7 +32,7 @@ This checklist covers the implementation of the TerminAI Configuration Directory
 - [ ] Efficient loading of recent history entries
 
 ## File Tracking
-- [ ] Created files tracking (`.terminai/created-files.json`)
+- [ ] Created files tracking (`.terminail/created-files.json`)
 - [ ] File tracking data structure
 - [ ] File tracking update functionality
 - [ ] File tracking query functionality
@@ -57,7 +57,7 @@ This checklist covers the implementation of the TerminAI Configuration Directory
 - [ ] Error condition testing
 
 ## Documentation
-- [ ] User guide for `.terminai` directory
+- [ ] User guide for `.terminail` directory
 - [ ] Configuration file format documentation
 - [ ] Troubleshooting guide for directory issues
 - [ ] Migration guide for configuration updates

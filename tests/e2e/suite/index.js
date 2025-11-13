@@ -1,4 +1,4 @@
-const { testTerminAIExtension } = require('./extension.test');
+const { testTerminailExtension } = require('./extension.test');
 const { testCommandRegistration } = require('./verifyCommands.test');
 const { testCompleteExtension } = require('./completeExtension.test');
 const { testSidebarIcon } = require('./sidebarIcon.test');
@@ -9,7 +9,7 @@ async function run() {
   
   try {
     // Run the extension functionality verification
-    await testTerminAIExtension();
+    await testTerminailExtension();
     
     // Run the command registration verification
     await testCommandRegistration();

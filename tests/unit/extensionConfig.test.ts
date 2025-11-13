@@ -42,14 +42,14 @@ describe('Extension Configuration Validation', () => {
         });
 
         it('should have correct extension name', () => {
-            expect(packageJson.name).toBe('terminai');
+            expect(packageJson.name).toBe('terminail');
         });
 
         it('should have correct activation events', () => {
             // Check if activationEvents exists and is an array, or if it's undefined (which is valid)
             if (packageJson.activationEvents) {
                 expect(Array.isArray(packageJson.activationEvents)).toBe(true);
-                expect(packageJson.activationEvents).toContain('onCommand:terminai.openTerminal');
+                expect(packageJson.activationEvents).toContain('onCommand:terminail.openTerminal');
             } else {
                 // activationEvents is optional, so this is acceptable
                 expect(true).toBe(true);
@@ -60,23 +60,23 @@ describe('Extension Configuration Validation', () => {
             const commands = packageJson.contributes.commands;
             const commandIds = commands.map((cmd: any) => cmd.command);
             
-            expect(commandIds).toContain('terminai.openTerminal');
+            expect(commandIds).toContain('terminail.openTerminal');
         });
 
         it('should have correct command configurations', () => {
             const commands = packageJson.contributes.commands;
-            const openTerminalCommand = commands.find((cmd: any) => cmd.command === 'terminai.openTerminal');
+            const openTerminalCommand = commands.find((cmd: any) => cmd.command === 'terminail.openTerminal');
             
             expect(openTerminalCommand).toBeDefined();
-            expect(openTerminalCommand.title).toBe('TerminAI: Open AI Terminal');
-            expect(openTerminalCommand.category).toBe('TerminAI');
+            expect(openTerminalCommand.title).toBe('Terminail: Open AI Terminal');
+            expect(openTerminalCommand.category).toBe('Terminail');
         });
 
         it('should have correct menu configurations', () => {
             // Check for keybindings
             expect(Array.isArray(packageJson.contributes.keybindings)).toBe(true);
             const keybinding = packageJson.contributes.keybindings[0];
-            expect(keybinding.command).toBe('terminai.openTerminal');
+            expect(keybinding.command).toBe('terminail.openTerminal');
         });
     });
 });

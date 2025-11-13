@@ -3,20 +3,20 @@
 **Feature Branch**: `020-command-help`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "The 'help' command displays help information about available commands and their usage, as described in terminai.md line 2247-2248."
+**Input**: User description: "The 'help' command displays help information about available commands and their usage, as described in terminail.md line 2247-2248."
 **Parent Feature**: [020-command](../020-command/spec.md)
 
 ## Implementation Summary
 
-This feature implements the `help` command for the TerminAI terminal interface, allowing users to display help information about available commands and their usage. When a user executes `help`, the TerminAI extension retrieves and displays comprehensive information about all supported commands, including syntax, parameters, and descriptions.
+This feature implements the `help` command for the Terminail terminal interface, allowing users to display help information about available commands and their usage. When a user executes `help`, the Terminail extension retrieves and displays comprehensive information about all supported commands, including syntax, parameters, and descriptions.
 
-The implementation involves parsing the `help` command in the terminal interface, retrieving help information from the command registry, and formatting the output for clear display. The command provides immediate access to documentation, helping users understand and effectively use TerminAI commands.
+The implementation involves parsing the `help` command in the terminal interface, retrieving help information from the command registry, and formatting the output for clear display. The command provides immediate access to documentation, helping users understand and effectively use Terminail commands.
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Display General Help Information (Priority: P1)
 
-As a developer using TerminAI, I want to use the `help` command to see information about all available commands so that I can understand how to use the terminal effectively.
+As a developer using Terminail, I want to use the `help` command to see information about all available commands so that I can understand how to use the terminal effectively.
 
 **Why this priority**: This is core functionality for user onboarding and command discovery.
 
@@ -24,13 +24,13 @@ As a developer using TerminAI, I want to use the `help` command to see informati
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with a ready TerminAI terminal, **When** they type "help", **Then** the terminal should display a list of all available commands with brief descriptions.
-2. **Given** a user with a ready TerminAI terminal, **When** they type "help" after new commands have been added, **Then** the terminal should show the updated list including new commands.
+1. **Given** a user with a ready Terminail terminal, **When** they type "help", **Then** the terminal should display a list of all available commands with brief descriptions.
+2. **Given** a user with a ready Terminail terminal, **When** they type "help" after new commands have been added, **Then** the terminal should show the updated list including new commands.
 3. **Given** a user with no commands configured, **When** they type "help", **Then** the terminal should display an appropriate message indicating no commands are available.
 
 ### User Story 2 - Display Specific Command Help (Priority: P1)
 
-As a developer using TerminAI, I want to use the `help <command>` syntax to see detailed information about a specific command so that I can understand its usage and parameters.
+As a developer using Terminail, I want to use the `help <command>` syntax to see detailed information about a specific command so that I can understand its usage and parameters.
 
 **Why this priority**: This is essential for providing detailed command documentation.
 
@@ -44,7 +44,7 @@ As a developer using TerminAI, I want to use the `help <command>` syntax to see 
 
 ### User Story 3 - Help Formatting and Readability (Priority: P1)
 
-As a developer using TerminAI, I want the help information to be well-formatted and readable so that I can quickly find the information I need.
+As a developer using Terminail, I want the help information to be well-formatted and readable so that I can quickly find the information I need.
 
 **Why this priority**: This is essential for providing a user-friendly experience.
 
@@ -58,7 +58,7 @@ As a developer using TerminAI, I want the help information to be well-formatted 
 
 ### User Story 4 - Context-Aware Help (Priority: P2)
 
-As a developer using TerminAI, I want the help command to provide context-aware information so that I get the most relevant help based on my current situation.
+As a developer using Terminail, I want the help command to provide context-aware information so that I get the most relevant help based on my current situation.
 
 **Why this priority**: This enhances usability by providing personalized help information.
 

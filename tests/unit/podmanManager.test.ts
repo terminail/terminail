@@ -21,7 +21,7 @@ jest.mock('child_process', () => ({
         // Return a Promise that resolves with the expected result
         if (command === 'podman --version' || command.includes('podman --version')) {
             return Promise.resolve({ stdout: 'podman version 4.0.0', stderr: '' });
-        } else if (command === 'podman image exists terminai-mcp-server' || command.includes('podman image exists terminai-mcp-server')) {
+        } else if (command === 'podman image exists terminail-mcp-server' || command.includes('podman image exists terminail-mcp-server')) {
             return Promise.resolve({ stdout: '', stderr: '' });
         } else if (command.includes('run')) {
             return Promise.resolve({ stdout: 'container123', stderr: '' });
@@ -302,7 +302,7 @@ describe('PodmanManager', () => {
             jest.requireMock('child_process').exec = originalMock;
         });
 
-        test('should check if TerminAI container is running', async () => {
+        test('should check if Terminail container is running', async () => {
             // Set container ID to enable ID-based check
             podmanManager['containerId'] = 'container123';
             
@@ -324,7 +324,7 @@ describe('PodmanManager', () => {
             podmanManager['containerId'] = null;
         });
 
-        test('should handle TerminAI container not running', async () => {
+        test('should handle Terminail container not running', async () => {
             // Mock exec to return empty container list
             const originalMock = jest.requireMock('child_process').exec;
             jest.requireMock('child_process').exec.mockImplementation((command: string) => {

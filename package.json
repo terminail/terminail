@@ -1,6 +1,6 @@
 {
-  "name": "terminai",
-  "displayName": "TerminAI",
+  "name": "terminail",
+  "displayName": "Terminail",
   "description": "AI-powered terminal assistant for VS Code",
   "version": "0.1.0",
   "engines": {
@@ -14,17 +14,17 @@
     "viewsContainers": {
       "panel": [
         {
-          "id": "terminai-panel",
-          "title": "TerminAI",
+          "id": "terminail-panel",
+          "title": "Terminail",
           "icon": "media/icon.svg"
         }
       ]
     },
     "views": {
-      "terminai-panel": [
+      "terminail-panel": [
         {
-          "id": "terminai.terminalView",
-          "name": "TerminAI",
+          "id": "terminail.terminalView",
+          "name": "Terminail",
           "type": "webview",
           "icon": "media/icon.svg"
         }
@@ -32,32 +32,32 @@
     },
     "commands": [
       {
-        "command": "terminai.openTerminal",
-        "title": "TerminAI: Open AI Terminal",
-        "category": "TerminAI"
+        "command": "terminail.openTerminal",
+        "title": "Terminail: Open AI Terminal",
+        "category": "Terminail"
       }
     ],
     "keybindings": [
       {
-        "command": "terminai.openTerminal",
+        "command": "terminail.openTerminal",
         "key": "ctrl+shift+t",
         "mac": "cmd+shift+t"
       }
     ],
     "configuration": {
-      "title": "TerminAI",
+      "title": "Terminail",
       "properties": {
-        "terminai.apiKey": {
+        "terminail.apiKey": {
           "type": "string",
           "default": "",
           "description": "API key for AI service (OpenAI, Anthropic, etc.)"
         },
-        "terminai.model": {
+        "terminail.model": {
           "type": "string",
           "default": "gpt-4",
           "description": "AI model to use for terminal assistance"
         },
-        "terminai.maxTokens": {
+        "terminail.maxTokens": {
           "type": "number",
           "default": 1000,
           "description": "Maximum tokens for AI responses"
@@ -74,8 +74,8 @@
     "test": "node ./out/test/vscode/runTest.js",
     "test:unit": "npx jest tests/unit/ --passWithNoTests",
     "test:integration": "npx jest tests/integration/ --passWithNoTests",
-    "test:e2e": "npm run compile && node ./tests/e2e/runTest.js",
-    "test:e2e:terminal": "npm run compile && node ./tests/e2e/runTest.js",
+    "test:e2e": "node ./tests/e2e/runTest.js",
+    "test:e2e:terminal": "node ./tests/e2e/runTest.js",
     "test:e2e:vscode": "vscode-test --extensionDevelopmentPath=. --extensionTestsPath=./tests/e2e/specs",
     "test:ui": "npx playwright test",
     "test:ui:headed": "npx playwright test --headed",
@@ -119,8 +119,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/6TerminAI/terminai.git"
+    "url": "https://github.com/terminail/terminail.git"
   },
-  "publisher": "TerminAI",
+  "publisher": "Terminail",
   "icon": "media/icon.png"
 }

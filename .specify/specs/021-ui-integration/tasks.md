@@ -54,11 +54,11 @@
   - Icon maintains quality at different display densities
 
 ### Task 1.3: Click Handler Implementation
-- **Description**: Add click handler to open/activate TerminAI panel
+- **Description**: Add click handler to open/activate Terminail panel
 - **Estimated Effort**: 2 hours
 - **Dependencies**: Task 1.2
 - **Acceptance Criteria**:
-  - Clicking icon opens TerminAI panel
+  - Clicking icon opens Terminail panel
   - Subsequent clicks toggle panel state appropriately
   - Panel activation is visually indicated
 
@@ -83,11 +83,11 @@
 ## Phase 2: Panel Integration
 
 ### Task 2.1: Panel Integration with VS Code
-- **Description**: Integrate TerminAI interface into VS Code panel area
+- **Description**: Integrate Terminail interface into VS Code panel area
 - **Estimated Effort**: 4 hours
 - **Dependencies**: None
 - **Acceptance Criteria**:
-  - TerminAI panel appears alongside PROBLEMS, OUTPUT, TERMINAL
+  - Terminail panel appears alongside PROBLEMS, OUTPUT, TERMINAL
   - Panel follows VS Code panel conventions
   - Panel can be shown/hidden independently
 

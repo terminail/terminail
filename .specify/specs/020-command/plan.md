@@ -7,15 +7,15 @@
 
 ## Summary
 
-This feature implements the overall command system for the TerminAI terminal interface, providing a unified framework for all terminal commands. The command system includes a centralized command parser, dispatcher, and registry that manages all individual commands such as cd, ls, chrome, podman, qi, help, and status.
+This feature implements the overall command system for the Terminail terminal interface, providing a unified framework for all terminal commands. The command system includes a centralized command parser, dispatcher, and registry that manages all individual commands such as cd, ls, chrome, podman, qi, help, and status.
 
 The implementation involves creating a hierarchical command structure where individual commands are organized under this parent command system. Each command maintains its own specification while integrating with the central command framework for consistent parsing, execution, and error handling.
 
 ## Technical Context
 
 **Language/Version**: TypeScript (Node.js 18+)  
-**Primary Dependencies**: VS Code Extension API, TerminAI Terminal components  
-**Storage**: In-memory command registry, configuration in `.terminai` directory  
+**Primary Dependencies**: VS Code Extension API, Terminail Terminal components  
+**Storage**: In-memory command registry, configuration in `.terminail` directory  
 **Testing**: Mocha/Chai for unit tests, manual testing for integration  
 **Target Platform**: VS Code extension running on Windows, macOS, and Linux  
 **Project Type**: Single project (VS Code extension)  
@@ -30,7 +30,7 @@ The implementation involves creating a hierarchical command structure where indi
 Based on the project constitution, this feature complies with all guidelines:
 - Uses TypeScript as primary language
 - Follows VS Code extension development patterns
-- Integrates with existing TerminAI terminal architecture
+- Integrates with existing Terminail terminal architecture
 - Maintains security by running locally without external dependencies
 - Follows established testing practices
 
@@ -78,4 +78,4 @@ tests/
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing TerminAI terminal architecture.
+No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing Terminail terminal architecture.

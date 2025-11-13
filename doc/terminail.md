@@ -1,4 +1,4 @@
-# TerminAI 
+# Terminail 
 
 Q: Is there a deployment on low-end personal computers that uses Playwright MCP to control browser automation, automatically fill in questions, and collect responses, such as automatically searching for products and then getting product lists?
 
@@ -1001,14 +1001,14 @@ flowchart TD
 
 希望这些方案和步骤能帮助你顺利完成在 Podman 容器中部署 Playwright MCP Server 的目标。如果某个步骤需要更详细的解释，或者你在实践中遇到了新的问题，随时可以再来问我。
 
-Q: 如果采用方案一，我要编写一个类似terminal操作界面的vscode extension叫TerminAI，支持一些命令如 cd deepseek，表示当前通过deepseek网页对话，ls列出当前支持的ai的chat网站，TerminAI extension打开后自动启动podman和自动检测可用端口号启动主机浏览器，然后可在TerminAI命令行发送命令qi xxxx问题，通过mcp服务器从浏览器获取ai网页的回复，能在等待ai网页回答问题过程中实时同步到TerminAI命令行界面？
+Q: 如果采用方案一，我要编写一个类似terminal操作界面的vscode extension叫Terminail，支持一些命令如 cd deepseek，表示当前通过deepseek网页对话，ls列出当前支持的ai的chat网站，Terminail extension打开后自动启动podman和自动检测可用端口号启动主机浏览器，然后可在Terminail命令行发送命令qi xxxx问题，通过mcp服务器从浏览器获取ai网页的回复，能在等待ai网页回答问题过程中实时同步到Terminail命令行界面？
 
 A: 您这个想法非常棒！将 Playwright MCP Server 部署在 Podman 容器中，并通过 VS Code 扩展提供类似终端的界面来控制，确实是一个优雅的解决方案。我来详细说明如何实现这个架构。
 
 ## 🎯 整体架构设计
 
 ```
-VS Code TerminAI Extension
+VS Code Terminail Extension
 ├── Terminal-like UI (Webview)
 ├── MCP Client
 ├── Podman Manager
@@ -1022,12 +1022,12 @@ Host System
 └── Chrome Browser (with debug port)
 ```
 
-## 🛠️ TerminAI 扩展实现方案
+## 🛠️ Terminail 扩展实现方案
 
 ### 1. 扩展项目结构
 
 ```
-TerminAI-extension/
+Terminail-extension/
 ├── package.json
 ├── src/
 │   ├── extension.ts
@@ -1045,31 +1045,31 @@ TerminAI-extension/
 
 ```json
 {
-  "name": "TerminAI",
-  "displayName": "TerminAI Terminal",
+  "name": "Terminail",
+  "displayName": "Terminail Terminal",
   "description": "Terminal interface for AI chat websites",
   "version": "1.0.0",
   "engines": {"vscode": "^1.85.0"},
   "categories": ["Other"],
-  "activationEvents": ["onCommand:TerminAI.openTerminal"],
+  "activationEvents": ["onCommand:Terminail.openTerminal"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "TerminAI.openTerminal",
-        "title": "Open TerminAI Terminal",
-        "category": "TerminAI"
+        "command": "Terminail.openTerminal",
+        "title": "Open Terminail Terminal",
+        "category": "Terminail"
       }
     ],
     "configuration": {
-      "title": "TerminAI",
+      "title": "Terminail",
       "properties": {
-        "TerminAI.supportedAIs": {
+        "Terminail.supportedAIs": {
           "type": "array",
           "default": ["deepseek", "qwen", "doubao", "chatgpt"],
           "description": "Supported AI websites"
         },
-        "TerminAI.browserPath": {
+        "Terminail.browserPath": {
           "type": "string",
           "default": "chrome",
           "description": "Browser executable path"
@@ -1099,13 +1099,13 @@ TerminAI-extension/
 
 ```typescript
 import * as vscode from 'vscode';
-import { TerminAITerminal } from './terminalView';
+import { TerminailTerminal } from './terminalView';
 import { PodmanManager } from './podmanManager';
 import { BrowserManager } from './browserManager';
 import { MCPClient } from './mcpClient';
 
 export async function activate(context: vscode.ExtensionContext) {
-    console.log('TerminAI extension activated');
+    console.log('Terminail extension activated');
     
     // 初始化管理器
     const podmanManager = new PodmanManager();
@@ -1113,7 +1113,7 @@ export async function activate(context: vscode.ExtensionContext) {
     const mcpClient = new MCPClient();
     
     // 注册打开终端命令
-    const openTerminalCommand = vscode.commands.registerCommand('TerminAI.openTerminal', async () => {
+    const openTerminalCommand = vscode.commands.registerCommand('Terminail.openTerminal', async () => {
         try {
             // 自动启动 Podman 容器
             const containerInfo = await podmanManager.startContainer();
@@ -1125,13 +1125,13 @@ export async function activate(context: vscode.ExtensionContext) {
             await mcpClient.connect(containerInfo.mcpPort);
             
             // 创建终端界面
-            const terminal = new TerminAITerminal(context.extensionUri, mcpClient);
+            const terminal = new TerminailTerminal(context.extensionUri, mcpClient);
             terminal.show();
             
-            vscode.window.showInformationMessage('TerminAI Terminal started successfully!');
+            vscode.window.showInformationMessage('Terminail Terminal started successfully!');
             
         } catch (error) {
-            vscode.window.showErrorMessage(`Failed to start TerminAI: ${error}`);
+            vscode.window.showErrorMessage(`Failed to start Terminail: ${error}`);
         }
     });
     
@@ -1139,7 +1139,7 @@ export async function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-    console.log('TerminAI extension deactivated');
+    console.log('Terminail extension deactivated');
 }
 ```
 
@@ -1186,7 +1186,7 @@ export class PodmanManager implements vscode.Disposable {
 
     private async buildContainerImage(): Promise<void> {
         try {
-            await execAsync('podman image exists TerminAI-mcp-server');
+            await execAsync('podman image exists Terminail-mcp-server');
             console.log('Container image already exists');
         } catch {
             console.log('Building container image...');
@@ -1197,7 +1197,7 @@ export class PodmanManager implements vscode.Disposable {
 
     private async runContainer(port: number): Promise<string> {
         const { stdout } = await execAsync(
-            `podman run -d -p ${port}:3000 --name TerminAI-mcp-${Date.now()} TerminAI-mcp-server`
+            `podman run -d -p ${port}:3000 --name Terminail-mcp-${Date.now()} Terminail-mcp-server`
         );
         return stdout.trim();
     }
@@ -1255,7 +1255,7 @@ export class BrowserManager {
             `--remote-debugging-port=${this.debugPort}`,
             '--no-first-run',
             '--no-default-browser-check',
-            '--user-data-dir=/tmp/TerminAI-browser',
+            '--user-data-dir=/tmp/Terminail-browser',
             '--start-maximized'
         ], {
             detached: true,
@@ -1441,8 +1441,8 @@ export class MCPClient extends EventEmitter {
 import * as vscode from 'vscode';
 import { MCPClient } from './mcpClient';
 
-export class TerminAITerminal {
-    public static readonly viewType = 'TerminAI.terminal';
+export class TerminailTerminal {
+    public static readonly viewType = 'Terminail.terminal';
     private _panel: vscode.WebviewPanel;
     private _disposables: vscode.Disposable[] = [];
     private _mcpClient: MCPClient;
@@ -1452,8 +1452,8 @@ export class TerminAITerminal {
         this._mcpClient = mcpClient;
         
         this._panel = vscode.window.createWebviewPanel(
-            TerminAITerminal.viewType,
-            'TerminAI Terminal',
+            TerminailTerminal.viewType,
+            'Terminail Terminal',
             vscode.ViewColumn.One,
             {
                 enableScripts: true,
@@ -1630,7 +1630,7 @@ export class TerminAITerminal {
             <body>
                 <div id="terminal"></div>
                 <div class="input-line">
-                    <span class="prompt">TerminAI:${this._currentAI}$</span>
+                    <span class="prompt">Terminail:${this._currentAI}$</span>
                     <input type="text" id="input" autofocus>
                 </div>
 
@@ -1650,7 +1650,7 @@ export class TerminAITerminal {
 
                     function updatePrompt() {
                         const prompt = document.querySelector('.prompt');
-                        prompt.textContent = \\`TerminAI:\\${currentAI}$\\`;
+                        prompt.textContent = \\`Terminail:\\${currentAI}$\\`;
                     }
 
                     input.addEventListener('keydown', (e) => {
@@ -1658,7 +1658,7 @@ export class TerminAITerminal {
                             const command = input.value.trim();
                             input.value = '';
                             
-                            addOutput(\\`TerminAI:\\${currentAI}$ \\${command}\\`, 'command');
+                            addOutput(\\`Terminail:\\${currentAI}$ \\${command}\\`, 'command');
                             
                             if (command.startsWith('qi ')) {
                                 const question = command.substring(3);
@@ -1771,8 +1771,8 @@ CMD ["node", "mcp-server.js"]
 
 ## 🚀 使用流程
 
-1. **安装扩展** → 在 VS Code 中搜索并安装 TerminAI 扩展
-2. **打开终端** → 运行 `TerminAI: Open TerminAI Terminal` 命令
+1. **安装扩展** → 在 VS Code 中搜索并安装 Terminail 扩展
+2. **打开终端** → 运行 `Terminail: Open Terminail Terminal` 命令
 3. **自动启动** → 扩展自动启动 Podman 容器和浏览器
 4. **使用命令**：
    - `cd deepseek` → 切换到 DeepSeek 聊天
@@ -1814,7 +1814,7 @@ A: 您提出了一个很好的质疑！让我诚实地分析这个方案的可�
 ### 1. 简化的架构设计
 
 ```
-VS Code TerminAI Extension (TypeScript)
+VS Code Terminail Extension (TypeScript)
     ↓ HTTP/WebSocket
 Playwright MCP Server (Node.js in Podman)  
     ↓ Chrome DevTools Protocol
@@ -1838,9 +1838,9 @@ Chrome Browser (on Host with debug port)
 ```typescript
 // 确实可运行的扩展框架
 export function activate(context: vscode.ExtensionContext) {
-    const provider = new TerminAIProvider();
+    const provider = new TerminailProvider();
     const view = vscode.window.registerWebviewViewProvider(
-        'TerminAI-terminal',
+        'Terminail-terminal',
         provider
     );
     context.subscriptions.push(view);
@@ -1945,10 +1945,10 @@ async function askQuestionWithProgress(question: string) {
 ```bash
 # 手动步骤（可脚本化）：
 # 1. 启动浏览器
-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/TerminAI
+chrome --remote-debugging-port=9222 --user-data-dir=/tmp/Terminail
 
 # 2. 启动容器
-podman run -d -p 3000:3000 --name TerminAI-mcp TerminAI-image
+podman run -d -p 3000:3000 --name Terminail-mcp Terminail-image
 
 # 3. 打开VS Code扩展
 ```
@@ -1970,12 +1970,12 @@ podman run -d -p 3000:3000 --name TerminAI-mcp TerminAI-image
 
 这个项目是完全有技术基础可以实现的，只是需要合理调整实现策略。您想要开始实现哪个部分？我可以提供更具体的可运行代码。
 
-Q: 关于第5步，TerminAI应该自动打印出启动浏览器的命令让用户直接回车确认启动
-启动podman应该自动启动，TerminAI可以内置podman就不需要再去下载了？这样子TerminAI应该有三个版本？
+Q: 关于第5步，Terminail应该自动打印出启动浏览器的命令让用户直接回车确认启动
+启动podman应该自动启动，Terminail可以内置podman就不需要再去下载了？这样子Terminail应该有三个版本？
 
 A: 您提出了两个非常好的改进点！让我重新设计一个更实用、更自动化的方案。
 
-## 🎯 重新设计的 TerminAI 架构
+## 🎯 重新设计的 Terminail 架构
 
 ### 1. 三个版本策略
 
@@ -2009,7 +2009,7 @@ export class BrowserManager {
 
     private generateBrowserCommand(port: number): string {
         const browserPath = this.getBrowserPath();
-        const userDataDir = path.join(os.homedir(), '.TerminAI', 'browser-profile');
+        const userDataDir = path.join(os.homedir(), '.Terminail', 'browser-profile');
         
         return `"${browserPath}" --remote-debugging-port=${port} --no-first-run --no-default-browser-check --user-data-dir="${userDataDir}"`;
     }
@@ -2113,8 +2113,8 @@ export class PodmanManager {
 #### 版本1: 轻量版 (Lightweight)
 ```json
 {
-  "name": "TerminAI-lightweight",
-  "displayName": "TerminAI Lightweight",
+  "name": "Terminail-lightweight",
+  "displayName": "Terminail Lightweight",
   "description": "轻量版本，需要预装 Podman",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
@@ -2125,8 +2125,8 @@ export class PodmanManager {
 #### 版本2: 标准版 (Standard)  
 ```json
 {
-  "name": "TerminAI-standard",
-  "displayName": "TerminAI Standard",
+  "name": "Terminail-standard",
+  "displayName": "Terminail Standard",
   "description": "标准版本，自动管理 Podman",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
@@ -2141,8 +2141,8 @@ export class PodmanManager {
 #### 版本3: 容器版 (Container)
 ```json
 {
-  "name": "TerminAI-container",
-  "displayName": "TerminAI Container", 
+  "name": "Terminail-container",
+  "displayName": "Terminail Container", 
   "description": "完整容器版本，零依赖",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
@@ -2157,7 +2157,7 @@ export class PodmanManager {
 
 ```typescript
 // terminalView.ts - 支持交互式命令
-export class TerminAITerminal {
+export class TerminailTerminal {
     private async setupInteractiveTerminal(): Promise<void> {
         // 显示欢迎信息和初始化步骤
         this.showWelcomeMessage();
@@ -2169,7 +2169,7 @@ export class TerminAITerminal {
     private showWelcomeMessage(): void {
         this.addOutput(`
 ╔══════════════════════════════════════╗
-║             TerminAI Terminal          ║
+║             Terminail Terminal          ║
 ║       AI 聊天网站命令行界面         ║
 ╚══════════════════════════════════════╝
 
@@ -2286,7 +2286,7 @@ export class VersionManager {
         // 根据版本类型执行不同的更新策略
         await this.updateBasedOnVersionType();
         
-        this.terminalView.showMessage('更新完成，请重启 TerminAI', 'success');
+        this.terminalView.showMessage('更新完成，请重启 Terminail', 'success');
     }
 }
 ```
@@ -2294,12 +2294,12 @@ export class VersionManager {
 ### 7. 完整的用户体验流程
 
 ```
-1. 用户安装 TerminAI 扩展
-2. 打开 TerminAI 终端
+1. 用户安装 Terminail 扩展
+2. 打开 Terminail 终端
 3. 自动检测环境并指导设置
 4. 用户复制浏览器启动命令并执行
 5. 在浏览器中登录各个 AI 网站
-6. 返回 TerminAI 终端按回车继续
+6. 返回 Terminail 终端按回车继续
 7. 开始使用 cd/ls/qi 命令与 AI 交互
 ```
 
@@ -2378,7 +2378,7 @@ export class GuideManager {
 
 ${command}
 
-这将启动一个特殊的浏览器实例，TerminAI 需要通过它来控制网页。
+这将启动一个特殊的浏览器实例，Terminail 需要通过它来控制网页。
 
 执行后，请:
 1. 在打开的浏览器中登录您需要的 AI 网站（豆包、通义千问等）
@@ -2401,7 +2401,7 @@ ${command}
 export class BrowserManager {
     generateBrowserCommand(debugPort: number): string {
         const platform = os.platform();
-        const userDataDir = path.join(os.homedir(), '.TerminAI', 'browser-data');
+        const userDataDir = path.join(os.homedir(), '.Terminail', 'browser-data');
         
         // 确保目录存在
         fs.mkdirSync(userDataDir, { recursive: true });
@@ -2484,8 +2484,8 @@ export class MCPServerManager {
         return `podman run -d \
             -p ${mcpPort}:3000 \
             ${envArgs} \
-            --name TerminAI-mcp-${Date.now()} \
-            TerminAI-mcp-server:latest`;
+            --name Terminail-mcp-${Date.now()} \
+            Terminail-mcp-server:latest`;
     }
 }
 ```
@@ -2493,8 +2493,8 @@ export class MCPServerManager {
 ### 4. 完整的引导流程
 
 ```typescript
-// TerminAICore.ts - 核心流程控制
-export class TerminAICore {
+// TerminailCore.ts - 核心流程控制
+export class TerminailCore {
     async initialize(): Promise<void> {
         try {
             // 显示欢迎信息
@@ -2524,7 +2524,7 @@ export class TerminAICore {
         const debugPort = 9222; // 使用固定端口便于说明
         
         this.terminalView.showMessage(`
-🚀 TerminAI 设置引导
+🚀 Terminail 设置引导
 ==================
 
 接下来需要您完成一个简单的设置步骤。
@@ -2734,10 +2734,10 @@ server.initialize().then(() => {
 
 ```typescript
 // terminalView.ts - 更友好的用户界面
-export class TerminAITerminal {
+export class TerminailTerminal {
     private showWelcome(): void {
         this.addOutput(`
-🤖 TerminAI - AI 聊天终端
+🤖 Terminail - AI 聊天终端
 版本: 轻量版 v1.0
 
 特性:
@@ -2766,7 +2766,7 @@ export class TerminAITerminal {
     
     private showHelp(): void {
         this.addOutput(`
-📖 TerminAI 命令帮助:
+📖 Terminail 命令帮助:
 
 基本命令:
   cd <ai>       切换当前 AI (deepseek, qwen, doubao)
@@ -2793,22 +2793,22 @@ export class TerminAITerminal {
 ```typescript
 // extension.ts - 主入口点
 export async function activate(context: vscode.ExtensionContext) {
-    const TerminAI = new TerminAICore();
+    const Terminail = new TerminailCore();
     
-    const startCommand = vscode.commands.registerCommand('TerminAI.start', async () => {
+    const startCommand = vscode.commands.registerCommand('Terminail.start', async () => {
         // 显示独立的终端面板
         const panel = vscode.window.createWebviewPanel(
-            'TerminAI-terminal',
-            'TerminAI Terminal',
+            'Terminail-terminal',
+            'Terminail Terminal',
             vscode.ViewColumn.One,
             { enableScripts: true }
         );
         
-        const terminalView = new TerminAITerminal(panel);
-        TerminAI.setTerminalView(terminalView);
+        const terminalView = new TerminailTerminal(panel);
+        Terminail.setTerminalView(terminalView);
         
         // 开始初始化流程
-        await TerminAI.initialize();
+        await Terminail.initialize();
     });
     
     context.subscriptions.push(startCommand);
@@ -2826,7 +2826,7 @@ export async function activate(context: vscode.ExtensionContext) {
 这样的设计才是真正可用的轻量版！您觉得这个方案如何？
 
 
-Q: TerminAI应该随时检查还是等mcp服务发现连接不上浏览器再报告提示用户再次启动端口的浏览器？要随时检查podman起来没有？
+Q: Terminail应该随时检查还是等mcp服务发现连接不上浏览器再报告提示用户再次启动端口的浏览器？要随时检查podman起来没有？
 
 A: 您提出了一个非常关键的设计问题！确实需要在**主动检查**和**按需报告**之间找到平衡。让我重新设计一个更合理的状态管理机制。
 

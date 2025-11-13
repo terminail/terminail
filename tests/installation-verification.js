@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * TerminAI Extension Installation Verification Script
+ * Terminail Extension Installation Verification Script
  * 
  * This script automates the process of packaging, installing, and verifying
- * the TerminAI extension in a real VS Code environment as specified in the checklist.
+ * the Terminail extension in a real VS Code environment as specified in the checklist.
  */
 
 const { exec } = require('child_process');
@@ -68,13 +68,13 @@ async function runCommand(command, options = {}) {
 }
 
 async function main() {
-    console.log('=== TerminAI Extension Installation Verification ===\n');
+    console.log('=== Terminail Extension Installation Verification ===\n');
     console.log('This script verifies the extension packaging, installation, and functionality as per checklist requirements...\n');
     
     const vscodePath = findVSCode();
-    const extensionId = 'terminai.terminai';
+    const extensionId = 'terminail.terminail';
     const projectRoot = path.resolve(__dirname, '..');
-    const vsixPath = path.join(projectRoot, 'terminai-0.1.0.vsix');
+    const vsixPath = path.join(projectRoot, 'terminail-0.1.0.vsix');
     
     try {
         // 1. Package the extension
@@ -100,8 +100,8 @@ async function main() {
         console.log('4. Verifying extension functionality by checking commands...');
         console.log('   Note: Manual verification required for UI elements in VS Code.');
         console.log('   Please manually verify the following:');
-        console.log('   - TerminAI terminal view appears in the activity bar');
-        console.log('   - Extension commands (terminai.openTerminal) are available');
+        console.log('   - Terminail terminal view appears in the activity bar');
+        console.log('   - Extension commands (terminail.openTerminal) are available');
         console.log('   - Webview terminal interface loads correctly');
         console.log('   - cd, ls, qi, status, help commands work properly\n');
 

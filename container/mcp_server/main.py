@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TerminAI MCP Server main program
+Terminail MCP Server main program
 Web server based on FastAPI, providing browser automation functionality
 """
 
@@ -32,7 +32,7 @@ logging.basicConfig(
     level=getattr(logging, log_level.upper()),
     format=log_format
 )
-logger = logging.getLogger("terminai-mcp-server")
+logger = logging.getLogger("terminail-mcp-server")
 
 # Global browser manager instance
 browser_manager: Optional[BrowserManager] = None
@@ -55,8 +55,8 @@ async def lifespan(app: FastAPI):
 
 # Create FastAPI application
 app = FastAPI(
-    title="TerminAI MCP Server",
-    description="MCP Server for browser automation in TerminAI VS Code Extension",
+    title="Terminail MCP Server",
+    description="MCP Server for browser automation in Terminail VS Code Extension",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -74,7 +74,7 @@ app.add_middleware(
 async def root():
     """Root endpoint"""
     return {
-        "service": "TerminAI MCP Server",
+        "service": "Terminail MCP Server",
         "version": "1.0.0",
         "status": "running"
     }

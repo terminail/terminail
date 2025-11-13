@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Create a simple test file
-RUN echo "print('Hello TerminAI')" > test.py
+RUN echo "print('Hello Terminail')" > test.py
 
 # Command to run
 CMD ["python", "test.py"]

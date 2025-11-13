@@ -1,6 +1,6 @@
-# TerminAI E2E Testing Framework
+# Terminail E2E Testing Framework
 
-This directory contains the End-to-End (E2E) testing framework for the TerminAI VS Code extension.
+This directory contains the End-to-End (E2E) testing framework for the Terminail VS Code extension.
 
 ## Overview
 
@@ -24,7 +24,7 @@ tests/e2e/
 ## Test Files
 
 ### Core Test Files
-- `terminalCommands.test.js` - Tests for terminal commands (cd, ls, qi)
+- `terminailCommands.test.js` - Tests for terminal commands (cd, ls, qi)
 - `extension.test.js` - Extension activation and command tests
 - `verifyCommands.test.js` - Command consistency verification
 
@@ -105,7 +105,7 @@ Results are available in:
 
 ### Common Issues
 
-1. **Extension not active** - Ensure VS Code is running with TerminAI extension installed
+1. **Extension not active** - Ensure VS Code is running with Terminail extension installed
 2. **Module not found** - Check import paths in test files
 3. **Timeout errors** - Increase timeout in test configuration
 

@@ -8,15 +8,15 @@
 
 ## Summary
 
-This feature implements the `cd` command for the TerminAI terminal interface, allowing users to switch between different AI chat services. The command follows the familiar Unix/Linux `cd` (change directory) convention but adapts it for AI service context switching. When a user executes `cd <ai_service>`, the TerminAI extension communicates with the Playwright MCP server running in a Podman container to navigate the browser to the appropriate AI chat website.
+This feature implements the `cd` command for the Terminail terminal interface, allowing users to switch between different AI chat services. The command follows the familiar Unix/Linux `cd` (change directory) convention but adapts it for AI service context switching. When a user executes `cd <ai_service>`, the Terminail extension communicates with the Playwright MCP server running in a Podman container to navigate the browser to the appropriate AI chat website.
 
 The implementation involves parsing the `cd` command in the terminal interface, validating the requested AI service, and sending the appropriate navigation command to the MCP server. The command provides immediate feedback to the user about the success or failure of the context switch operation.
 
 ## Technical Context
 
 **Language/Version**: TypeScript (Node.js 18+)  
-**Primary Dependencies**: VS Code Extension API, TerminAI Terminal components, MCP Client  
-**Storage**: In-memory context tracking, configuration files in `.terminai` directory  
+**Primary Dependencies**: VS Code Extension API, Terminail Terminal components, MCP Client  
+**Storage**: In-memory context tracking, configuration files in `.terminail` directory  
 **Testing**: Mocha/Chai for unit tests, manual testing for integration  
 **Target Platform**: VS Code extension running on Windows, macOS, and Linux  
 **Project Type**: Single project (VS Code extension)  
@@ -31,7 +31,7 @@ The implementation involves parsing the `cd` command in the terminal interface, 
 Based on the project constitution, this feature complies with all guidelines:
 - Uses TypeScript as primary language
 - Follows VS Code extension development patterns
-- Integrates with existing TerminAI terminal architecture
+- Integrates with existing Terminail terminal architecture
 - Maintains security through containerized MCP server communication
 - Follows established testing practices
 
@@ -80,4 +80,4 @@ tests/
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing TerminAI terminal architecture.
+No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing Terminail terminal architecture.

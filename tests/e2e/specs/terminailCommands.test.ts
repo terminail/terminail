@@ -1,8 +1,8 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 
-// Mocha test suite for TerminAI terminal commands
-suite('TerminAI Terminal Commands E2E Tests', function() {
+// Mocha test suite for Terminail terminal commands
+suite('Terminail Terminal Commands E2E Tests', function() {
     this.timeout(30000); // 30 seconds timeout
     
     let extension: vscode.Extension<any> | undefined;
@@ -10,26 +10,26 @@ suite('TerminAI Terminal Commands E2E Tests', function() {
     
     suiteSetup(async function() {
         // Activate the extension
-        extension = vscode.extensions.getExtension('TerminAI.terminai');
-        assert.ok(extension, 'TerminAI extension should be present');
+        extension = vscode.extensions.getExtension('Terminail.terminail');
+        assert.ok(extension, 'Terminail extension should be present');
         
         if (!extension.isActive) {
             await extension.activate();
         }
         
-        vscode.window.showInformationMessage('Starting TerminAI terminal commands tests');
+        vscode.window.showInformationMessage('Starting Terminail terminal commands tests');
     });
     
     setup(async function() {
-        // Open TerminAI terminal before each test
-        await vscode.commands.executeCommand('terminai.openTerminal');
+        // Open Terminail terminal before each test
+        await vscode.commands.executeCommand('terminail.openTerminal');
         
         // Wait a bit for terminal to initialize
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         // Get the active terminal
         terminal = vscode.window.activeTerminal;
-        assert.ok(terminal, 'TerminAI terminal should be active');
+        assert.ok(terminal, 'Terminail terminal should be active');
     });
     
     teardown(async function() {
@@ -41,7 +41,7 @@ suite('TerminAI Terminal Commands E2E Tests', function() {
     });
     
     suiteTeardown(function() {
-        vscode.window.showInformationMessage('TerminAI terminal commands tests completed');
+        vscode.window.showInformationMessage('Terminail terminal commands tests completed');
     });
     
     test('should switch to deepseek AI', async function() {

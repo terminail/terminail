@@ -34,7 +34,7 @@ describe('ConfigurationManager Integration', () => {
         
         // Verify the configuration was retrieved correctly
         expect(apiKey).toBe('test-api-key');
-        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminai');
+        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminail');
     });
 
     it('should handle missing configuration gracefully', () => {

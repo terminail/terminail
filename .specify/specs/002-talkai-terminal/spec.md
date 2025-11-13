@@ -1,9 +1,9 @@
-# Feature Specification: TerminAI Terminal
+# Feature Specification: Terminail Terminal
 
-**Feature Branch**: `002-terminai-terminal`  
+**Feature Branch**: `002-terminail-terminal`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "Create a terminal-like VS Code extension called TerminAI that supports commands like 'cd deepseek' for switching AI chat contexts, 'ls' for listing supported AI websites, and 'qi xxxx' for sending questions to AI websites through browser automation via MCP server running in Podman container."
+**Input**: User description: "Create a terminal-like VS Code extension called Terminail that supports commands like 'cd deepseek' for switching AI chat contexts, 'ls' for listing supported AI websites, and 'qi xxxx' for sending questions to AI websites through browser automation via MCP server running in Podman container."
 
 ## Implementation Summary
 
@@ -23,9 +23,9 @@ Key technical approach:
 
 ## User Scenarios & Testing *(mandatory)*
 
-### User Story 1 - Initialize TerminAI Terminal Environment (Priority: P1)
+### User Story 1 - Initialize Terminail Terminal Environment (Priority: P1)
 
-As a developer using multiple AI services, I want to open the TerminAI terminal and have it automatically set up the required environment so that I can immediately start interacting with AI services without manual configuration.
+As a developer using multiple AI services, I want to open the Terminail terminal and have it automatically set up the required environment so that I can immediately start interacting with AI services without manual configuration.
 
 **Why this priority**: This is essential for providing a seamless user experience with the terminal interface.
 
@@ -33,7 +33,7 @@ As a developer using multiple AI services, I want to open the TerminAI terminal 
 
 **Acceptance Scenarios**:
 
-1. **Given** a fresh extension installation, **When** a user runs the "Open TerminAI Terminal" command, **Then** the extension should automatically start a Podman container with the MCP server.
+1. **Given** a fresh extension installation, **When** a user runs the "Open Terminail Terminal" command, **Then** the extension should automatically start a Podman container with the MCP server.
 2. **Given** the MCP server is running, **When** a user opens the terminal, **Then** they should be guided through starting a browser with debug port for CDP connection.
 3. **Given** a browser with debug port is running, **When** the user completes setup, **Then** the terminal should show a ready state with available commands.
 
@@ -80,7 +80,7 @@ As a developer seeking AI assistance, I want to send questions to the current AI
 
 ### User Story 5 - Handle Browser Disconnection (Priority: P2)
 
-As a developer using TerminAI, I want the extension to automatically detect when the browser connection is lost and guide me to reconnect so that I can continue using the service without technical knowledge of the underlying system.
+As a developer using Terminail, I want the extension to automatically detect when the browser connection is lost and guide me to reconnect so that I can continue using the service without technical knowledge of the underlying system.
 
 **Why this priority**: This enhances reliability but is not core functionality for initial use.
 
@@ -93,7 +93,7 @@ As a developer using TerminAI, I want the extension to automatically detect when
 
 ### User Story 6 - Handle Podman Container Issues (Priority: P2)
 
-As a developer using TerminAI, I want the extension to automatically detect when the Podman container is not running and guide me to resolve the issue so that I can continue using the service.
+As a developer using Terminail, I want the extension to automatically detect when the Podman container is not running and guide me to resolve the issue so that I can continue using the service.
 
 **Why this priority**: This enhances reliability but is not core functionality for initial use.
 
@@ -140,7 +140,7 @@ As a developer using TerminAI, I want the extension to automatically detect when
 
 ### Key Entities
 
-- **TerminAITerminal**: Main terminal interface component that handles user input and displays output
+- **TerminailTerminal**: Main terminal interface component that handles user input and displays output
 - **PodmanManager**: Manages Podman container lifecycle for MCP server
 - **BrowserManager**: Handles browser launching with debug port and connection status
 - **MCPClient**: Communicates with MCP server in Podman container to send commands and receive responses

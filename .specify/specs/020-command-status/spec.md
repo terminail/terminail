@@ -3,20 +3,20 @@
 **Feature Branch**: `020-command-status`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "The 'status' command allows users to view the current system status including information about the Podman container, browser connection, AI service context, and other relevant system components, as described in terminai.md line 1830-1831."
+**Input**: User description: "The 'status' command allows users to view the current system status including information about the Podman container, browser connection, AI service context, and other relevant system components, as described in terminail.md line 1830-1831."
 **Parent Feature**: [020-command](../020-command/spec.md)
 
 ## Implementation Summary
 
-This feature implements the `status` command for the TerminAI terminal interface, allowing users to view the current system status including information about the Podman container, browser connection, AI service context, and other relevant system components. When a user executes `status`, the TerminAI extension retrieves and displays comprehensive information about the current state of all system components.
+This feature implements the `status` command for the Terminail terminal interface, allowing users to view the current system status including information about the Podman container, browser connection, AI service context, and other relevant system components. When a user executes `status`, the Terminail extension retrieves and displays comprehensive information about the current state of all system components.
 
-The implementation involves parsing the `status` command, collecting status information from various system components (Podman manager, browser manager, MCP client, AI service manager, etc.), and formatting the output for clear display. The command provides immediate visibility into the health and configuration of the TerminAI system.
+The implementation involves parsing the `status` command, collecting status information from various system components (Podman manager, browser manager, MCP client, AI service manager, etc.), and formatting the output for clear display. The command provides immediate visibility into the health and configuration of the Terminail system.
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - View System Status (Priority: P1)
 
-As a developer using TerminAI, I want to use the `status` command to see the current system status so that I can understand if all components are working correctly.
+As a developer using Terminail, I want to use the `status` command to see the current system status so that I can understand if all components are working correctly.
 
 **Why this priority**: This is core functionality for system monitoring and troubleshooting.
 
@@ -24,13 +24,13 @@ As a developer using TerminAI, I want to use the `status` command to see the cur
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with a ready TerminAI terminal, **When** they type "status", **Then** the terminal should display current status of all system components.
+1. **Given** a user with a ready Terminail terminal, **When** they type "status", **Then** the terminal should display current status of all system components.
 2. **Given** a user with all components running correctly, **When** they execute "status", **Then** the terminal should show all components as healthy.
 3. **Given** a user with some components having issues, **When** they execute "status", **Then** the terminal should clearly indicate which components have problems.
 
 ### User Story 2 - Detailed Component Status (Priority: P1)
 
-As a developer using TerminAI, I want the `status` command to show detailed information about each system component so that I can diagnose issues effectively.
+As a developer using Terminail, I want the `status` command to show detailed information about each system component so that I can diagnose issues effectively.
 
 **Why this priority**: This is essential for providing comprehensive system visibility.
 
@@ -44,7 +44,7 @@ As a developer using TerminAI, I want the `status` command to show detailed info
 
 ### User Story 3 - Status Formatting and Readability (Priority: P1)
 
-As a developer using TerminAI, I want the status information to be well-formatted and readable so that I can quickly understand the system state.
+As a developer using Terminail, I want the status information to be well-formatted and readable so that I can quickly understand the system state.
 
 **Why this priority**: This is essential for providing a user-friendly experience.
 
@@ -58,7 +58,7 @@ As a developer using TerminAI, I want the status information to be well-formatte
 
 ### User Story 4 - Component Health Indicators (Priority: P1)
 
-As a developer using TerminAI, I want clear health indicators for each system component so that I can quickly identify issues.
+As a developer using Terminail, I want clear health indicators for each system component so that I can quickly identify issues.
 
 **Why this priority**: This is essential for effective system monitoring.
 
@@ -72,7 +72,7 @@ As a developer using TerminAI, I want clear health indicators for each system co
 
 ### User Story 5 - Status Refresh and Updates (Priority: P2)
 
-As a developer using TerminAI, I want the status information to be current and potentially auto-refresh so that I always see the latest system state.
+As a developer using Terminail, I want the status information to be current and potentially auto-refresh so that I always see the latest system state.
 
 **Why this priority**: This enhances usability by providing current information.
 

@@ -1,9 +1,9 @@
 """
-Architecture Diagram - Visual representation of TerminAI architecture
+Architecture Diagram - Visual representation of Terminail architecture
 """
 def print_architecture_diagram():
-    """Print a visual diagram of the TerminAI architecture"""
-    print("=== TerminAI Complete Architecture ===")
+    """Print a visual diagram of the Terminail architecture"""
+    print("=== Terminail Complete Architecture ===")
     print()
     
     print("┌─────────────────────────────────────────────────────────────────┐")

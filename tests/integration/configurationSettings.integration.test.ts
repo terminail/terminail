@@ -32,16 +32,16 @@ describe('Extension Configuration Settings Integration', () => {
         jest.clearAllMocks();
     });
     
-    it('should have terminai configuration section', () => {
-        // This test verifies that the terminai configuration section exists
-        const config = vscode.workspace.getConfiguration('terminai');
+    it('should have terminail configuration section', () => {
+        // This test verifies that the terminail configuration section exists
+        const config = vscode.workspace.getConfiguration('terminail');
         expect(config).toBeDefined();
-        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminai');
+        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminail');
     });
     
     it('should have default configuration values', () => {
         // This test verifies that default configuration values are set correctly
-        const config = vscode.workspace.getConfiguration('terminai');
+        const config = vscode.workspace.getConfiguration('terminail');
         
         // Test default values from package.json
         expect(config.get('model')).toBe('gpt-4');
@@ -62,7 +62,7 @@ describe('Extension Configuration Settings Integration', () => {
     
     it('should allow configuration updates', async () => {
         // This test verifies that configuration can be updated
-        const config = vscode.workspace.getConfiguration('terminai');
+        const config = vscode.workspace.getConfiguration('terminail');
         
         // Test updating a configuration value
         await config.update('model', 'gpt-3.5-turbo', 1); // Global = 1

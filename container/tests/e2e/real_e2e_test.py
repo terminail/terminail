@@ -44,7 +44,7 @@ def main():
     
     # Define the steps in order
     steps = [
-        ("00_install_terminai_extension", "Step 0: Install TerminAI Extension"),
+        ("00_install_terminail_extension", "Step 0: Install Terminail Extension"),
         ("01_check_podman_installation", "Step 1: Check Podman Installation"),
         ("02_check_chrome_installation", "Step 2: Check Chrome Installation"),
         ("03_check_container_installation", "Step 3: Check Container Installation"),

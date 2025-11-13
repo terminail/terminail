@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for TerminAI MCP Server tests
+Pytest configuration and fixtures for Terminail MCP Server tests
 """
 import pytest
 import asyncio

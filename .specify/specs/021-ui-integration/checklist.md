@@ -9,7 +9,7 @@
 - [ ] Review VS Code extension guidelines for sidebar icons and panel integration
 - [ ] Research existing VS Code extensions for best practices in UI integration
 - [ ] Define icon design specifications and create assets
-- [ ] Plan integration approach with existing TerminAI terminal interface
+- [ ] Plan integration approach with existing Terminail terminal interface
 - [ ] Identify potential conflicts with other extensions
 - [ ] Define testing scenarios for different VS Code themes and layouts
 
@@ -18,13 +18,13 @@
 ### Sidebar Icon Integration
 - [ ] Register custom view container in VS Code activity bar
 - [ ] Implement icon display with appropriate sizing and theming
-- [ ] Add click handler to open/activate TerminAI panel
+- [ ] Add click handler to open/activate Terminail panel
 - [ ] Implement keyboard navigation support
 - [ ] Add visual feedback for active/focused states
 - [ ] Handle conflicts with other extension icons
 
 ### Panel Integration
-- [ ] Integrate TerminAI interface into VS Code panel area
+- [ ] Integrate Terminail interface into VS Code panel area
 - [ ] Implement tab navigation alongside PROBLEMS, OUTPUT, and TERMINAL
 - [ ] Ensure consistent behavior with default VS Code panels
 - [ ] Handle panel resizing appropriately

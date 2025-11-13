@@ -1,6 +1,6 @@
 """
 08_send_cd_deepseek_command.py
-Send 'cd deepseek' command from TerminAI and verify Chrome navigation
+Send 'cd deepseek' command from Terminail and verify Chrome navigation
 """
 import subprocess
 import sys
@@ -9,14 +9,14 @@ import requests
 import json
 
 def send_cd_deepseek_command():
-    """Send 'cd deepseek' command from TerminAI and check if Chrome navigates to DeepSeek website"""
+    """Send 'cd deepseek' command from Terminail and check if Chrome navigates to DeepSeek website"""
     try:
         print("🚀 STEP 8: Issue 'cd deepseek' Command")
-        print("   🔧 Sending 'cd deepseek' command from TerminAI...")
+        print("   🔧 Sending 'cd deepseek' command from Terminail...")
         
-        # In a real implementation, we would send the command to the TerminAI extension
+        # In a real implementation, we would send the command to the Terminail extension
         # For this demo, we'll simulate the action
-        print("   📤 Command 'cd deepseek' sent to TerminAI extension")
+        print("   📤 Command 'cd deepseek' sent to Terminail extension")
         time.sleep(2)  # Simulate processing time
         
         # Check if Chrome is on DeepSeek website by connecting to Chrome DevTools

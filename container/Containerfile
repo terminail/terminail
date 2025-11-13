@@ -1,4 +1,4 @@
-# Minimal Containerfile for TerminAI MCP Server
+# Minimal Containerfile for Terminail MCP Server
 FROM python:3.11-slim
 
 # Set environment variables
@@ -47,9 +47,9 @@ RUN pip install --no-cache-dir .
 RUN playwright install-deps
 
 # Create non-root user (security best practice)
-RUN groupadd -r terminai && useradd -r -g terminai terminai
-RUN chown -R terminai:terminai /app
-USER terminai
+RUN groupadd -r terminail && useradd -r -g terminail terminail
+RUN chown -R terminail:terminail /app
+USER terminail
 
 # Expose MCP server port
 EXPOSE 3000
@@ -59,4 +59,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:3000/health || exit 1
 
 # Start MCP server using the entry point defined in pyproject.toml
-CMD ["terminai-mcp-server"]
+CMD ["terminail-mcp-server"]

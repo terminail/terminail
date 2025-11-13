@@ -1,6 +1,6 @@
-# TerminAI Constitution
+# Terminail Constitution
 
-This document outlines the governing principles and guidelines for the TerminAI project development and usage.
+This document outlines the governing principles and guidelines for the Terminail project development and usage.
 
 ## Core Principles
 

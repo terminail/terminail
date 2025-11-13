@@ -1,5 +1,5 @@
 """
-TerminAI Full E2E Test Runner - Demonstrates the complete end-to-end workflow
+Terminail Full E2E Test Runner - Demonstrates the complete end-to-end workflow
 """
 import subprocess
 import time
@@ -24,12 +24,12 @@ def print_final_demo():
     print()
     
     print("🚀 COMPLETE WORKFLOW:")
-    print("Step 1: User installs TerminAI VS Code extension")
+    print("Step 1: User installs Terminail VS Code extension")
     print("Step 2: Extension checks for Podman installation")
     print("Step 3: Extension starts Podman container with MCP Server")
     print("Step 4: Container starts Host Chrome Service")
     print("Step 5: Host Chrome Service starts Chrome with debug port 9222")
-    print("Step 6: User types 'cd deepseek' in TerminAI terminal")
+    print("Step 6: User types 'cd deepseek' in Terminail terminal")
     print("Step 7: Extension sends command to Container")
     print("Step 8: Container controls Chrome to navigate to DeepSeek")
     print("Step 9: User types 'qi What is the capital of France?'")

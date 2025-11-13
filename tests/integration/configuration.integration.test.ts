@@ -38,7 +38,7 @@ describe('Configuration Management Integration', () => {
         
         // Verify the configuration was retrieved correctly
         expect(apiKey).toBe('test-api-key');
-        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminai');
+        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminail');
         expect(mockGet).toHaveBeenCalledWith('apiKey', '');
     });
 
@@ -69,7 +69,7 @@ describe('Configuration Management Integration', () => {
         
         // Verify the configuration was retrieved correctly
         expect(model).toBe('gpt-4');
-        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminai');
+        expect(vscode.workspace.getConfiguration).toHaveBeenCalledWith('terminail');
         expect(mockGet).toHaveBeenCalledWith('model', 'gpt-4');
     });
 });

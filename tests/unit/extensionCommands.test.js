@@ -66,12 +66,12 @@ describe('Extension Commands', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
-    it('should register the terminai.openTerminal command', async () => {
+    it('should register the terminail.openTerminal command', async () => {
         // Activate the extension
         await extension.activate(mockContext);
         // Check that the command was registered
         const registerCommandMock = vscode.commands.registerCommand;
-        const commandRegistered = registerCommandMock.mock.calls.some(call => call[0] === 'terminai.openTerminal');
+        const commandRegistered = registerCommandMock.mock.calls.some(call => call[0] === 'terminail.openTerminal');
         expect(commandRegistered).toBe(true);
     });
     it('should register all required commands', async () => {
@@ -81,7 +81,7 @@ describe('Extension Commands', () => {
         const registerCommandMock = vscode.commands.registerCommand;
         // These are the commands that should be registered based on package.json
         const requiredCommands = [
-            'terminai.openTerminal'
+            'terminail.openTerminal'
         ];
         requiredCommands.forEach(command => {
             const commandRegistered = registerCommandMock.mock.calls.some(call => call[0] === command);

@@ -8,7 +8,7 @@ import yaml
 from typing import Dict, List, Optional
 from .ai_service import AIService
 
-logger = logging.getLogger("terminai-mcp-utils")
+logger = logging.getLogger("terminail-mcp-utils")
 
 def load_ai_urls() -> Dict[str, str]:
     """Load AI URLs from container configuration"""

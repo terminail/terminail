@@ -97,7 +97,7 @@ module.exports = TalkAITestRunner;
 
 ### 4. **Mocha Test Specifications**
 
-**`tests/e2e/specs/terminalCommands.test.js`**:
+**`tests/e2e/specs/terminailCommands.test.js`**:
 ```javascript
 const { expect } = require('chai');
 const TalkAITestRunner = require('../helpers/testRunner');
@@ -459,7 +459,7 @@ npm install --save-dev @vscode/test-electron mocha chai
 npm run test:e2e
 
 # Run specific test suite
-npx mocha tests/e2e/specs/terminalCommands.test.js
+npx mocha tests/e2e/specs/terminailCommands.test.js
 
 # Run with debug output
 DEBUG=talkai-test npx mocha tests/e2e/specs/**/*.test.js

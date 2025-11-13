@@ -38,10 +38,10 @@ Personalized settings:
 - Terminal configuration: In-depth configuration through terminal.integrated series settings 10
 - Shell path: Can customize Shell paths for different operating systems [not required]
 - Environment variables: Can set specific environment variables for the terminal 
-### 7. Application in Your TerminAI Project
-According to your 008-terminal-interface/spec.md file, the TerminAI extension plans to implement:
+### 7. Application in Your Terminail Project
+According to your 008-terminal-interface/spec.md file, the Terminail extension plans to implement:
 
-TerminAI terminal enhanced features:
+Terminail terminal enhanced features:
 
 - AI service integration: AI service name displayed in prompt (e.g., 'deepseek>')
 - WebView interface: Modern terminal panel based on WebView
@@ -56,5 +56,5 @@ Technical implementation features:
 - Serialized communication: Inter-process communication between VS Code and terminal [not required]
 - Multi-platform compatibility: Unified cross-platform terminal implementation
 
-VS Code's integrated terminal is a fully functional command-line environment that provides developers with a convenient development workflow, while offering rich integration opportunities for extension development (such as your TerminAI project).
+VS Code's integrated terminal is a fully functional command-line environment that provides developers with a convenient development workflow, while offering rich integration opportunities for extension development (such as your Terminail project).
 

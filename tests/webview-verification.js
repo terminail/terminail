@@ -5,46 +5,46 @@ function verifyWebviewImplementation() {
     console.log('=== Webview Functionality Verification ===\n');
     
     try {
-        // 1. Check if TerminAIWebviewProvider class exists
-        const terminAIManagerPath = path.join(__dirname, '..', 'src', 'terminAIManager.ts');
-        if (!fs.existsSync(terminAIManagerPath)) {
-            throw new Error('terminAIManager.ts file not found');
+        // 1. Check if TerminailWebviewProvider class exists
+        const terminailManagerPath = path.join(__dirname, '..', 'src', 'terminailManager.ts');
+        if (!fs.existsSync(terminailManagerPath)) {
+            throw new Error('terminailManager.ts file not found');
         }
         
-        const terminAIManagerContent = fs.readFileSync(terminAIManagerPath, 'utf8');
+        const terminailManagerContent = fs.readFileSync(terminailManagerPath, 'utf8');
         
-        // 2. Verify TerminAIWebviewProvider class implementation
-        if (!terminAIManagerContent.includes('class TerminAIWebviewProvider')) {
-            throw new Error('TerminAIWebviewProvider class not found');
+        // 2. Verify TerminailWebviewProvider class implementation
+        if (!terminailManagerContent.includes('class TerminailWebviewProvider')) {
+            throw new Error('TerminailWebviewProvider class not found');
         }
         
-        if (!terminAIManagerContent.includes('implements vscode.WebviewViewProvider')) {
-            throw new Error('TerminAIWebviewProvider does not implement vscode.WebviewViewProvider');
+        if (!terminailManagerContent.includes('implements vscode.WebviewViewProvider')) {
+            throw new Error('TerminailWebviewProvider does not implement vscode.WebviewViewProvider');
         }
         
-        console.log('✅ TerminAIWebviewProvider class properly implemented\n');
+        console.log('✅ TerminailWebviewProvider class properly implemented\n');
         
         // 3. Verify resolveWebviewView method
-        if (!terminAIManagerContent.includes('resolveWebviewView')) {
+        if (!terminailManagerContent.includes('resolveWebviewView')) {
             throw new Error('resolveWebviewView method not found');
         }
         
-        if (!terminAIManagerContent.includes('enableScripts: true')) {
+        if (!terminailManagerContent.includes('enableScripts: true')) {
             throw new Error('enableScripts not set to true in webview options');
         }
         
         console.log('✅ resolveWebviewView method properly implemented\n');
         
         // 4. Verify HTML template structure
-        if (!terminAIManagerContent.includes('getWebviewContent')) {
+        if (!terminailManagerContent.includes('getWebviewContent')) {
             throw new Error('getWebviewContent method not found');
         }
         
-        if (!terminAIManagerContent.includes('<meta charset="UTF-8">')) {
+        if (!terminailManagerContent.includes('<meta charset="UTF-8">')) {
             throw new Error('UTF-8 meta tag not found in HTML template');
         }
         
-        if (!terminAIManagerContent.includes('<meta name="viewport"')) {
+        if (!terminailManagerContent.includes('<meta name="viewport"')) {
             throw new Error('Viewport meta tag not found in HTML template');
         }
         
@@ -53,7 +53,7 @@ function verifyWebviewImplementation() {
         // 5. Verify command system implementation
         const requiredCommands = ['cd ', 'ls', 'qi ', 'status', 'help'];
         for (const command of requiredCommands) {
-            if (!terminAIManagerContent.includes(command)) {
+            if (!terminailManagerContent.includes(command)) {
                 throw new Error(`Required command "${command}" not found`);
             }
         }
@@ -61,26 +61,26 @@ function verifyWebviewImplementation() {
         console.log('✅ Command system properly implemented\n');
         
         // 6. Verify message handling
-        if (!terminAIManagerContent.includes('onDidReceiveMessage')) {
+        if (!terminailManagerContent.includes('onDidReceiveMessage')) {
             throw new Error('onDidReceiveMessage handler not found');
         }
         
-        if (!terminAIManagerContent.includes('handleMessage')) {
+        if (!terminailManagerContent.includes('handleMessage')) {
             throw new Error('handleMessage method not found');
         }
         
         console.log('✅ Message handling properly implemented\n');
         
         // 7. Verify command history implementation
-        if (!terminAIManagerContent.includes('commandHistory')) {
+        if (!terminailManagerContent.includes('commandHistory')) {
             throw new Error('commandHistory not found');
         }
         
-        if (!terminAIManagerContent.includes('historyIndex')) {
+        if (!terminailManagerContent.includes('historyIndex')) {
             throw new Error('historyIndex not found');
         }
         
-        if (!terminAIManagerContent.includes('ArrowUp') || !terminAIManagerContent.includes('ArrowDown')) {
+        if (!terminailManagerContent.includes('ArrowUp') || !terminailManagerContent.includes('ArrowDown')) {
             throw new Error('Arrow key navigation not implemented');
         }
         
@@ -89,7 +89,7 @@ function verifyWebviewImplementation() {
         console.log('🎉 All webview functionality verification tests passed!');
         console.log('');
         console.log('Summary of verified functionality:');
-        console.log('- TerminAIWebviewProvider class properly implemented');
+        console.log('- TerminailWebviewProvider class properly implemented');
         console.log('- resolveWebviewView method with correct options');
         console.log('- HTML template with proper meta tags');
         console.log('- Command system with all required commands');

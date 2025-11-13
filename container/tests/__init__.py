@@ -1,3 +1,3 @@
 """
-Test package for TerminAI MCP Server
+Test package for Terminail MCP Server
 """

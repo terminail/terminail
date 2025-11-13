@@ -1,7 +1,7 @@
 # CD Command Implementation Checklist
 
 ## Overview
-This checklist covers the implementation of the `cd` command for the TerminAI terminal interface, allowing users to switch between different AI chat services.
+This checklist covers the implementation of the `cd` command for the Terminail terminal interface, allowing users to switch between different AI chat services.
 
 ## Command Implementation
 - [ ] CD command parsing and validation
@@ -20,7 +20,7 @@ This checklist covers the implementation of the `cd` command for the TerminAI te
 - [ ] Terminal prompt updates with current context
 - [ ] Last used context restoration on restart
 - [ ] Independent context for multiple terminal instances
-- [ ] Context persistence in `.terminai` directory
+- [ ] Context persistence in `.terminail` directory
 - [ ] Context validation on load
 - [ ] Context cleanup on extension shutdown
 

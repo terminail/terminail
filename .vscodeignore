@@ -64,6 +64,9 @@ README.md
 # Exclude Playwright test reports
 playwright-report/**
 
+# Exclude test results directory
+test-results/**
+
 # Exclude TypeScript source files (only compiled JS needed)
 src/**
 

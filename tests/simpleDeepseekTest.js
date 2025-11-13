@@ -17,10 +17,10 @@ try {
     require('fs').accessSync(extensionPath);
     console.log('✅ Extension file exists');
     
-    // Check if the terminAIManager exists
-    const managerPath = path.join(__dirname, '..', 'out', 'terminAIManager.js');
+    // Check if the terminailManager exists
+    const managerPath = path.join(__dirname, '..', 'out', 'terminailManager.js');
     require('fs').accessSync(managerPath);
-    console.log('✅ TerminAI manager file exists');
+    console.log('✅ Terminail manager file exists');
     
     // Check if the aiService exists
     const aiServicePath = path.join(__dirname, '..', 'out', 'aiService.js');
@@ -31,7 +31,7 @@ try {
     console.log('\n📝 Note: Full E2E testing requires the VS Code extension host environment.');
     console.log('The deepseek AI switching functionality can be tested manually by:');
     console.log('1. Installing the extension in VS Code');
-    console.log('2. Opening the TerminAI terminal (Ctrl+Shift+T)');
+    console.log('2. Opening the Terminail terminal (Ctrl+Shift+T)');
     console.log('3. Running "cd deepseek" command');
     console.log('4. Verifying the prompt changes to "deepseek>"');
     

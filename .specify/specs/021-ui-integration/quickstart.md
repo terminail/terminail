@@ -6,7 +6,7 @@
 
 ## Overview
 
-This quick start guide provides step-by-step instructions for implementing UI integration in the TerminAI extension, including sidebar icon registration and panel placement in VS Code's default panel area. Follow these steps to enable quick access to TerminAI through a recognizable sidebar icon and integrate the terminal interface alongside PROBLEMS, OUTPUT, and TERMINAL panels.
+This quick start guide provides step-by-step instructions for implementing UI integration in the Terminail extension, including sidebar icon registration and panel placement in VS Code's default panel area. Follow these steps to enable quick access to Terminail through a recognizable sidebar icon and integrate the terminal interface alongside PROBLEMS, OUTPUT, and TERMINAL panels.
 
 ## Prerequisites
 
@@ -30,16 +30,16 @@ Add the necessary contributions to your extension's `package.json` file:
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "terminai",
-          "title": "TerminAI",
-          "icon": "resources/icons/terminai-icon.svg"
+          "id": "terminail",
+          "title": "Terminail",
+          "icon": "resources/icons/terminail-icon.svg"
         }
       ]
     },
     "views": {
-      "terminai": [
+      "terminail": [
         {
-          "id": "terminai-terminal",
+          "id": "terminail-terminal",
           "name": "Terminal",
           "type": "webview"
         }
@@ -58,25 +58,25 @@ In your extension's activation function, register the view container:
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-  // Register the TerminAI view container
-  const terminaiViewContainer = vscode.window.registerWebviewViewProvider(
-    'terminai-terminal',
-    new TerminAIViewProvider(context.extensionUri)
+  // Register the Terminail view container
+  const terminailViewContainer = vscode.window.registerWebviewViewProvider(
+    'terminail-terminal',
+    new TerminailViewProvider(context.extensionUri)
   );
   
-  context.subscriptions.push(terminaiViewContainer);
+  context.subscriptions.push(terminailViewContainer);
 }
 ```
 
 ### Step 3: Implement the View Provider
 
-Create a webview view provider for the TerminAI terminal:
+Create a webview view provider for the Terminail terminal:
 
 ```typescript
-// terminaiViewProvider.ts
+// terminailViewProvider.ts
 import * as vscode from 'vscode';
 
-export class TerminAIViewProvider implements vscode.WebviewViewProvider {
+export class TerminailViewProvider implements vscode.WebviewViewProvider {
   constructor(private readonly _extensionUri: vscode.Uri) {}
 
   public resolveWebviewView(
@@ -93,14 +93,14 @@ export class TerminAIViewProvider implements vscode.WebviewViewProvider {
   }
 
   private _getHtmlForWebview(webview: vscode.Webview): string {
-    // Return HTML content for the TerminAI terminal
+    // Return HTML content for the Terminail terminal
     return `
       <!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TerminAI Terminal</title>
+        <title>Terminail Terminal</title>
       </head>
       <body>
         <!-- Terminal interface implementation -->
@@ -120,7 +120,7 @@ Add state management to preserve UI state between sessions:
 import * as vscode from 'vscode';
 
 export class UIStateManager {
-  private static readonly STATE_KEY = 'terminai.uiState';
+  private static readonly STATE_KEY = 'terminail.uiState';
 
   static saveState(context: vscode.ExtensionContext, state: any): void {
     context.workspaceState.update(this.STATE_KEY, state);
@@ -146,11 +146,11 @@ export class ThemeAdapterManager {
     
     switch (themeKind) {
       case vscode.ColorThemeKind.Light:
-        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminai-icon-light.svg');
+        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminail-icon-light.svg');
       case vscode.ColorThemeKind.HighContrast:
-        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminai-icon-hc.svg');
+        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminail-icon-hc.svg');
       default:
-        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminai-icon-dark.svg');
+        return vscode.Uri.joinPath(extensionUri, 'resources', 'icons', 'terminail-icon-dark.svg');
     }
   }
 }
@@ -171,8 +171,8 @@ export class AccessibilityManager {
 
   static registerKeyboardShortcuts(): void {
     // Register common keyboard shortcuts
-    vscode.commands.registerCommand('terminai.focusSidebar', () => {
-      // Focus the TerminAI sidebar icon
+    vscode.commands.registerCommand('terminail.focusSidebar', () => {
+      // Focus the Terminail sidebar icon
     });
   }
 }
@@ -184,16 +184,16 @@ export class AccessibilityManager {
 
 1. **Sidebar Icon Visibility**:
    - Launch VS Code with the extension
-   - Verify the TerminAI icon appears in the activity bar
+   - Verify the Terminail icon appears in the activity bar
    - Check icon visibility across different themes
 
 2. **Panel Integration**:
    - Click the sidebar icon
-   - Verify the TerminAI panel opens in the panel area
+   - Verify the Terminail panel opens in the panel area
    - Check that it appears alongside PROBLEMS, OUTPUT, and TERMINAL
 
 3. **State Persistence**:
-   - Open the TerminAI panel
+   - Open the Terminail panel
    - Resize the panel
    - Close and reopen VS Code
    - Verify the panel state is preserved
@@ -215,8 +215,8 @@ suite('UI Integration Test Suite', () => {
   test('Panel should integrate with default panels', async () => {
     // Test that the panel integrates correctly
     const panel = vscode.window.createWebviewPanel(
-      'terminai',
-      'TerminAI',
+      'terminail',
+      'Terminail',
       vscode.ViewColumn.One
     );
     assert.ok(panel);

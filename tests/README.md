@@ -1,6 +1,6 @@
-# TerminAI Extension Tests
+# Terminail Extension Tests
 
-This directory contains the test suite for the TerminAI VS Code extension, organized into three main categories following industry best practices:
+This directory contains the test suite for the Terminail VS Code extension, organized into three main categories following industry best practices:
 
 ## Test Categories
 
@@ -8,7 +8,7 @@ This directory contains the test suite for the TerminAI VS Code extension, organ
 Unit tests focus on individual components in isolation. These tests verify that each class and function behaves correctly with mocked dependencies.
 
 **Key components tested:**
-- `TerminAIManager` - Core extension manager
+- `TerminailManager` - Core extension manager
 - `ConfigurationManager` - Configuration management logic
 - `PodmanManager` - Podman container management
 - `AIService` - AI service integration

@@ -9,7 +9,7 @@
 
 This feature implements a terminal-like interface within VS Code that provides users with a familiar command-line experience for interacting with AI services. The interface includes a webview-based terminal panel with command prompt, input handling, and output display capabilities. The terminal supports standard terminal features such as command history, real-time output streaming, and error message display.
 
-The terminal interface is designed to work with other TerminAI features including Podman container management, browser automation, and AI service interaction commands (cd, ls, qi, etc.). It provides a consistent user experience that feels like a traditional terminal while integrating with VS Code's UI. **The command prompt displays the current AI service name followed by '>' instead of the traditional Linux '$' prompt, for example: 'deepseek>'**.
+The terminal interface is designed to work with other Terminail features including Podman container management, browser automation, and AI service interaction commands (cd, ls, qi, etc.). It provides a consistent user experience that feels like a traditional terminal while integrating with VS Code's UI. **The command prompt displays the current AI service name followed by '>' instead of the traditional Linux '$' prompt, for example: 'deepseek>'**.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -17,19 +17,19 @@ The terminal interface is designed to work with other TerminAI features includin
 
 As a developer using AI services, I want to open a terminal-like interface in VS Code so that I can interact with AI services through familiar command-line interface.
 
-**Why this priority**: This is essential for providing the core user experience of the TerminAI extension.
+**Why this priority**: This is essential for providing the core user experience of the Terminail extension.
 
 **Independent Test**: Can be fully tested by installing the extension and verifying that the terminal interface opens when the command is executed.
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with the TerminAI extension installed, **When** they execute the "Open TerminAI Terminal" command, **Then** the terminal interface should open in a VS Code panel.
+1. **Given** a user with the Terminail extension installed, **When** they execute the "Open Terminail Terminal" command, **Then** the terminal interface should open in a VS Code panel.
 2. **Given** a user with the terminal interface open, **When** they close and reopen it, **Then** the interface should restore properly.
 3. **Given** a user with multiple VS Code windows, **When** they open the terminal in each window, **Then** each window should have an independent terminal instance.
 
 ### User Story 2 - Command Input and Execution (Priority: P1)
 
-As a developer using TerminAI, I want to enter commands in the terminal interface and have them executed so that I can interact with AI services.
+As a developer using Terminail, I want to enter commands in the terminal interface and have them executed so that I can interact with AI services.
 
 **Why this priority**: This is core functionality for the terminal interface.
 
@@ -43,7 +43,7 @@ As a developer using TerminAI, I want to enter commands in the terminal interfac
 
 ### User Story 3 - Command History and Navigation (Priority: P2)
 
-As a developer using TerminAI, I want to access my command history and navigate through it so that I can reuse previous commands efficiently.
+As a developer using Terminail, I want to access my command history and navigate through it so that I can reuse previous commands efficiently.
 
 **Why this priority**: This enhances usability but is not core functionality.
 
@@ -57,7 +57,7 @@ As a developer using TerminAI, I want to access my command history and navigate 
 
 ### User Story 4 - Real-time Output Display (Priority: P1)
 
-As a developer using TerminAI, I want to see command output displayed in real-time so that I can monitor the progress of long-running operations.
+As a developer using Terminail, I want to see command output displayed in real-time so that I can monitor the progress of long-running operations.
 
 **Why this priority**: This is essential for providing responsive feedback during AI interactions.
 
@@ -71,7 +71,7 @@ As a developer using TerminAI, I want to see command output displayed in real-ti
 
 ### User Story 5 - Error Message Display (Priority: P1)
 
-As a developer using TerminAI, I want clear error messages when commands fail so that I can understand and resolve issues.
+As a developer using Terminail, I want clear error messages when commands fail so that I can understand and resolve issues.
 
 **Why this priority**: This is essential for providing a good user experience.
 
@@ -85,7 +85,7 @@ As a developer using TerminAI, I want clear error messages when commands fail so
 
 ### User Story 6 - Customizable Terminal Appearance (Priority: P2)
 
-As a developer using TerminAI, I want to customize the terminal appearance so that it fits my preferences and workflow.
+As a developer using Terminail, I want to customize the terminal appearance so that it fits my preferences and workflow.
 
 **Why this priority**: This enhances user experience but is not core functionality.
 

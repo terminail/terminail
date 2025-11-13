@@ -6,30 +6,30 @@
 **Input**: User description: "Replace Docker with Podman for enhanced security and rootless operation."
 
 ## Related Documents
-- Extension: `d:\git\6terminai\terminai-vscode-extension`
-- MCP Server: `d:\git\6terminai\mcp-server`
-- Container Environment: `d:\git\6terminai\container`
-- Playwright MCP Server: `d:\git\6terminai\container\mcp_server`
-- Auto-Build Specification: `d:\git\6terminai\.specify\specs\010-auto-podman-build\spec.md`
+- Extension: `d:\git\6terminail\terminail-vscode-extension`
+- MCP Server: `d:\git\6terminail\mcp-server`
+- Container Environment: `d:\git\6terminail\container`
+- Playwright MCP Server: `d:\git\6terminail\container\mcp_server`
+- Auto-Build Specification: `d:\git\6terminail\.specify\specs\010-auto-podman-build\spec.md`
 
 ## Implementation Summary
 
 This feature implements integration with Podman containerization to run a Playwright MCP (Model Context Protocol) server for browser automation. The Podman environment provides a secure, isolated infrastructure for running the MCP server that controls browser interactions with AI chat websites. This approach enhances security by keeping browser automation within a container while also simplifying installation and improving startup performance.
 
-The Playwright MCP server running in the Podman container connects to a host browser instance via Chrome DevTools Protocol (CDP) to automate interactions with pre-logged-in AI chat websites like DeepSeek, Qwen, and Doubao. This architecture allows the TerminAI terminal extension to send natural language commands to control browser interactions without requiring direct browser automation from the extension.
+The Playwright MCP server running in the Podman container connects to a host browser instance via Chrome DevTools Protocol (CDP) to automate interactions with pre-logged-in AI chat websites like DeepSeek, Qwen, and Doubao. This architecture allows the Terminail terminal extension to send natural language commands to control browser interactions without requiring direct browser automation from the extension.
 
 **Note**: Podman is a **mandatory requirement** for this extension. The Playwright MCP server that enables browser automation for AI chat websites runs in a Podman container. The extension includes functionality for managing Podman containers for lightweight, daemonless operation, eliminating the need for users to manually manage the container.
 
-**Critical Requirement**: The TerminAI extension MUST perform comprehensive Podman environment checks at startup and before any Podman operations to ensure the container functionality is properly initialized and actively running. This is a critical requirement for the proper functioning of the browser automation features.
+**Critical Requirement**: The Terminail extension MUST perform comprehensive Podman environment checks at startup and before any Podman operations to ensure the container functionality is properly initialized and actively running. This is a critical requirement for the proper functioning of the browser automation features.
 
-**Architecture Note**: The TerminAI extension uses a single Podman container to run the Playwright MCP server:
-1. **TerminAI Podman Environment**: This is the infrastructure container that hosts the Playwright MCP server. The MCP server connects to a host browser instance via Chrome DevTools Protocol (CDP) to automate interactions with AI chat websites. This environment is managed by the TerminAI extension.
+**Architecture Note**: The Terminail extension uses a single Podman container to run the Playwright MCP server:
+1. **Terminail Podman Environment**: This is the infrastructure container that hosts the Playwright MCP server. The MCP server connects to a host browser instance via Chrome DevTools Protocol (CDP) to automate interactions with AI chat websites. This environment is managed by the Terminail extension.
 
-The TerminAI Podman Environment handles browser automation requests from the extension and translates them into Playwright commands that control the host browser. This architecture provides security isolation while maintaining the ability to interact with pre-logged-in AI websites.
+The Terminail Podman Environment handles browser automation requests from the extension and translates them into Playwright commands that control the host browser. This architecture provides security isolation while maintaining the ability to interact with pre-logged-in AI websites.
 
 ## Enhancement: Persistent Installation Instructions
 
-When Podman is not installed or not available on the user's system, the extension now displays persistent installation instructions directly in the TerminAI terminal panel instead of transient popup dialogs. This enhancement improves the user experience by providing clear, always-visible guidance on how to resolve the Podman dependency issue.
+When Podman is not installed or not available on the user's system, the extension now displays persistent installation instructions directly in the Terminail terminal panel instead of transient popup dialogs. This enhancement improves the user experience by providing clear, always-visible guidance on how to resolve the Podman dependency issue.
 
 The panel shows:
 - Clear explanation of why Podman is required for browser automation
@@ -41,7 +41,7 @@ This approach ensures users always know what to do when Podman is missing, rathe
 
 ## User Scenarios & Testing *(mandatory)*
 
-### User Story 1 - Initialize TerminAI Podman Environment (Priority: P1)
+### User Story 1 - Initialize Terminail Podman Environment (Priority: P1)
 
 As a developer using multiple AI chat services, I want the extension to automatically initialize the Podman container for the Playwright MCP server so that I can immediately start interacting with AI services through the terminal interface.
 
@@ -51,7 +51,7 @@ As a developer using multiple AI chat services, I want the extension to automati
 
 **Acceptance Scenarios**:
 
-1. **Given** a fresh extension installation, **When** a user opens the TerminAI terminal, **Then** the extension should automatically initialize the Podman container with the Playwright MCP server.
+1. **Given** a fresh extension installation, **When** a user opens the Terminail terminal, **Then** the extension should automatically initialize the Podman container with the Playwright MCP server.
 2. **Given** an existing Podman environment, **When** a user opens the terminal, **Then** the extension should verify the container is up-to-date and start it if needed.
 
 ### User Story 2 - Control Browser Through Podman Container Communication (Priority: P1)
@@ -64,7 +64,7 @@ As a developer using multiple AI chat services, I want the extension to communic
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with the TerminAI terminal open, **When** they send a command to switch AI services, **Then** the extension should communicate with the Podman container that controls browser navigation.
+1. **Given** a user with the Terminail terminal open, **When** they send a command to switch AI services, **Then** the extension should communicate with the Podman container that controls browser navigation.
 2. **Given** a user with the terminal ready, **When** they send a question to an AI service, **Then** the extension should communicate with the container to automate browser interactions and retrieve the response.
 
 ### User Story 3 - Access AI Services Through Terminal Commands (Priority: P1)
@@ -77,7 +77,7 @@ As a developer using multiple AI chat services, I want to interact with AI chat 
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with the TerminAI terminal open, **When** they use the 'cd' command to switch AI services, **Then** the browser should navigate to the appropriate AI chat website.
+1. **Given** a user with the Terminail terminal open, **When** they use the 'cd' command to switch AI services, **Then** the browser should navigate to the appropriate AI chat website.
 2. **Given** a user with the terminal ready, **When** they use the 'qi' command to send a question, **Then** they should receive the AI response directly in the terminal.
 
 ### User Story 4 - Secure Container Access with Authentication (Priority: P2)
@@ -181,7 +181,7 @@ As a learner using the Learning Buddy extension, I want to see persistent instal
 - **FR-002**: Extension MUST initialize the Podman environment automatically, including automatic building of the Playwright MCP server image using the container/mcp_server directory
 - **FR-003**: Extension MUST communicate with Podman containers to manage browser automation for AI service access
 - **FR-004**: Extension MUST prevent browser automation data from being stored on the host filesystem
-- **FR-005**: Extension MUST integrate with TerminAI Terminal for seamless AI service access
+- **FR-005**: Extension MUST integrate with Terminail Terminal for seamless AI service access
 - **FR-006**: Extension MUST provide secure container access with authentication
 - **FR-007**: Extension MUST manage container resources with appropriate limits
 - **FR-008**: Extension MUST verify embedded Podman functionality and provide clear error messages when Podman is not available
@@ -231,7 +231,7 @@ As a learner using the Learning Buddy extension, I want to see persistent instal
 - **SC-004**: Container starts successfully in 98% of attempts
 - **SC-005**: Resource limits are enforced in 100% of cases
 - **SC-006**: Authentication prevents unauthorized access in 100% of cases
-- **SC-007**: 90% of users can successfully access AI services through TerminAI Terminal commands
+- **SC-007**: 90% of users can successfully access AI services through Terminail Terminal commands
 - **SC-008**: Podman installation and status verification completes in 100% of cases within 2 seconds
 - **SC-009**: Clear error messages are displayed for Podman issues in 100% of cases
 - **SC-010**: Extension blocks all functionality when Podman is not available in 100% of cases

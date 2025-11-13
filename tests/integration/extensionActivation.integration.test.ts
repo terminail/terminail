@@ -46,6 +46,6 @@ describe('Extension Activation Integration', () => {
         const registeredCommands = registerCommandMock.mock.calls.map(call => call[0]);
         
         // Check that required commands are present
-        expect(registeredCommands).toContain('terminai.openTerminal');
+        expect(registeredCommands).toContain('terminail.openTerminal');
     });
 });

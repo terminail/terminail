@@ -285,7 +285,7 @@ export class ChromeManager {
         const os = require('os');
         const path = require('path');
         
-        const baseDir = path.join(os.tmpdir(), 'terminai-chrome');
+        const baseDir = path.join(os.tmpdir(), 'terminail-chrome');
         const sessionId = Date.now().toString();
         
         return path.join(baseDir, sessionId);

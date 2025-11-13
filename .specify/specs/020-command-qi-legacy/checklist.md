@@ -1,7 +1,7 @@
 # QI Command Implementation Checklist
 
 ## Overview
-This checklist covers the implementation of the `qi` command for the TerminAI terminal interface, allowing users to ask questions to the currently selected AI service.
+This checklist covers the implementation of the `qi` command for the Terminail terminal interface, allowing users to ask questions to the currently selected AI service.
 
 ## Command Implementation
 - [ ] QI command parsing and validation

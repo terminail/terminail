@@ -8,15 +8,15 @@
 
 ## Summary
 
-This feature implements intelligent command auto-completion and template suggestion functionality for the TerminAI terminal interface. When users type commands, the system automatically suggests possible command formats with pre-filled parameters. Users can select these templates and then modify the parameters as needed before execution.
+This feature implements intelligent command auto-completion and template suggestion functionality for the Terminail terminal interface. When users type commands, the system automatically suggests possible command formats with pre-filled parameters. Users can select these templates and then modify the parameters as needed before execution.
 
 The implementation involves creating an intelligent auto-completion system that recognizes partial command input, suggests relevant command templates with example parameters, and allows users to navigate and select from these suggestions. Once selected, the template is placed in the command line for further editing before execution.
 
 ## Technical Context
 
 **Language/Version**: TypeScript (Node.js 18+)  
-**Primary Dependencies**: VS Code Extension API, TerminAI Terminal components, Command Parser  
-**Storage**: In-memory template repository, configuration in `.terminai` directory  
+**Primary Dependencies**: VS Code Extension API, Terminail Terminal components, Command Parser  
+**Storage**: In-memory template repository, configuration in `.terminail` directory  
 **Testing**: Mocha/Chai for unit tests, manual testing for integration  
 **Target Platform**: VS Code extension running on Windows, macOS, and Linux  
 **Project Type**: Single project (VS Code extension)  
@@ -31,7 +31,7 @@ The implementation involves creating an intelligent auto-completion system that 
 Based on the project constitution, this feature complies with all guidelines:
 - Uses TypeScript as primary language
 - Follows VS Code extension development patterns
-- Integrates with existing TerminAI terminal architecture
+- Integrates with existing Terminail terminal architecture
 - Maintains security by running locally without external dependencies
 - Follows established testing practices
 
@@ -82,4 +82,4 @@ tests/
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing TerminAI terminal architecture.
+No constitutional violations identified. The feature follows established patterns for VS Code extensions and integrates properly with the existing Terminail terminal architecture.

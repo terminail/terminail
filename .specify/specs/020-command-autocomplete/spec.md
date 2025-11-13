@@ -3,12 +3,12 @@
 **Feature Branch**: `020-command-autocomplete`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "After entering commands in the TerminAI terminal, it will automatically prompt possible command formats. After selection, users can modify the command parameters. For example, a command can have multiple parameters. Users select some parameters such as qi --ai ai1 ai2. This command template is displayed in the command line, and then users can modify it to execute, such as qi --ai deepseek doubao."
+**Input**: User description: "After entering commands in the Terminail terminal, it will automatically prompt possible command formats. After selection, users can modify the command parameters. For example, a command can have multiple parameters. Users select some parameters such as qi --ai ai1 ai2. This command template is displayed in the command line, and then users can modify it to execute, such as qi --ai deepseek doubao."
 **Parent Feature**: [020-command](../020-command/spec.md)
 
 ## Implementation Summary
 
-This feature implements intelligent command auto-completion and template suggestion functionality for the TerminAI terminal interface. When users type commands, the system automatically suggests possible command formats with pre-filled parameters. Users can select these templates and then modify the parameters as needed before execution.
+This feature implements intelligent command auto-completion and template suggestion functionality for the Terminail terminal interface. When users type commands, the system automatically suggests possible command formats with pre-filled parameters. Users can select these templates and then modify the parameters as needed before execution.
 
 The implementation involves creating an intelligent auto-completion system that recognizes partial command input, suggests relevant command templates with example parameters, and allows users to navigate and select from these suggestions. Once selected, the template is placed in the command line for further editing before execution.
 
@@ -16,7 +16,7 @@ The implementation involves creating an intelligent auto-completion system that 
 
 ### User Story 1 - Command Template Suggestion (Priority: P1)
 
-As a developer using TerminAI, I want the terminal to automatically suggest command templates as I type so that I can quickly access complex commands with appropriate parameter structures.
+As a developer using Terminail, I want the terminal to automatically suggest command templates as I type so that I can quickly access complex commands with appropriate parameter structures.
 
 **Why this priority**: This is core functionality for improving command discoverability and usability.
 
@@ -24,13 +24,13 @@ As a developer using TerminAI, I want the terminal to automatically suggest comm
 
 **Acceptance Scenarios**:
 
-1. **Given** a user typing "qi" in the TerminAI terminal, **When** they pause typing, **Then** the terminal should suggest the "qi --ai <service> <question>" template.
-2. **Given** a user typing "cd" in the TerminAI terminal, **When** they pause typing, **Then** the terminal should suggest the "cd <service>" template with available services.
+1. **Given** a user typing "qi" in the Terminail terminal, **When** they pause typing, **Then** the terminal should suggest the "qi --ai <service> <question>" template.
+2. **Given** a user typing "cd" in the Terminail terminal, **When** they pause typing, **Then** the terminal should suggest the "cd <service>" template with available services.
 3. **Given** a user typing an unrecognized partial command, **When** they pause typing, **Then** the terminal should suggest relevant command templates or indicate no matches.
 
 ### User Story 2 - Template Selection and Modification (Priority: P1)
 
-As a developer using TerminAI, I want to select suggested command templates and modify their parameters so that I can customize commands for my specific needs.
+As a developer using Terminail, I want to select suggested command templates and modify their parameters so that I can customize commands for my specific needs.
 
 **Why this priority**: This is essential for providing flexible command execution.
 
@@ -44,7 +44,7 @@ As a developer using TerminAI, I want to select suggested command templates and 
 
 ### User Story 3 - Parameter-Specific Suggestions (Priority: P2)
 
-As a developer using TerminAI, I want parameter-specific suggestions when editing command templates so that I can quickly select valid parameter values.
+As a developer using Terminail, I want parameter-specific suggestions when editing command templates so that I can quickly select valid parameter values.
 
 **Why this priority**: This enhances usability by providing context-aware suggestions.
 
@@ -58,7 +58,7 @@ As a developer using TerminAI, I want parameter-specific suggestions when editin
 
 ### User Story 4 - Navigation Through Suggestions (Priority: P2)
 
-As a developer using TerminAI, I want to navigate through suggested command templates using keyboard shortcuts so that I can efficiently select the desired template.
+As a developer using Terminail, I want to navigate through suggested command templates using keyboard shortcuts so that I can efficiently select the desired template.
 
 **Why this priority**: This enhances user experience by providing intuitive navigation.
 
@@ -73,7 +73,7 @@ As a developer using TerminAI, I want to navigate through suggested command temp
 
 ### User Story 5 - Context-Aware Suggestions (Priority: P2)
 
-As a developer using TerminAI, I want command suggestions to be context-aware based on my current AI service context so that I receive relevant suggestions.
+As a developer using Terminail, I want command suggestions to be context-aware based on my current AI service context so that I receive relevant suggestions.
 
 **Why this priority**: This enhances user experience by providing personalized suggestions.
 

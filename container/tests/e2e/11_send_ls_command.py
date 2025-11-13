@@ -1,6 +1,6 @@
 """
 11_send_ls_command.py
-Test ls command functionality in TerminAI webview
+Test ls command functionality in Terminail webview
 """
 import subprocess
 import time
@@ -44,22 +44,22 @@ def test_ls_command():
             return False
         
         # Now test the ls command functionality through VS Code
-        print("   ⌨️  Testing ls command in TerminAI webview...")
+        print("   ⌨️  Testing ls command in Terminail webview...")
         
-        # Open VS Code and execute ls command in TerminAI terminal
+        # Open VS Code and execute ls command in Terminail terminal
         print("   🚀 Opening VS Code and executing ls command...")
         
-        # First, ensure VS Code is running with TerminAI extension
-        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminai", 
-                         "--command", "terminai.openTerminal"])
+        # First, ensure VS Code is running with Terminail extension
+        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminail", 
+                         "--command", "terminail.openTerminal"])
         time.sleep(5)
         
         # Execute ls command through VS Code extension using automation
         print("   📝 Executing 'ls' command through automation...")
         
-        # Use VSCode command palette to send ls command to TerminAI
+        # Use VSCode command palette to send ls command to Terminail
         # This simulates real user interaction
-        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminai", 
+        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminail", 
                          "--command", "workbench.action.terminal.sendSequence", 
                          "--args", "ls\\n"])
         time.sleep(3)
@@ -94,7 +94,7 @@ def test_ls_command():
         print("   🔍 Testing detailed ls command (ls -l)...")
         
         # Execute ls -l command through VS Code automation
-        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminai", 
+        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminail", 
                          "--command", "workbench.action.terminal.sendSequence", 
                          "--args", "ls -l\\n"])
         time.sleep(3)
@@ -143,7 +143,7 @@ def test_ls_command():
                         print(f"   🔄 Testing switch to AI: {test_ai}")
                         
                         # Execute cd command through VS Code automation
-                        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminai", 
+                        subprocess.Popen(["C:\\VSCode\\bin\\code.cmd", "D:\\git\\6terminail", 
                                          "--command", "workbench.action.terminal.sendSequence", 
                                          "--args", f"cd {test_ai}\\n"])
                         time.sleep(3)
@@ -177,7 +177,7 @@ def test_ls_command():
         
         # Ask user to manually verify the ls command in VS Code
         print("\n   👤 Manual verification required:")
-        print("   Please open VS Code and check the TerminAI terminal")
+        print("   Please open VS Code and check the Terminail terminal")
         print("   Try these commands manually:")
         print("     1. 'ls' - should show simple AI service list")
         print("     2. 'ls -l' - should show detailed AI service list")

@@ -1,10 +1,10 @@
 ---
-description: "Task list for TerminAI Configuration Directory implementation"
+description: "Task list for Terminail Configuration Directory implementation"
 ---
 
-# Tasks: TerminAI Configuration Directory
+# Tasks: Terminail Configuration Directory
 
-**Input**: Design documents from `/specs/003-terminai-directory/`
+**Input**: Design documents from `/specs/003-terminail-directory/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
 **Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
@@ -42,7 +42,7 @@ description: "Task list for TerminAI Configuration Directory implementation"
 - [ ] T005 Setup VS Code extension entry point in src/extension.ts
 - [ ] T006 [P] Implement utility functions for path handling in src/utils/pathUtils.ts
 - [ ] T007 [P] Implement utility functions for file operations in src/utils/fileUtils.ts
-- [ ] T008 Create base TerminAIDirectoryManager in src/terminaiDirectoryManager.ts
+- [ ] T008 Create base TerminailDirectoryManager in src/terminailDirectoryManager.ts
 - [ ] T009 Setup basic configuration management in src/configurationManager.ts
 - [ ] T010 Configure extension manifest (package.json) with required permissions
 
@@ -52,23 +52,23 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ## Phase 3: User Story 1 - Automatic Directory Creation (Priority: P1) 🎯 MVP
 
-**Goal**: Provide automatic creation of `.terminai` directory in VS Code workspace root
+**Goal**: Provide automatic creation of `.terminail` directory in VS Code workspace root
 
-**Independent Test**: Can be tested by opening the TerminAI extension in a workspace and verifying that the `.terminai` directory is created automatically
+**Independent Test**: Can be tested by opening the Terminail extension in a workspace and verifying that the `.terminail` directory is created automatically
 
 ### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T011 [P] [US1] Unit test for directory creation in tests/unit/terminaiDirectoryManager.test.ts
-- [ ] T012 [P] [US1] Unit test for existing directory handling in tests/unit/terminaiDirectoryManager.test.ts
+- [ ] T011 [P] [US1] Unit test for directory creation in tests/unit/terminailDirectoryManager.test.ts
+- [ ] T012 [P] [US1] Unit test for existing directory handling in tests/unit/terminailDirectoryManager.test.ts
 - [ ] T013 [P] [US1] Integration test for directory initialization in tests/integration/directoryInitialization.test.ts
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] Implement directory creation logic in TerminAIDirectoryManager
-- [ ] T015 [P] [US1] Implement permission verification in TerminAIDirectoryManager
-- [ ] T016 [P] [US1] Implement existing directory detection in TerminAIDirectoryManager
+- [ ] T014 [P] [US1] Implement directory creation logic in TerminailDirectoryManager
+- [ ] T015 [P] [US1] Implement permission verification in TerminailDirectoryManager
+- [ ] T016 [P] [US1] Implement existing directory detection in TerminailDirectoryManager
 - [ ] T017 [US1] Add error handling for directory creation failures
 - [ ] T018 [US1] Add logging for directory operations
 - [ ] T019 [US1] Integrate directory manager with extension initialization
@@ -80,9 +80,9 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ## Phase 4: User Story 2 - Configuration Storage (Priority: P1)
 
-**Goal**: Enable storage and retrieval of configuration settings in `.terminai/config.json`
+**Goal**: Enable storage and retrieval of configuration settings in `.terminail/config.json`
 
-**Independent Test**: Can be fully tested by changing configuration settings and verifying they are saved to and loaded from the `.terminai` directory
+**Independent Test**: Can be fully tested by changing configuration settings and verifying they are saved to and loaded from the `.terminail` directory
 
 ### Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️
 
@@ -106,9 +106,9 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ## Phase 5: User Story 3 - Command History Storage (Priority: P2)
 
-**Goal**: Enable storage and retrieval of command history in `.terminai/history.json`
+**Goal**: Enable storage and retrieval of command history in `.terminail/history.json`
 
-**Independent Test**: Can be tested by executing commands and verifying they are saved to and loaded from the `.terminai` directory
+**Independent Test**: Can be tested by executing commands and verifying they are saved to and loaded from the `.terminail` directory
 
 ### Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️
 
@@ -132,9 +132,9 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ## Phase 6: User Story 4 - Created File Tracking (Priority: P2)
 
-**Goal**: Enable tracking of files created through TerminAI commands in `.terminai/created-files.json`
+**Goal**: Enable tracking of files created through Terminail commands in `.terminail/created-files.json`
 
-**Independent Test**: Can be tested by creating files through TerminAI commands and verifying the file information is tracked
+**Independent Test**: Can be tested by creating files through Terminail commands and verifying the file information is tracked
 
 ### Tests for User Story 4 (OPTIONAL - only if tests requested) ⚠️
 
@@ -157,15 +157,15 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ## Phase 7: User Story 5 - Cross-Platform Directory Handling (Priority: P1)
 
-**Goal**: Ensure consistent handling of `.terminai` directory across Windows, macOS, and Linux
+**Goal**: Ensure consistent handling of `.terminail` directory across Windows, macOS, and Linux
 
 **Independent Test**: Can be tested by running the extension on different operating systems and verifying consistent directory handling
 
 ### Tests for User Story 5 (OPTIONAL - only if tests requested) ⚠️
 
-- [ ] T050 [P] [US5] Unit test for Windows path handling in tests/unit/terminaiDirectoryManager.test.ts
-- [ ] T051 [P] [US5] Unit test for macOS path handling in tests/unit/terminaiDirectoryManager.test.ts
-- [ ] T052 [P] [US5] Unit test for Linux path handling in tests/unit/terminaiDirectoryManager.test.ts
+- [ ] T050 [P] [US5] Unit test for Windows path handling in tests/unit/terminailDirectoryManager.test.ts
+- [ ] T051 [P] [US5] Unit test for macOS path handling in tests/unit/terminailDirectoryManager.test.ts
+- [ ] T052 [P] [US5] Unit test for Linux path handling in tests/unit/terminailDirectoryManager.test.ts
 
 ### Implementation for User Story 5
 
@@ -246,14 +246,14 @@ description: "Task list for TerminAI Configuration Directory implementation"
 
 ```bash
 # Launch all tests for User Story 1 together (if tests requested):
-Task: "Unit test for directory creation in tests/unit/terminaiDirectoryManager.test.ts"
-Task: "Unit test for existing directory handling in tests/unit/terminaiDirectoryManager.test.ts"
+Task: "Unit test for directory creation in tests/unit/terminailDirectoryManager.test.ts"
+Task: "Unit test for existing directory handling in tests/unit/terminailDirectoryManager.test.ts"
 Task: "Integration test for directory initialization in tests/integration/directoryInitialization.test.ts"
 
 # Launch all components for User Story 1 together:
-Task: "Implement directory creation logic in TerminAIDirectoryManager"
-Task: "Implement permission verification in TerminAIDirectoryManager"
-Task: "Implement existing directory detection in TerminAIDirectoryManager"
+Task: "Implement directory creation logic in TerminailDirectoryManager"
+Task: "Implement permission verification in TerminailDirectoryManager"
+Task: "Implement existing directory detection in TerminailDirectoryManager"
 ```
 
 ---

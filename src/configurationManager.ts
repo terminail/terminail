@@ -4,7 +4,7 @@ export class ConfigurationManager {
     private config: vscode.WorkspaceConfiguration;
 
     constructor() {
-        this.config = vscode.workspace.getConfiguration('terminai');
+        this.config = vscode.workspace.getConfiguration('terminail');
     }
 
     /**
@@ -76,7 +76,7 @@ export class ConfigurationManager {
      * Open settings for configuration
      */
     public async openSettings(): Promise<void> {
-        await vscode.commands.executeCommand('workbench.action.openSettings', 'terminai');
+        await vscode.commands.executeCommand('workbench.action.openSettings', 'terminail');
     }
 
     /**

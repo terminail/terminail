@@ -3,11 +3,11 @@
 **Feature Branch**: `020-command`  
 **Created**: 2025-11-11  
 **Status**: Draft  
-**Input**: User description: "The command system provides a unified framework for all terminal commands in TerminAI, managing command parsing, execution, and registry for individual commands such as cd, ls, chrome, podman, qi, help, and status. The command prompt displays the current AI service name followed by '>' instead of the traditional Linux '$' prompt."
+**Input**: User description: "The command system provides a unified framework for all terminal commands in Terminail, managing command parsing, execution, and registry for individual commands such as cd, ls, chrome, podman, qi, help, and status. The command prompt displays the current AI service name followed by '>' instead of the traditional Linux '$' prompt."
 
 ## Implementation Summary
 
-This feature implements the overall command system for the TerminAI terminal interface, providing a unified framework for all terminal commands. The command system includes a centralized command parser, dispatcher, and registry that manages all individual commands such as cd, ls, chrome, podman, qi, help, and status.
+This feature implements the overall command system for the Terminail terminal interface, providing a unified framework for all terminal commands. The command system includes a centralized command parser, dispatcher, and registry that manages all individual commands such as cd, ls, chrome, podman, qi, help, and status.
 
 The implementation involves creating a hierarchical command structure where individual commands are organized under this parent command system. Each command maintains its own specification while integrating with the central command framework for consistent parsing, execution, and error handling.
 
@@ -15,7 +15,7 @@ The implementation involves creating a hierarchical command structure where indi
 
 ### User Story 1 - Unified Command Interface (Priority: P1)
 
-As a developer using TerminAI, I want a unified command interface that handles all terminal commands consistently so that I can use commands with a consistent experience.
+As a developer using Terminail, I want a unified command interface that handles all terminal commands consistently so that I can use commands with a consistent experience.
 
 **Why this priority**: This is core functionality for providing a cohesive terminal experience.
 
@@ -23,13 +23,13 @@ As a developer using TerminAI, I want a unified command interface that handles a
 
 **Acceptance Scenarios**:
 
-1. **Given** a user with the TerminAI terminal open, **When** they execute any supported command, **Then** the command should be parsed and executed through the unified command system.
+1. **Given** a user with the Terminail terminal open, **When** they execute any supported command, **Then** the command should be parsed and executed through the unified command system.
 2. **Given** a user executing commands, **When** they use different commands, **Then** all commands should follow consistent parsing and error handling patterns.
 3. **Given** a user with an invalid command, **When** they execute it, **Then** they should receive consistent error messaging.
 
 ### User Story 2 - Command Registration and Discovery (Priority: P1)
 
-As a developer using TerminAI, I want to easily discover available commands so that I can understand what functionality is available.
+As a developer using Terminail, I want to easily discover available commands so that I can understand what functionality is available.
 
 **Why this priority**: This is essential for command discoverability.
 
@@ -43,7 +43,7 @@ As a developer using TerminAI, I want to easily discover available commands so t
 
 ### User Story 3 - Command Extensibility (Priority: P2)
 
-As a developer extending TerminAI, I want a clear framework for adding new commands so that I can easily extend the terminal functionality.
+As a developer extending Terminail, I want a clear framework for adding new commands so that I can easily extend the terminal functionality.
 
 **Why this priority**: This enhances extensibility but is not core functionality.
 

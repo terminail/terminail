@@ -22,13 +22,13 @@ Manages the registration and display of the sidebar icon in VS Code's activity b
 - `onIconFocused: Event<void>` - Fired when the sidebar icon gains focus
 
 #### PanelIntegrationManager
-Handles the integration of the TerminAI interface into VS Code's panel area.
+Handles the integration of the Terminail interface into VS Code's panel area.
 
 **Methods**:
-- `createPanel(): Promise<WebviewPanel>` - Creates the TerminAI panel
-- `showPanel(): Promise<void>` - Shows the TerminAI panel
-- `hidePanel(): Promise<void>` - Hides the TerminAI panel
-- `focusPanel(): Promise<void>` - Focuses the TerminAI panel
+- `createPanel(): Promise<WebviewPanel>` - Creates the Terminail panel
+- `showPanel(): Promise<void>` - Shows the Terminail panel
+- `hidePanel(): Promise<void>` - Hides the Terminail panel
+- `focusPanel(): Promise<void>` - Focuses the Terminail panel
 - `resizePanel(size: number): Promise<void>` - Resizes the panel to specified size
 
 **Events**:
@@ -79,9 +79,9 @@ Ensures UI elements are accessible to users with disabilities.
 #### Sidebar Icon Configuration
 ```json
 {
-  "id": "terminai",
-  "title": "TerminAI",
-  "icon": "resources/icons/terminai-icon.svg",
+  "id": "terminail",
+  "title": "Terminail",
+  "icon": "resources/icons/terminail-icon.svg",
   "priority": 100
 }
 ```
@@ -89,10 +89,10 @@ Ensures UI elements are accessible to users with disabilities.
 #### Panel Configuration
 ```json
 {
-  "id": "terminai-terminal",
+  "id": "terminail-terminal",
   "name": "Terminal",
   "type": "webview",
-  "contextValue": "terminaiTerminal"
+  "contextValue": "terminailTerminal"
 }
 ```
 

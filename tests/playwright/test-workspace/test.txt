@@ -1,1 +1,1 @@
-TerminAI Playwright Test Workspace
+Terminail Playwright Test Workspace

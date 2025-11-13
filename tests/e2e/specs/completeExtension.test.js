@@ -1,19 +1,19 @@
 const { expect } = require('chai');
-const TerminAITestRunner = require('../helpers/testRunner');
+const TerminailTestRunner = require('../helpers/testRunner');
 
-describe('Complete TerminAI Extension E2E Tests', function() {
+describe('Complete Terminail Extension E2E Tests', function() {
     this.timeout(30000); // 30 seconds timeout
     
     let testRunner;
     let extension;
 
     before(async function() {
-        testRunner = new TerminAITestRunner();
+        testRunner = new TerminailTestRunner();
         extension = await testRunner.activateExtension();
     });
 
     beforeEach(async function() {
-        await testRunner.openTerminAITerminal();
+        await testRunner.openTerminailTerminal();
     });
 
     afterEach(async function() {
@@ -32,7 +32,7 @@ describe('Complete TerminAI Extension E2E Tests', function() {
 
         it('should be able to open the terminal', async function() {
             // This test verifies that the terminal can be opened
-            // The actual command execution will be tested in terminalCommands.test.js
+            // The actual command execution will be tested in terminailCommands.test.js
             expect(testRunner).to.not.be.undefined;
             expect(testRunner.isActive).to.be.true;
         });
