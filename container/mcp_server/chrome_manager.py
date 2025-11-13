@@ -11,7 +11,7 @@ import logging
 import socket
 import json
 
-logger = logging.getLogger("terminai-chrome-manager")
+logger = logging.getLogger("terminail-chrome-manager")
 
 class ChromeManager:
     """Manages Chrome browser lifecycle for debugging"""
@@ -162,7 +162,8 @@ class ChromeManager:
                 return False
             
             # Create user data directory
-            user_data_dir = os.path.join(os.path.expanduser("~"), "terminai_chrome_data")
+            # Use persistent user data directory in .terminail subdirectory
+            user_data_dir = os.path.join(os.path.expanduser("~"), ".terminail", "chrome_data")
             os.makedirs(user_data_dir, exist_ok=True)
             
             # Build Chrome command

@@ -1,5 +1,5 @@
 """
-Full Real E2E Test - Complete end-to-end test from zero to working TerminAI
+Full Real E2E Test - Complete end-to-end test from zero to working Terminail
 """
 import subprocess
 import time
@@ -46,9 +46,9 @@ def wait_for_user_confirmation(message: str) -> None:
     print(f"\n{message}")
     input("Press Enter to continue...")
 
-def step_0_uninstall_and_install_terminai() -> bool:
-    """Step 0: Uninstall and reinstall TerminAI extension"""
-    print("🚀 STEP 0: Uninstall and reinstall TerminAI extension")
+def step_0_uninstall_and_install_terminail() -> bool:
+    """Step 0: Uninstall and reinstall Terminail extension"""
+    print("🚀 STEP 0: Uninstall and reinstall Terminail extension")
     
     # Check if code command exists (VS Code)
     if not check_command_exists("code --version"):
@@ -56,19 +56,19 @@ def step_0_uninstall_and_install_terminai() -> bool:
         return False
     
     try:
-        # Uninstall existing TerminAI extension
-        print("   Uninstalling existing TerminAI extension...")
-        subprocess.run("code --uninstall-extension terminai.terminai", shell=True, capture_output=True)
+        # Uninstall existing Terminail extension
+        print("   Uninstalling existing Terminail extension...")
+        subprocess.run("code --uninstall-extension terminail.terminail", shell=True, capture_output=True)
         time.sleep(2)
         
-        # Install TerminAI extension (assuming it's in the current directory or published)
-        print("   Installing TerminAI extension...")
+        # Install Terminail extension (assuming it's in the current directory or published)
+        print("   Installing Terminail extension...")
         # For development, we'd install from local vsix file
-        # subprocess.run("code --install-extension terminai-0.0.1.vsix", shell=True, capture_output=True)
-        print("   ✅ TerminAI extension installed (simulated)")
+        # subprocess.run("code --install-extension terminail-0.0.1.vsix", shell=True, capture_output=True)
+        print("   ✅ Terminail extension installed (simulated)")
         return True
     except Exception as e:
-        print(f"❌ Failed to manage TerminAI extension: {e}")
+        print(f"❌ Failed to manage Terminail extension: {e}")
         return False
 
 def step_1_check_podman() -> bool:
@@ -206,13 +206,17 @@ def step_6_start_chrome_with_debug_port() -> bool:
             return False
         
         # Start Chrome with debug port
+        # Use persistent user data directory in .terminail subdirectory
+        user_data_dir = os.path.join(os.path.expanduser('~'), '.terminail', 'chrome_data')
+        os.makedirs(user_data_dir, exist_ok=True)
+        
         chrome_cmd = [
             chrome_path,
             "--remote-debugging-port=9222",
             "--no-first-run",
             "--no-default-browser-check",
             "--disable-extensions",
-            f"--user-data-dir={os.path.join(os.path.expanduser('~'), 'terminai_chrome_data')}"
+            f"--user-data-dir={user_data_dir}"
         ]
         
         if system == "Windows":
@@ -259,10 +263,10 @@ def step_8_issue_cd_command() -> bool:
     """Step 8: Issue 'cd deepseek' command and verify"""
     print("\n🚀 STEP 8: Issue 'cd deepseek' command")
     
-    # In a real implementation, this would communicate with the TerminAI extension
+    # In a real implementation, this would communicate with the Terminail extension
     # For now, we'll simulate the process
     print("   Issuing command: cd deepseek")
-    print("   ✅ Command sent to TerminAI extension")
+    print("   ✅ Command sent to Terminail extension")
     print("   🔍 Please check if Chrome navigated to DeepSeek website")
     
     # Ask user to confirm
@@ -272,18 +276,18 @@ def step_8_issue_cd_command() -> bool:
         return True
     else:
         print("   ❌ Chrome is not on DeepSeek website")
-        print("   Please ensure TerminAI extension is working correctly")
+        print("   Please ensure Terminail extension is working correctly")
         return False
 
 def step_9_issue_qi_command() -> bool:
     """Step 9: Issue 'qi <question>' command and get answer"""
     print("\n🚀 STEP 9: Issue 'qi <question>' command")
     
-    # In a real implementation, this would communicate with the TerminAI extension
+    # In a real implementation, this would communicate with the Terminail extension
     # For now, we'll simulate the process
     test_question = "What is the capital of France?"
     print(f"   Issuing command: qi {test_question}")
-    print("   ✅ Question sent to TerminAI extension")
+    print("   ✅ Question sent to Terminail extension")
     print("   ⏳ Waiting for response from DeepSeek...")
     
     # Simulate waiting for response
@@ -294,13 +298,13 @@ def step_9_issue_qi_command() -> bool:
     print(f"   ✅ Received answer: {simulated_answer}")
     
     # Ask user to confirm
-    response = input("   Did you see the answer displayed in the TerminAI terminal? (y/N): ")
+    response = input("   Did you see the answer displayed in the Terminail terminal? (y/N): ")
     if response.lower().strip() in ['y', 'yes']:
-        print("   ✅ Confirmed: Answer displayed in TerminAI terminal")
+        print("   ✅ Confirmed: Answer displayed in Terminail terminal")
         return True
     else:
-        print("   ❌ Answer not displayed in TerminAI terminal")
-        print("   Please ensure TerminAI extension is working correctly")
+        print("   ❌ Answer not displayed in Terminail terminal")
+        print("   Please ensure Terminail extension is working correctly")
         return False
 
 def step_10_full_e2e_success() -> None:
@@ -311,13 +315,13 @@ def step_10_full_e2e_success() -> None:
     print("=" * 50)
     print()
     print("📋 VERIFICATION SUMMARY:")
-    print("   ✅ TerminAI extension installed and running")
+    print("   ✅ Terminail extension installed and running")
     print("   ✅ Podman installed and service started")
     print("   ✅ Container image built and available")
     print("   ✅ Chrome installed and running with debug port")
-    print("   ✅ TerminAI successfully navigated to DeepSeek")
+    print("   ✅ Terminail successfully navigated to DeepSeek")
     print("   ✅ Question sent and answer received")
-    print("   ✅ Answer displayed in TerminAI terminal")
+    print("   ✅ Answer displayed in Terminail terminal")
     print()
     print("🚀 TERMINAI IS READY FOR PRODUCTION USE!")
 
@@ -326,8 +330,8 @@ async def run_full_e2e_test():
     print("🎯 FULL TERMINAI END-TO-END TEST")
     print("=" * 40)
     
-    # Step 0: Uninstall and install TerminAI
-    if not step_0_uninstall_and_install_terminai():
+    # Step 0: Uninstall and install Terminail
+    if not step_0_uninstall_and_install_terminail():
         print("❌ Failed at Step 0")
         return False
     

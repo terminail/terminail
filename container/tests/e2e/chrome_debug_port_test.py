@@ -62,13 +62,17 @@ def start_chrome_with_debug_port() -> bool:
             return False
         
         # Start Chrome with debug port
+        # Use persistent user data directory in .terminail subdirectory
+        user_data_dir = os.path.join(os.path.expanduser('~'), '.terminail', 'chrome_data')
+        os.makedirs(user_data_dir, exist_ok=True)
+        
         chrome_cmd = [
             chrome_path,
             "--remote-debugging-port=9222",
             "--no-first-run",
             "--no-default-browser-check",
             "--disable-extensions",
-            f"--user-data-dir={os.path.join(os.path.expanduser('~'), 'terminai_chrome_data')}"
+            f"--user-data-dir={user_data_dir}"
         ]
         
         print(f"   📟 Executing: {' '.join(chrome_cmd)}")
