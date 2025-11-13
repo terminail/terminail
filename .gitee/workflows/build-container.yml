@@ -1,0 +1,33 @@
+version: '1.0'
+name: terminai-mcp-server-build
+displayName: TerminAI MCP Server Build
+triggers:
+  push:
+    branches:
+      precise:
+        - main
+stages:
+  - name: buildAndPush
+    displayName: Build and Push
+    strategy: naturally
+    trigger: auto
+    executor:
+      - type: script
+        name: buildAndPush
+        displayName: Build and Push Container
+        tool: shell
+        script: |
+          #!/bin/bash
+          set -e
+          
+          # Build the container image
+          docker build -t terminai-mcp-server:${GITEE_GIT_COMMIT} -f container/Containerfile container/
+          
+          # Tag as latest
+          docker tag terminai-mcp-server:${GITEE_GIT_COMMIT} terminai-mcp-server:latest
+          
+          # Push to Gitee Container Registry (if credentials are configured)
+          # docker push terminai-mcp-server:${GITEE_GIT_COMMIT}
+          # docker push terminai-mcp-server:latest
+          
+          echo "Container image built successfully: terminai-mcp-server:${GITEE_GIT_COMMIT}"

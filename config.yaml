@@ -1,0 +1,138 @@
+# TerminAI Configuration File
+# This file contains all configuration settings for the TerminAI extension
+
+# Version and metadata
+version: "1.0.0"
+config_version: "1.0"
+last_updated: "2025-01-20"
+
+# Database Configuration
+database:
+  type: "sqlite"
+  path: "~/.vscode/terminai/data.db"
+  backup_enabled: true
+  backup_interval_hours: 24
+  max_backup_files: 7
+  
+  # Table configurations
+  tables:
+    conversation_history:
+      max_entries_per_service: 1000
+      auto_cleanup: true
+      retention_days: 30
+    
+    user_preferences:
+      encrypted: true
+      compression_enabled: true
+
+# UI Settings
+ui_settings:
+  terminal:
+    theme: "dark"
+    font_family: "Consolas, 'Courier New', monospace"
+    font_size: 14
+    line_height: 1.4
+    
+  # Command interface settings
+  commands:
+    auto_complete: true
+    syntax_highlighting: true
+    command_history_size: 100
+    
+  # Service switching interface
+  service_switcher:
+    show_icons: true
+    compact_mode: false
+    default_service: "deepseek"
+    
+  # Response display settings
+  responses:
+    streaming_enabled: true
+    markdown_rendering: true
+    code_highlighting: true
+    max_response_length: 10000
+
+# Security Configuration
+security:
+  # API key management
+  api_keys:
+    encryption_enabled: true
+    key_rotation_days: 90
+    secure_storage: true
+    
+  # Privacy settings
+  privacy:
+    anonymize_requests: false
+    delete_conversations_after_days: 30
+    opt_out_telemetry: true
+    
+  # Network security
+  network:
+    timeout_seconds: 30
+    retry_attempts: 3
+    validate_ssl_certificates: true
+
+# Logging Configuration
+logging:
+  level: "info"  # debug, info, warn, error
+  file_enabled: true
+  file_path: "~/.vscode/terminai/logs/terminai.log"
+  max_file_size_mb: 10
+  max_backup_files: 5
+  
+  # Console logging
+  console_enabled: true
+  colors_enabled: true
+  
+  # Performance metrics
+  metrics_enabled: true
+  performance_tracking: true
+
+# Performance Settings
+performance:
+  # Caching settings
+  caching:
+    enabled: true
+    ttl_minutes: 60
+    max_cache_size_mb: 100
+    
+  # Concurrent requests
+  concurrency:
+    max_concurrent_requests: 3
+    request_delay_ms: 100
+    
+  # Memory management
+  memory:
+    max_memory_usage_mb: 512
+    garbage_collection_interval_minutes: 5
+
+# Development Settings (for testing and development)
+development:
+  debug_mode: false
+  mock_services: false
+  test_environment: false
+  
+  # Testing configurations
+  testing:
+    playwright_timeout_ms: 30000
+    headless_mode: true
+    slow_mo_ms: 0
+
+# Environment-specific overrides
+environments:
+  development:
+    logging:
+      level: "debug"
+    security:
+      validate_ssl_certificates: false
+    development:
+      debug_mode: true
+      
+  production:
+    logging:
+      level: "warn"
+    security:
+      validate_ssl_certificates: true
+    performance:
+      caching:
+        enabled: true

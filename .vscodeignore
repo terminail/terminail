@@ -1,0 +1,74 @@
+container/**
+
+tests/**
+
+.github/**
+
+.specify/**
+
+node_modules/
+
+learning-primer-buddy/
+
+# Other files to exclude from the extension package
+
+**/*.txt
+
+**/*.log
+
+.gitignore
+
+.vscodeignore
+
+
+
+# Exclude specific markdown files not needed at runtime
+
+CHANGELOG.md
+
+CONTRIBUTING.md
+
+README.md
+
+
+
+# Exclude development and test files
+
+**/tsconfig*.json
+
+**/package-lock.json
+
+**/yarn.lock
+
+**/*.test.*
+
+**/*.spec.*
+
+**/__mocks__/**
+
+**/__tests__/**
+
+**/tests/**
+
+**/test/**
+
+**/.git/**
+
+**/.vscode/**
+
+**/.github/**
+
+**/.specify/**
+**/.gitee/**
+
+# Exclude Playwright test reports
+playwright-report/**
+
+# Exclude TypeScript source files (only compiled JS needed)
+src/**
+
+# Exclude development scripts
+scripts/**
+
+# Exclude documentation files (not needed at runtime)
+doc/**

@@ -1,0 +1,126 @@
+{
+  "name": "terminai",
+  "displayName": "TerminAI",
+  "description": "AI-powered terminal assistant for VS Code",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "terminai-panel",
+          "title": "TerminAI",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "terminai-panel": [
+        {
+          "id": "terminai.terminalView",
+          "name": "TerminAI",
+          "type": "webview",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "terminai.openTerminal",
+        "title": "TerminAI: Open AI Terminal",
+        "category": "TerminAI"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "terminai.openTerminal",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t"
+      }
+    ],
+    "configuration": {
+      "title": "TerminAI",
+      "properties": {
+        "terminai.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for AI service (OpenAI, Anthropic, etc.)"
+        },
+        "terminai.model": {
+          "type": "string",
+          "default": "gpt-4",
+          "description": "AI model to use for terminal assistance"
+        },
+        "terminai.maxTokens": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum tokens for AI responses"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/vscode/runTest.js",
+    "test:unit": "npx jest tests/unit/ --passWithNoTests",
+    "test:integration": "npx jest tests/integration/ --passWithNoTests",
+    "test:e2e": "npm run compile && node ./tests/e2e/runTest.js",
+    "test:e2e:terminal": "npm run compile && node ./tests/e2e/runTest.js",
+    "test:e2e:vscode": "vscode-test --extensionDevelopmentPath=. --extensionTestsPath=./tests/e2e/specs",
+    "test:ui": "npx playwright test",
+    "test:ui:headed": "npx playwright test --headed",
+    "test:ui:debug": "npx playwright test --debug",
+    "test:ui:install": "npx playwright install",
+    "test:ui:vscode": "node tests/playwright/runPlaywrightTests.js",
+    "test:install": "node ./tests/installation-verification.js",
+    "test:automated": "node ./tests/automated-integration-tests.js",
+    "package": "vsce package",
+    "build": "npm run compile && npm run package",
+    "build:optimized": "node ./scripts/build-optimized.js"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.7.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-search": "^0.15.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "@xterm/xterm": "^5.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/chai": "^4.3.0",
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^29.5.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^16.18.126",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.5.2",
+    "chai": "^4.3.0",
+    "eslint": "^8.28.0",
+    "jest": "^29.5.0",
+    "mocha": "^10.0.0",
+    "playwright": "^1.40.0",
+    "sinon": "^15.0.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vscode-test": "^1.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/6TerminAI/terminai.git"
+  },
+  "publisher": "TerminAI",
+  "icon": "media/icon.png"
+}

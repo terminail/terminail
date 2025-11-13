@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "courses": [
+    {
+      "id": "cpp-primer-5th",
+      "name": "C++ Primer 5th Edition",
+      "author": "Stanley Lippman, Josée Lajoie, and Barbara Moo",
+      "publishDate": "2025-01-15",
+      "summary": "Complete guide to C++ programming language covering fundamentals to advanced topics",
+      "repository": "https://gitee.com/learning-buddy/cpp-primer-5th-course",
+      "tags": ["cpp", "programming", "beginner", "intermediate"],
+      "estimatedHours": 40
+    },
+    {
+      "id": "python-3rd",
+      "name": "Python Programming 3rd Edition",
+      "author": "John Zelle",
+      "publishDate": "2025-03-22",
+      "summary": "Introduction to Python programming with hands-on exercises and projects",
+      "repository": "https://gitee.com/learning-buddy/python-3rd-course",
+      "tags": ["python", "programming", "beginner"],
+      "estimatedHours": 30
+    },
+    {
+      "id": "javascript-complete",
+      "name": "Complete JavaScript Guide",
+      "author": "Marijn Haverbeke",
+      "publishDate": "2025-05-10",
+      "summary": "Comprehensive guide to JavaScript from basics to advanced concepts",
+      "repository": "https://gitee.com/learning-buddy/javascript-complete-course",
+      "tags": ["javascript", "web", "programming", "intermediate"],
+      "estimatedHours": 35
+    }
+  ]
+}

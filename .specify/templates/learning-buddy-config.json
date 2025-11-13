@@ -1,0 +1,35 @@
+{
+  "name": "learning-buddy-template",
+  "displayName": "Learning Buddy Template",
+  "description": "A template for creating customized Learning Buddy extensions",
+  "publisher": "learning-buddy-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/learning-buddy/learning-buddy-template.git"
+  },
+  "content": {
+    "source": "github",
+    "repository": "https://github.com/learning-buddy/template-content",
+    "branch": "main"
+  },
+  "chapters": [
+    {
+      "id": "1_introduction",
+      "title": "1. Introduction",
+      "protected": false
+    },
+    {
+      "id": "2_basics",
+      "title": "2. Basics",
+      "protected": false
+    },
+    {
+      "id": "3_advanced",
+      "title": "3. Advanced Topics",
+      "protected": true
+    }
+  ],
+  "protectedChapters": [
+    "3_advanced"
+  ]
+}

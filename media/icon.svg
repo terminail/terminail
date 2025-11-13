@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- Terminal window -->
+  <rect x="2" y="2" width="20" height="16" rx="2" ry="2" fill="#282c34" stroke="#4b5263" stroke-width="1.5"/>
+  <!-- Terminal header -->
+  <rect x="2" y="2" width="20" height="3" rx="2" ry="2" fill="#353945"/>
+  <!-- Terminal dots -->
+  <circle cx="4" cy="3.5" r="1" fill="#ff5f56"/>
+  <circle cx="7" cy="3.5" r="1" fill="#ffbd2e"/>
+  <circle cx="10" cy="3.5" r="1" fill="#27c93f"/>
+  <!-- Terminal lines -->
+  <path d="M5 8 L19 8" stroke="#abb2bf" stroke-width="0.5" opacity="0.7"/>
+  <path d="M5 11 L15 11" stroke="#abb2bf" stroke-width="0.5" opacity="0.7"/>
+  <path d="M5 14 L18 14" stroke="#abb2bf" stroke-width="0.5" opacity="0.7"/>
+  <!-- AI indicator - brain shape -->
+  <path d="M18 5 C20 5 21 7 21 9 C21 13 19 15 17 15 C17 17 18 19 20 19 L21 20 L17 20 L16 19 L16 17 L15 17 L15 19 L14 20 L10 20 L11 19 C13 19 14 17 14 15 C12 15 10 13 10 9 C10 7 11 5 13 5 Z" 
+        fill="#61dafb" opacity="0.8"/>
+  <!-- AI neural connections -->
+  <path d="M14 9 C15 10.5 16 10.5 17 9" stroke="#61dafb" stroke-width="1"/>
+  <path d="M13 11 C14 12.5 16 12.5 18 11" stroke="#61dafb" stroke-width="1"/>
+</svg>

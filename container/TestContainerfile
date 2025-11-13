@@ -1,0 +1,15 @@
+# Minimal Containerfile for testing
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Set working directory
+WORKDIR /app
+
+# Create a simple test file
+RUN echo "print('Hello TerminAI')" > test.py
+
+# Command to run
+CMD ["python", "test.py"]

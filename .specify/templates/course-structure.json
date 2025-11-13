@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "title": "Course Title",
+  "description": "Course description",
+  "chapters": [
+    {
+      "id": "1_introduction",
+      "title": "1. Introduction",
+      "protected": false,
+      "sections": [
+        {
+          "id": "1.1_welcome",
+          "title": "Welcome to the Course",
+          "type": "readme",
+          "file": "1_introduction/welcome.md"
+        },
+        {
+          "id": "1.2_setup",
+          "title": "Environment Setup",
+          "type": "exercise",
+          "file": "1_introduction/setup.py"
+        }
+      ]
+    },
+    {
+      "id": "2_basics",
+      "title": "2. Basics",
+      "protected": false,
+      "sections": [
+        {
+          "id": "2.1_fundamentals",
+          "title": "Fundamental Concepts",
+          "type": "readme",
+          "file": "2_basics/fundamentals.md"
+        },
+        {
+          "id": "2.2_exercise",
+          "title": "Basic Exercise",
+          "type": "exercise",
+          "file": "2_basics/exercise.py"
+        },
+        {
+          "id": "2.2_solution",
+          "title": "Solution",
+          "type": "solution",
+          "file": "2_basics/solution.py"
+        },
+        {
+          "id": "2.2_hint",
+          "title": "Hint",
+          "type": "hint",
+          "file": "2_basics/hint.md"
+        }
+      ]
+    },
+    {
+      "id": "3_advanced",
+      "title": "3. Advanced Topics",
+      "protected": true,
+      "sections": [
+        {
+          "id": "3.1_advanced_concepts",
+          "title": "Advanced Concepts",
+          "type": "readme",
+          "file": "3_advanced/concepts.md"
+        },
+        {
+          "id": "3.1_exercise",
+          "title": "Advanced Exercise",
+          "type": "exercise",
+          "file": "3_advanced/exercise.py"
+        }
+      ]
+    }
+  ],
+  "protectedChapters": [
+    "3_advanced"
+  ]
+}

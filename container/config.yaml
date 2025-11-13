@@ -1,0 +1,151 @@
+# MCP Server Configuration
+# This configuration file contains settings specific to the MCP server container
+
+server:
+  host: "0.0.0.0"
+  port: 3000
+  debug: false
+
+browser:
+  # Default debug port for Chrome/Chromium browser connection
+  default_debug_port: 9222
+  # Timeout for browser operations (in milliseconds)
+  operation_timeout: 30000
+  # Time to wait for AI responses (in milliseconds)
+  response_timeout: 60000
+
+# AI Services supported by the MCP server
+# These are the AI services that can be accessed through the browser automation
+ai_services:
+  # Chinese AI websites from major domestic companies (prioritized as requested)
+  - id: "deepseek"
+    name: "DeepSeek"
+    url: "https://chat.deepseek.com"
+    category: "domestic"
+    enabled: true
+    sequence: 0
+    
+  - id: "doubao"
+    name: "Doubao"
+    url: "https://www.doubao.com"
+    category: "domestic"
+    enabled: true
+    sequence: 1
+    
+  - id: "yuanbao"
+    name: "Yuanbao (Tencent)"
+    url: "https://yuanbao.tencent.com"
+    category: "domestic"
+    enabled: true
+    sequence: 2
+    
+  - id: "qwen"
+    name: "Qwen (Alibaba)"
+    url: "https://tongyi.aliyun.com"
+    category: "domestic"
+    enabled: true
+    sequence: 3
+    
+  - id: "ernie"
+    name: "ERNIE Bot (Baidu)"
+    url: "https://yiyan.baidu.com"
+    category: "domestic"
+    enabled: true
+    sequence: 4
+    
+  - id: "kimi"
+    name: "Kimi"
+    url: "https://kimi.com"
+    category: "domestic"
+    enabled: true
+    sequence: 5
+
+  - id: "tongyi-wanxiang"
+    name: "Tongyi Wanxiang"
+    url: "https://wanxiang.aliyun.com"
+    category: "domestic"
+    enabled: true
+    sequence: 6
+    
+  - id: "wenxin-yiyan"
+    name: "Wenxin Yiyan"
+    url: "https://yiyan.baidu.com"
+    category: "domestic"
+    enabled: true
+    sequence: 7
+    
+  - id: "quark"
+    name: "Quark AI"
+    url: "https://quark.cn"
+    category: "domestic"
+    enabled: true
+    sequence: 8
+
+  # International popular AI websites
+  - id: "chatgpt"
+    name: "ChatGPT"
+    url: "https://chatgpt.com"
+    category: "international"
+    enabled: true
+    sequence: 9
+    
+  - id: "claude"
+    name: "Claude"
+    url: "https://claude.ai"
+    category: "international"
+    enabled: true
+    sequence: 10
+    
+  - id: "gemini"
+    name: "Gemini"
+    url: "https://gemini.google.com"
+    category: "international"
+    enabled: true
+    sequence: 11
+    
+  - id: "copilot"
+    name: "Microsoft Copilot"
+    url: "https://copilot.microsoft.com"
+    category: "international"
+    enabled: true
+    sequence: 12
+    
+  - id: "perplexity"
+    name: "Perplexity AI"
+    url: "https://perplexity.ai"
+    category: "international"
+    enabled: true
+    sequence: 13
+
+  - id: "grok"
+    name: "Grok"
+    url: "https://grok.x.ai"
+    category: "international"
+    enabled: true
+    sequence: 14
+    
+  - id: "pi"
+    name: "Pi AI"
+    url: "https://pi.ai"
+    category: "international"
+    enabled: true
+    sequence: 15
+    
+  - id: "huggingchat"
+    name: "HuggingChat"
+    url: "https://huggingface.co/chat"
+    category: "international"
+    enabled: true
+    sequence: 16
+    
+  - id: "leonardo-ai"
+    name: "Leonardo AI"
+    url: "https://leonardo.ai"
+    category: "international"
+    enabled: true
+    sequence: 17
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
